@@ -119,7 +119,7 @@
           </form>
 
           {{-- 削除フォーム --}}
-          <form method="POST" action="{{ route('user_destination.update', $val->id) }}"" style="display:inline;">
+          <form method="POST" action="{{ route('member.delete', $val->id) }}" style="display:inline;">
             @csrf
             @method('DELETE')
 
