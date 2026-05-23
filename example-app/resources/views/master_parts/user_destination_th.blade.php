@@ -1,0 +1,10 @@
+<tr>
+    <th>ID</th>
+    <th>利用者</th>
+    <th>行き先</th>
+    <th>迎え地</th>
+    <th>透析</th>
+    <th>距離</th>
+    <th>移動支援費</th>
+    <th></th>
+</tr>

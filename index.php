@@ -1,0 +1,19 @@
+<?php
+
+// このファイルは 手を加えない のが基本
+
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
+
+define('LARAVEL_START', microtime(true));
+
+require __DIR__.'/example-app/vendor/autoload.php';
+$app = require_once __DIR__.'/example-app/bootstrap/app.php';
+
+$kernel = $app->make(Kernel::class);
+
+$request = Request::capture();
+$response = $kernel->handle($request);
+$response->send();
+
+$kernel->terminate($request, $response);

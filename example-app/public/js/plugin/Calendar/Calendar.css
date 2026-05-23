@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+.wp{
+   overflow:hidden;
+   text-align:center;
+   padding:5px 0 0;
+   display:flex;
+   width:100%;
+   box-sizing:border-box;
+   margin:0 auto;
+   font-weight:bold;
+   background-color:#F3981D;
+   font-size:13px;
+
+}
+.prev{
+   width:16.666%;
+   padding:5px 0;
+   background-color:#F3981D;
+   color:#fff;
+   text-align:center;
+}
+.ynext,
+.yprev{
+   width:16.666%;
+   padding:5px 0;
+   background-color:#F3981D;
+   color:#fff;
+   text-align:center;
+}
+.yprev{
+   border-left:1px solid #F3981D;
+}
+.next{
+   width:16.666%;
+   padding:5px 0;
+   background-color:#F3981D;
+   border-right:1px solid #F3981D;
+   color:#fff;
+   text-align:center;
+}
+.yy{
+   width:16.666%;
+   padding:5px 0;
+   background-color:#F3981D;
+   color:#fff;
+   text-align:center;
+}
+.mm{
+   width:16.666%;
+   padding:5px 0;
+   background-color:#F3981D;
+   color:#fff;
+   text-align:center;
+}
+#calendar td,
+.yprev:hover,
+.ynext:hover,
+.prev:hover,
+.next:hover{
+   cursor:pointer;
+}
+ table{
+    width:100%;
+    border-collapse:collapse;
+ }
+#calendar td{
+   text-align:center;
+   font-size:12px;
+   font-weight:bold;
+   line-height:1em;
+   padding:10px;
+   border:1px solid #F3981D;
+   background:#fff;
+   color:#555;
+}
+#calendar tr:nth-child(1) td {
+    background: #F9E7D2;
+}
+#calendar tr:nth-child(1) td:nth-child(1) {
+    color: #f00;
+}
+#calendar tr:nth-child(1) td:nth-child(7) {
+    color: blue;
+}
+#calendar{
+   border:1px solid #F3981D;
+   background:#F3981D;
+   margin:0 auto 20px;
+   /*width:266px;*/
+   width:100%;
+   box-sizing: border-box;
+}
+.cl_toggle{
+   display:none;
+   margin:10px auto 0;
+}
+@media screen and (min-width:768px){
+   .wp{
+      font-size:14px;
+   }
+   #calendar td{
+      padding:30px;
+      font-size:14px;
+   }
+}
+/*------------------------------------------------------------*/
+/*カレンダーCSSここまで*/
