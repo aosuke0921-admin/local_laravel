@@ -179,6 +179,7 @@
             'records' => $user_destination_records
         ])
 
+        
       </tbody>
 
     </table>
