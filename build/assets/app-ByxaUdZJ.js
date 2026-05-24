@@ -1,0 +1,1 @@
+import{a as t,R as e}from"./client-z24FyGN8.js";function a(){return e.createElement("div",null,e.createElement("h1",null,"Hello aosuke a"))}t.createRoot(document.getElementById("app")).render(e.createElement(a,null));
