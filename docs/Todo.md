@@ -10,11 +10,15 @@ ArchiveController.phpの39行目修正
 //before
 //return $query->orderBy('dates')->get();
 
+--------------------------------------------
+
 //after
 return $query
     ->orderBy('dates', 'asc')
     ->orderBy('departureTime', 'asc')
     ->get();
+
+--------------------------------------------
 
 logute.com / OK
 test-sistem.jp / まだ
