@@ -12,7 +12,14 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    // ローカルだけ
+
+    server: {
+        host: 'localhost',
+        hmr: {
+            host: 'localhost',
+        },
+    },
+
     build: {
         outDir: 'public/build',
         emptyOutDir: true,
