@@ -22,7 +22,7 @@ return $query
 
 logute.com / OK
 test-sistem.jp / OK
-localhost / まだ
+localhost / OK
 
 ------------------------------------------------------------------------------------------
 

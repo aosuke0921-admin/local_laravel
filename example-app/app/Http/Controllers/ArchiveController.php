@@ -36,7 +36,11 @@ class ArchiveController extends Controller
         $query->whereYear('dates', $year);
         $query->whereMonth('dates', $month);
 
-        return $query->orderBy('dates')->get();
+        //return $query->orderBy('dates')->get();
+        return $query
+            ->orderBy('dates', 'asc')
+            ->orderBy('departureTime', 'asc')
+            ->get();
     }
 
     /**
