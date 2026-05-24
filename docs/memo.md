@@ -16,7 +16,16 @@ localhost:5174
 
 git pull --rebase
 git add .
-git commit -m "docs/検索ページ・時刻・降順修正・完了"
+git commit -m "memo.md・更新"
+git push
+
+--------------------------------------------
+
+◯　example-appより上の階層のmeme.md、Todo.mdの更新
+
+cd ../
+git add docs/memo.md
+git commit -m "memo更新"
 git push
 
 --------------------------------------------
@@ -234,14 +243,5 @@ cd ~/Desktop
 Finder で Shift + Command + H
 
 ホームディレクトリに一瞬で飛べます
-
---------------------------------------------
-
-◯ タグ	意味
-
-FIX	バグ修正
-PENDING　未着手（ペンディング）
-FEATURE	機能追加 (フィーチャー)
-UPDATE	軽い修正
 
 --------------------------------------------
