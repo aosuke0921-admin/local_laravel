@@ -80,6 +80,20 @@ $(function(){
   // 指定した間隔で繰り返し実行
   }, checkInterval);
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // =============================================================================================
 
   // URLのクエリ文字列を取得
@@ -269,13 +283,25 @@ if (isSP) {
         });
     }
 //----------------------------------------------------------------------------------------
+
+    const paramStartDistance = params.get('start_distance');
+
+
     // #carの変更時だけ発火
     //$('#car').on('change', updateStartDistance);
     $('#car, #ymd').on('change', updateStartDistance);
 
-    // ページ読み込み時にも初期値を表示
-    updateStartDistance();
+    // URLにパラメータがついていればパラメータ優先
+    if (paramStartDistance !== null) {
 
+        $('#start_distance').val(paramStartDistance);
+
+    } else {
+
+        // DBから取得
+        updateStartDistance();
+
+    }
   }
 
   /* td 0非表示
@@ -1420,12 +1446,31 @@ function syncRowDisabledState() {
   });
 /*-------------------------------------------------------------------------------------*/
 
-  $(document).ready(function() {
-      // ページ読み込み時に updateStartDistance を実行
-      $('#ymd, #car').trigger('change');
-  });
 
-  $('#ymd, #car').on('change', updateStartDistance);
+
+//const paramStartDistance = params.get('start_distance');
+
+//alert(paramStartDistance);
+
+// urlにパラメータがついていればパラメータ優先
+if (paramStartDistance !== null) {
+
+    $('#start_distance').val(paramStartDistance);
+
+} else {
+
+    // changeイベント登録
+    $('#ymd, #car').on('change', updateStartDistance);
+
+    // 初回実行
+    updateStartDistance();
+
+}
+
+
+
+
+
 
 /*-------------------------------------------------------------------------------------*/
 // flashImage1

@@ -67,13 +67,8 @@ $(function(){
                     </dl>
                   </div>
 
-
-
-                  {{ request('start_distance') }}
-
-
-
-
+                  {{-- $start_distance --}}
+                  
                   <div class="start_k">
                     <dl>
                       <dt>登録は始業距離を入力<span><b>登録されている始業距離が消えている場合は、</b>更新ボタンで再確認してください</span></dt>
@@ -81,7 +76,7 @@ $(function(){
                         <input 
                           type="number" 
                           name="start_distance" 
-                          value="{{ request('start_distance', session('start_distance')) }}" 
+                          value="{{ request('start_distance') ?: session('start_distance') }}" 
                           id="start_distance"
                           pattern="[0-9]*"
                           inputmode="numeric"
