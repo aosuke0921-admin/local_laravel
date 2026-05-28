@@ -1,5 +1,7 @@
 $(function(){
 
+  //console.log('俺だ');
+
   let isInit = true; // ←ここ
 
 //------------------------------------------------------------------------
@@ -1448,26 +1450,26 @@ function syncRowDisabledState() {
 /*-------------------------------------------------------------------------------------*/
 
 
+if (fileName === "dashboard") {
+  const paramStartDistance = params.get('start_distance');
 
-const paramStartDistance = params.get('start_distance');
+  //alert(paramStartDistance);
 
-//alert(paramStartDistance);
+  // urlにパラメータがついていればパラメータ優先
+  if (paramStartDistance !== null) {
 
-// urlにパラメータがついていればパラメータ優先
-if (paramStartDistance !== null) {
+      $('#start_distance').val(paramStartDistance);
 
-    $('#start_distance').val(paramStartDistance);
+  } else {
 
-} else {
+      // changeイベント登録
+      $('#ymd, #car').on('change', updateStartDistance);
 
-    // changeイベント登録
-    $('#ymd, #car').on('change', updateStartDistance);
+      // 初回実行
+      updateStartDistance();
 
-    // 初回実行
-    updateStartDistance();
-
+  }
 }
-
 
 
 

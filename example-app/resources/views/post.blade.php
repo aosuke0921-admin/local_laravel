@@ -46,9 +46,6 @@
         @csrf
         <input type="hidden" name="recaptcha_token" class="recaptcha_token">
 
-
-
-
         <button type="submit">ログアウト</button>
     </form>
 
