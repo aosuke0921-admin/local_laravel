@@ -144,17 +144,11 @@
     <div class="addition_button">+</div>
     <div class="prevPage">
 
-
-
-    <?php /*
-      <a href="{{ route('dashboard') }}">戻る</a>
-    */ ?>
-
-    <a href="{{ route('dashboard', [
-        'dates' => session('dates'),
-        'car' => session('car'),
-        'start_distance' => session('start_distance')
-    ]) }}">戻る</a>
+      <a href="{{ route('dashboard', [
+          'dates' => session('dates'),
+          'car' => session('car'),
+          'start_distance' => session('start_distance')
+      ]) }}">戻る</a>
 
     </div>
     <div class="fixed">
