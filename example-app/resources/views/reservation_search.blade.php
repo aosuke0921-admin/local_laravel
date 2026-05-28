@@ -154,7 +154,7 @@
             <th>依頼者</th>
             <th>受付日時</th>
             @if($mode !== 'support')
-                <th>反映日</th>
+                <th>反映日 / 反映者</th>
             @endif
             <th>支援上の留意点</th>
             <th>備考</th>
