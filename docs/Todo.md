@@ -124,7 +124,7 @@ GitHub / NO
 ------------------------------------------------------------------------------------------
 smile_yoyaku テーブルに reflected_by カラム追加
 ------------------------------------------------------------------------------------------
-◯ SmileYoyaku.php修正
+◯ SmileYoyaku.php
 
 app/Models/SmileYoyaku.php
 protected $fillable = [
@@ -141,9 +141,27 @@ protected $fillable = [
     'reflected_at',
     'reflected_by',　←追加（反映者）
 ];
-
 ------------------------------------------------------------------------------------------
-◯　reservation_search.blade.php修正
+◯ BoardingReservationController.php　139行目
+
+    // =========================
+    // 反映
+    // =========================
+    public function reflect($id)
+    {
+        $yoyaku = SmileYoyaku::findOrFail($id);
+
+        $yoyaku->update([
+            'is_reflected' => 1,
+            'reflected_at' => now(),
+            //'receptionist' => auth()->user()->full_name ?? null,
+            'reflected_by' => auth()->user()->full_name ?? null,　←こっちに修正
+        ]);
+
+        return back()->with('success', '反映しました');
+    }
+------------------------------------------------------------------------------------------
+◯　reservation_search.blade.php
 
 {{-- 反映日 --}}
 @if($mode !== 'support')
@@ -157,9 +175,11 @@ protected $fillable = [
 [2026.5.29]動作検証
 ------------------------------------------------------------------------------------------
 ◯ 環境別・進行状況
-logute.com / NO
-test-sistem.jp / NO
+logute.com / OK
+test-sistem.jp / OK
 GitHub / OK
+
+
 ------------------------------------------------------------------------------------------
 🟡　[2026.0.00] [WIP]  削除画面・確認アラート追加
 ------------------------------------------------------------------------------------------
