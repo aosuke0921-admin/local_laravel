@@ -22,6 +22,7 @@ class SmileYoyaku extends Model
         'place',
         'is_reflected', // ←これ絶対必要
         'reflected_at', // ←これ絶対必要
+        'reflected_by',
     ];
 
     // 👇 ここに追加する

@@ -11,6 +11,16 @@ use App\Models\Customer;
 
 class BoardingReservationController extends Controller
 {
+
+
+
+
+
+
+
+
+
+
     // =========================
     // 一覧・登録画面
     // =========================
@@ -133,7 +143,8 @@ class BoardingReservationController extends Controller
         $yoyaku->update([
             'is_reflected' => 1,
             'reflected_at' => now(),
-            'receptionist' => auth()->user()->full_name ?? null,
+            //'receptionist' => auth()->user()->full_name ?? null,
+            'reflected_by' => auth()->user()->full_name ?? null,
         ]);
 
         return back()->with('success', '反映しました');

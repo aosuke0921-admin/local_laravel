@@ -197,7 +197,7 @@
                 <td>
                     {{ $row->reflected_at
                         ? \Carbon\Carbon::parse($row->reflected_at)->format('Y/n/j G:i')
-                        : '—' }}
+                        : '—' }} 【反映者 : {{ $row->reflected_by }}】
                 </td>
                 @endif
 
