@@ -3,10 +3,82 @@
 ------------------------------------------------------------------------------------------
 [2026.0.00]戻るボタンリンクに始業距離パラメータをつけてダッシュボードで受け取る
 ------------------------------------------------------------------------------------------
+
+運行日、乗降者、始業距離、URLにパラメータがついていたらURLのパラメータを優先に修正
+
+------------------------------------------------------------------------------------------
+
+// system.js・パラメータがついている時はURLパラメータから取得・２箇所
+
+// 1
+
+const paramStartDistance = params.get('start_distance');
+
+// #carの変更時だけ発火
+//$('#car').on('change', updateStartDistance);
+$('#car, #ymd').on('change', updateStartDistance);
+
+// URLにパラメータがついていればパラメータ優先
+if (paramStartDistance !== null) {
+
+    $('#start_distance').val(paramStartDistance);
+
+} else {
+
+    // DBから取得
+    updateStartDistance();
+
+}
+
+------------------------------------------------------------------------------------------
+
+// 2
+
+const paramStartDistance = params.get('start_distance');
+
+//alert(paramStartDistance);
+
+// urlにパラメータがついていればパラメータ優先
+if (paramStartDistance !== null) {
+
+    $('#start_distance').val(paramStartDistance);
+
+} else {
+
+    // changeイベント登録
+    $('#ymd, #car').on('change', updateStartDistance);
+
+    // 初回実行
+    updateStartDistance();
+
+}
+
+------------------------------------------------------------------------------------------
+
+// post.blade.php　・パラメータつきリンク
+
+<a href="{{ route('dashboard', [
+    'dates' => session('dates'),
+    'car' => session('car'),
+    'start_distance' => session('start_distance')
+]) }}">戻る</a>
+------------------------------------------------------------------------------------------
 ◯ 環境別・進行状況
 logute.com / NO
-test-sistem.jp / NO
+test-sistem.jp / OK
 GitHub / OK
+
+
+
+
+
+
+
+
+
+
+
+
 ------------------------------------------------------------------------------------------
 🟡　[2026.0.00] [WIP]  登録画面・一瞬追加した値をその場で消せるように
 ------------------------------------------------------------------------------------------
