@@ -37,7 +37,7 @@ $(function(){
   </form>
   <a href="{{ route('dashboard') }}">TOPへ</a>
 </div>
-<form action="{{ route('smile_posts.deleteMultiple') }}" method="POST" id="form">
+<form action="{{ route('smile_posts.deleteMultiple') }}" method="POST" id="form" onsubmit="return confirm('削除しますか？')">
     @csrf
     <input type="hidden" name="recaptcha_token" class="recaptcha_token">
 

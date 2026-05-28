@@ -1,6 +1,7 @@
 (function($) {
    $.fn.DeleteCheck_Plugin = function() {
-      $('.delte_btn').on('click', function(){
+      /*
+      $('.delete_btn').on('click', function(){
          var result = window.confirm('本当に削除してよろしいですか？');
          if(result == true){
            return true;
@@ -8,6 +9,7 @@
            return false; //exit();
          }
       });
+      */
 
       $('.delete_btn').hide();
 
