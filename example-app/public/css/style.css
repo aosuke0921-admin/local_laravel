@@ -757,9 +757,17 @@ select:focus{
                                             * window open
                                             --------------------------------------------------------*/
                                             .open_window{
+                                              
+
                                               width: 80%;
                                               margin: 0 auto 0;
-                                              display: flex;
+
+
+                                              display:none;
+                                              /*display: flex;*/
+
+
+
                                               flex-direction: column;
                                               flex-wrap: wrap;
                                               height: calc(5 * 125px + 4 * 10px);

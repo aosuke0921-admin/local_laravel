@@ -577,6 +577,8 @@ $('.open_window ul.open_1, .open_window ul.open_2').each(function () {
 
           $('.open_window').append('<div class="nasi">該当する検索結果はありません</div>');
 
+
+          
           $('.nasi').css({
             fontFamily:'"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO"',
             width:'100%',
@@ -587,6 +589,8 @@ $('.open_window ul.open_1, .open_window ul.open_2').each(function () {
             textAlign:'center',
             fontSize:'50px'
           });
+
+
         }
         $('.open_window ul li.cap').css('display','none');
       });
@@ -597,7 +601,11 @@ $('.open_window ul.open_1, .open_window ul.open_2').each(function () {
 
         var tr_id = $(this).parent().parent('tr').attr('id');
 
-        $('.open_window').css('opacity',1).fadeIn(500);
+        //$('.open_window').css('opacity',1).fadeIn(500);
+
+        $('.open_window').css({
+            opacity: 1,
+            display: 'flex'}).hide().fadeIn(500);
 
         $('#wrapper').hide();
 
