@@ -286,6 +286,7 @@ if (isSP) {
 
     const paramStartDistance = params.get('start_distance');
 
+    //alert(paramStartDistance);
 
     // #carの変更時だけ発火
     //$('#car').on('change', updateStartDistance);
@@ -1448,7 +1449,7 @@ function syncRowDisabledState() {
 
 
 
-//const paramStartDistance = params.get('start_distance');
+const paramStartDistance = params.get('start_distance');
 
 //alert(paramStartDistance);
 
