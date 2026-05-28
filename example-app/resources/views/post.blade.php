@@ -60,10 +60,6 @@
   @csrf
   <input type="hidden" name="recaptcha_token" class="recaptcha_token">
 
-
-
-
-
     <table class="tb">
 
         @php
