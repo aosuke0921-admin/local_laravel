@@ -46,7 +46,19 @@ $(function(){
                     <dl>
                       <dt>運行日</dt>
                       <dd>
-                        <input id="ymd" class="ymd" placeholder="（例）{{ $today }}" size="20" type="text" name="dates" value="{{ $dates ?? '' }}" readonly>
+                        <?php /*<input id="ymd" class="ymd" placeholder="（例）{{ $today }}" size="20" type="text" name="dates" value="{{ $dates ?? '' }}" readonly>*/ ?>
+                        {{-- パラメータがついている時はパラメータの値を優先 --}}
+                        <input
+                        id="ymd"
+                            class="ymd"
+                            placeholder="（例）{{ $today }}"
+                            size="20"
+                            type="text"
+                            name="dates"
+                            value="{{ request('dates') ?? ($dates ?? '') }}"
+                            readonly
+                        >
+
                         <div class="cl_toggle">
                           <div id="calendar"></div>
                         </div>
@@ -57,12 +69,28 @@ $(function(){
                     <dl>
                       <dt>乗降車を選択</dt>
                       <dd>
+
+                      {{-- パラメータがついている時はパラメータの値を優先 --}}
+                      <select name="car" id="car">
+                          <option value="">選択してください</option>
+
+                          @foreach($cars as $c)
+                              <option
+                                  value="{{ $c }}"
+                                  {{ request('car', $car) == $c ? 'selected' : '' }}
+                              >
+                                  {{ $c }}
+                              </option>
+                          @endforeach
+                      </select>
+                      <?php /*
                         <select name="car" id="car">
                             <option value="">選択してください</option>
                             @foreach($cars as $c)
                                 <option value="{{ $c }}" {{ $car == $c ? 'selected' : '' }}>{{ $c }}</option>
                             @endforeach
                         </select>
+                      */ ?>
                       </dd>
                     </dl>
                   </div>
@@ -73,6 +101,19 @@ $(function(){
                     <dl>
                       <dt>登録は始業距離を入力<span><b>登録されている始業距離が消えている場合は、</b>更新ボタンで再確認してください</span></dt>
                       <dd>
+
+                      {{-- パラメータがついている時はパラメータの値を優先 --}}
+                      <input 
+                        type="number" 
+                        name="start_distance" 
+                        value="{{ request('start_distance') }}"
+                        id="start_distance"
+                        pattern="[0-9]*"
+                        inputmode="numeric"
+                        step="0.1"
+                      >
+
+                      <?php /*
                         <input 
                           type="number" 
                           name="start_distance" 
@@ -82,6 +123,7 @@ $(function(){
                           inputmode="numeric"
                           step="0.1"
                         >
+                        */ ?>
                         <span class="error_msg"></span>
                       </dd>
                     </dl>
