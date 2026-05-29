@@ -1,3 +1,24 @@
+
+○　reactの作業
+
+まずローカルで修正して、
+
+ビルドする
+rm -rf public/build
+npm run build
+
+build/assets
+build/manifest.json
+アップする。それぞれ2箇所のbuildディレクトリ
+
+SSHサーバー移動
+cd public_html/logute.com/example-app
+
+サーバーキャッシュ削除。
+php artisan optimize:clear
+
+--------------------------------------------
+
 ◯　ローカル自動リロード
 
 public/hot は Git管理しないのが普通。
@@ -90,6 +111,14 @@ Tigers&1207&
 
 ssh -i ~/Desktop/aoyama_key.pem -p 8022 r9589205@www1130.onamae.ne.jp
 
+
+cd public_html/logute.com/example-app
+
+キャッシュクリア
+php artisan optimize:clear
+
+
+
 --------------------------------------------
 
 ◯　開発環境・お名前
@@ -100,6 +129,12 @@ ssh -i ~/Desktop/aoyama_key.pem -p 8022 r9589205@www1130.onamae.ne.jp
 鍵：sistem.pem（デスクトップ）
 
 ssh -i ~/Desktop/sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp
+
+
+cd public_html/test-sistem.jp/example-app
+
+キャッシュクリア
+php artisan optimize:clear
 
 --------------------------------------------
 
