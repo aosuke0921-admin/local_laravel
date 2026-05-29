@@ -1317,7 +1317,7 @@ function syncRowDisabledState() {
     $(this).closest('caption').next('tbody').toggle();
 
   });
-*/
+
 
 
   $('.preview-page caption:last').on('click',function(){
@@ -1329,6 +1329,7 @@ function syncRowDisabledState() {
       $(this).css('marginBottom','0');
     }
   });
+*/
 
   /*-------------------------------------------------------------------------------------*/
 

@@ -9,6 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+
+<script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
+
+
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 </head>
 <body class="preview-page">
@@ -81,11 +86,15 @@
             </tr>
         @endif
 
-
         @foreach($posts as $index => $post)
 
         <caption class="input_area_c input_area_c{{ $loop->index }}">
-            運行{{ $loop->iteration }}<span>ー</span>
+            <?php /*運行{{ $loop->iteration }}<span>ー</span>*/ ?>
+
+                  運行{{ $loop->iteration }}             
+
+              <span class="toggle_run">ー</span>
+
         </caption>
 
         <tbody class="input_area_t input_area_t{{ $loop->index }}">
