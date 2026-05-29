@@ -4123,10 +4123,18 @@ select:focus{
     .post-page form table.tb caption:hover{
       cursor:pointer;
     }
-    .post-page form table.tb caption span{
+    .post-page form table.tb caption span:last-child{
       position:absolute;
       right:20px;
     }
+    
+
+    .post-page form table.tb caption span.delete_run{
+      position:absolute;
+      left:20px;
+      display:inline;
+    }
+
     .post-page form table.tb{
       width:100%;
       margin:0 auto;

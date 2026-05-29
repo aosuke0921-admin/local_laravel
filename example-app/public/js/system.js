@@ -1298,29 +1298,27 @@ function syncRowDisabledState() {
       }
   });
 /*-------------------------------------------------------------------------------------*/
-  $('caption').on('click',function(){
 
-    $(this).children('span').toggleClass("active");
+/*　移動します
+  $('span.toggle_run').on('click',function(){
 
-    if($(this).children('span').hasClass('active')){
+    $(this).toggleClass("active");
 
-      //alert("A");
+    if($(this).hasClass('active')){
 
-      $(this).children('span').text('＋');
+      $(this).text('＋');
 
     }else{
 
-      //alert("B");
-
-      $(this).children('span').text('ー');
+      $(this).text('ー');
 
     }
 
-    $(this).next('tbody').toggle();
+    $(this).closest('caption').next('tbody').toggle();
 
   });
+*/
 
-//------------------------------------------------------------------------------------------------------------------------------
 
   $('.preview-page caption:last').on('click',function(){
     //alert('last');
@@ -2749,6 +2747,7 @@ function syncRowDisabledState() {
       }
   });
 /*-------------------------------------------------------------------------------------*/
+/*
   $('caption').on('click',function(){
 
     $(this).children('span').toggleClass("active");
@@ -2770,7 +2769,7 @@ function syncRowDisabledState() {
     $(this).next('tbody').toggle();
 
   });
-
+*/
 //------------------------------------------------------------------------------------------------------------------------------
 
   $('.preview-page caption:last').on('click',function(){

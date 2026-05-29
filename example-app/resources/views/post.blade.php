@@ -22,6 +22,9 @@
 <script src="{{ asset('js/system.js') }}?id={{ time() }}" charset="utf-8"></script>
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">
 <script src="{{ asset('js/form.js') }}?id={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
+
 <script src="https://www.google.com/recaptcha/api.js?render={{ config('recaptcha.site_key') }}"></script>
 </head>
 <body class="post-page">
@@ -64,9 +67,21 @@
         @endphp
 
         @foreach ($rows as $i)
+
+        <div class="run_block">
+
           <caption class="input_area_c input_area_c{{ $i }}">
-              運行{{ $startIndex + $i }}<span>ー</span>
+
+              <span class="delete_run">✕</span>
+
+              <span class="run_title">
+                  運行{{ $startIndex + $i }}
+              </span>
+
+              <span class="toggle_run">ー</span>
+
           </caption>
+
           <tbody class="input_area_t input_area_t{{ $i }}">  
             @if($i === 0)
             <tr>
@@ -139,6 +154,11 @@
               </td>
             </tr>
           </tbody>
+
+
+        </div><!---追記--->
+
+
         @endforeach
       </table>
     <div class="addition_button">+</div>
@@ -158,7 +178,7 @@
       </div>
       <div class="insert_btn">
         <?php /*<a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>*/ ?>
-        
+
         <a href="{{ route('dashboard', [
             'dates' => session('dates'),
             'car' => session('car'),
