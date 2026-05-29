@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>React Test</title>
 
-    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+    @vite([
+        'resources/react/app/app.css',
+        'resources/react/app/app.jsx'
+    ])
+
 </head>
 <body>
 
