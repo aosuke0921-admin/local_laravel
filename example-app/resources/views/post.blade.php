@@ -157,7 +157,14 @@
         <div class="item">合計金額<input type="text" name="total_amount" class="total_amount fixed_input" value="0" readonly></div>  
       </div>
       <div class="insert_btn">
-        <a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>
+        <?php /*<a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>*/ ?>
+        
+        <a href="{{ route('dashboard', [
+            'dates' => session('dates'),
+            'car' => session('car'),
+            'start_distance' => session('start_distance')
+        ]) }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>
+
         <input type="submit" name="submit" class="post_btn" value="登録">
         <img src="{{ asset('image/pagetop.png') }}" alt="" class="pagetop_btn">
       </div>

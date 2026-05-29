@@ -51,11 +51,21 @@ if (paramStartDistance !== null) {
 ------------------------------------------------------------------------------------------
 // post.blade.php　・パラメータつきリンク
 
+○　PC
 <a href="{{ route('dashboard', [
     'dates' => session('dates'),
     'car' => session('car'),
     'start_distance' => session('start_distance')
 ]) }}">戻る</a>
+------------------------------------------------------------------------------------------
+○　SP　←画像矢印ボタンのリンク修正
+<?php /*<a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>*/ ?>
+
+<a href="{{ route('dashboard', [
+    'dates' => session('dates'),
+    'car' => session('car'),
+    'start_distance' => session('start_distance')
+]) }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>
 ------------------------------------------------------------------------------------------
 ◯ 環境別・進行状況
 logute.com / NO
