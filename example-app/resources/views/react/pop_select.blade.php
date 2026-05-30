@@ -7,7 +7,7 @@
 
 @viteReactRefresh
 
-@vite('resources/react/pop_select/index.jsx')
+@vite('resources/react/pop_select/index.tsx')
 
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>

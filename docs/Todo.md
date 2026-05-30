@@ -4,7 +4,7 @@
 ○　reactの作業
 
 resources / react / pop_select / index.jsx
-resources / react / PopSelect / PopSelect.jsx
+resources / react / PopSelect / PopSelect.tsx ← typeScriptに変換
 
 部品をこの形で統一して増やしてく
 
@@ -12,7 +12,7 @@ resources / react / PopSelect / PopSelect.jsx
 ◯ 環境別・進行状況
 logute.com / NO
 test-sistem.jp / NO
-GitHub / NO
+GitHub / OK
 ------------------------------------------------------------------------------------------
 🟡　[2026.0.00] [WIP]  resources / コンポーネント名 / .css .js　分ける
 ------------------------------------------------------------------------------------------
@@ -24,13 +24,6 @@ test-sistem.jp / NO
 GitHub / NO
 ------------------------------------------------------------------------------------------
 🟡　[2026.0.00] [WIP]  点検項目ページの戻るボタンにも、日付、車種、開始走行距離のパラメ追加
-------------------------------------------------------------------------------------------
-◯ 環境別・進行状況
-logute.com / NO
-test-sistem.jp / NO
-GitHub / NO
-------------------------------------------------------------------------------------------
-🟡　[2026.0.00] [WIP]  pop_selectページを jsx → tsxに変換
 ------------------------------------------------------------------------------------------
 ◯ 環境別・進行状況
 logute.com / NO
@@ -178,7 +171,7 @@ GitHub / OKOK
 <caption class="input_area_c input_area_c{{ $i }}">
 
     <span class="delete_run">✕</span>
-
+0
     <span class="run_title">
         運行{{ $startIndex + $i }}
     </span>
