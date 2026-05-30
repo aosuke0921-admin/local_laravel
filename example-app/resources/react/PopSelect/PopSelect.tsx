@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function PopSelect() {
 
+    /* jsx ------------------------------------------------------
     const moveSupport = () => {
 
         window.location.href =
@@ -15,6 +16,24 @@ export default function PopSelect() {
             '/boarding_reservation?mode=support&id=2';
 
     };
+    ---------------------------------------------------------------*/
+    // tsx
+    // この関数は値を返さない (): void => {
+    const moveSupport = (): void => {
+
+        window.location.href =
+            '/boarding_reservation?mode=support&id=1';
+
+    };
+
+    const moveBoarding = (): void => {
+
+        window.location.href =
+            '/boarding_reservation?mode=support&id=2';
+
+    };
+
+    /*---------------------------------------------------------------*/
 
     return (
 
