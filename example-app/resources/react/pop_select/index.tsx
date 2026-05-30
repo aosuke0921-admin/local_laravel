@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import PopSelect from '../PopSelect/PopSelect';
+import PopSelect from './PopSelect';
 
 const App = (): React.JSX.Element => {
     return <PopSelect />;
