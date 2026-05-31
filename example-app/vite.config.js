@@ -8,7 +8,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/react/pop_select/index.jsx',
+                'resources/react/pop_select/index.tsx',
             ],
             refresh: true,
         }),
