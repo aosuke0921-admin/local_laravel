@@ -1,0 +1,76 @@
+#change_date{
+    width:100%;
+    /*border:1px solid #ff0;*/
+    display:block;
+    height:0;
+}
+.date_wrap_parent {
+    display: flex;
+    justify-content: center;
+    /*border:1px solid #f00;*/
+    position:relative;
+    top:3px;
+}
+
+.date_wrap {
+    font-size:14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /*border:1px solid #f00;*/
+    img{
+        margin:0 10px;
+        position:relative;
+        top:2px;
+    }
+    .inner{
+        text-align:center;
+        /*border:1px solid blue;*/
+        position:relative;
+        top:-3px;
+        img{
+            /*border:1px solid #f00;*/
+            position:relative;
+            left:5px;
+            top:7px;
+        }
+        span{
+            /*color:#f00;*/
+            font-size:18px;
+            display:inline-block;
+            padding:0 5px;
+        }
+    }
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.date_text {
+    min-width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.date_input {
+    position: absolute;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.date_icon {
+    cursor: pointer;
+    user-select: none;
+}
+
+@media screen and (max-width:768px){
+    .date_wrap {
+        display:none;
+    }
+}

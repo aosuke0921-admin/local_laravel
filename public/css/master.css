@@ -1,0 +1,316 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.error_msg{
+  display:block;
+  background:#f00;
+  padding:4px;
+  text-align:center;
+  color:#fff;
+  margin:5px auto 0;
+}
+
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+body.master-page{
+  font-size:12px;
+  opacity: 0;
+  animation: pageFadeIn 0.6s ease forwards;
+  form{
+    display:inline;
+  }
+  a{
+    text-decoration:none;
+  }
+  select,
+  input[type="password"],
+  input[type="text"]{
+    font-size:13px;
+    width:100%;
+    line-height:1em;
+    padding:3px 2px 2px;
+    background:#e5eefe;
+    border:1px solid #999;
+  }
+  input::placeholder {
+    text-align: center;
+    color:#bcbcbc;
+    font-size:10px;
+  }
+  .page_top{
+    position:fixed;
+    bottom:5px;
+    right:35px;
+    width:120px;
+    font-weight:bold;
+    img{
+      display:block;
+      width:84%;
+      margin:0 auto;
+      position:relative;
+      right:5px;
+    }
+    span{
+      background:#F3981D;
+      color:#fff;
+      display:block;
+      width:120px;
+      padding:3px 10px;
+      position:fixed;
+      bottom:5px;
+      right:32px;
+      border:1px solid #F3981D;
+      font-size:12px;
+    }
+  }
+  .page_top:hover{
+    cursor:pointer;
+  }
+}
+
+/*----------------------------------------------------------------------------------------
+ gnav
+----------------------------------------------------------------------------------------*/ 
+body.master-page .gnav{
+  text-align:center;
+  width:100%;
+  margin:0 auto;
+  position:relative;
+  top:14px;
+  font-size:12px;
+  padding:0 0 20px;
+  p{
+    display:block;
+    padding:0 0 5px;
+  }
+  ul{
+    position:relative;
+    display:block;
+    li{
+      display:inline-block;
+      padding:0 6px;
+      i{
+        color:#F3981D;
+        display:inline-block;
+        padding:0 2px 0 0;
+      }
+      a{
+        color:#000;
+        text-decoration:none;
+      }
+    }
+    li:first-child{
+      padding:0 6px 0 0;
+    }
+    li:last-child{
+      padding:0;
+      background:url(../image/kagi.gif) no-repeat left top;
+      padding:0 0 0 16px;
+      position:relative;
+      left:5px;
+      button{
+        appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+}
+/*----------------------------------------------------------------------------------------
+ 社員登録
+----------------------------------------------------------------------------------------*/ 
+.master-page .user_admin table{
+  margin:0 auto;
+  width:100%;
+  border-collapse:collapse;
+  th{
+    border:1px solid #000;
+    font-weight:normal;
+    background:#F3981D;
+    color:#fff;
+    text-align:center;
+    font-size:13px;
+  }
+  th:first-child{
+    text-align:center;
+  }
+  td{
+    border:1px solid #000;
+    padding:7px;
+    font-size:13px;
+    background:#fff;
+    text-align:center;
+  }
+  td:nth-child(5) a{
+    display:inline-block;
+    background:#fd3a51;
+    color:#fff;
+    padding:3px 15px;
+    text-decoration:none;
+    border:none;
+    margin:0 0 0 10px;
+  }
+  td.td_last{
+    width:120px;
+  }
+  td.td_last button[type="submit"]{
+    background:#F3981D;
+    color:#fff;
+    border:none;
+    padding:2px 5px;
+    margin:0 5px;
+  }
+  .submit:hover{
+    cursor:pointer;
+  }
+}
+/*------------------------------------------------------------------------*/
+.master-page .new_addition{
+  margin:0 auto;
+  text-align:right;
+  padding:10px;
+  a{
+    display:block;
+    width:100px;
+    height:20px;
+    line-height:20px;
+    color:#fff;
+    background:#000;
+    text-align:center;
+    float:right;
+    text-decoration:none;
+    border:none;
+  }
+  .input{
+    margin:0 10px 0 10px;
+    width:auto;
+    padding:1px;
+  }
+  .submit{
+    background:#38be65;
+    color:#fff;
+    border:none;
+    padding:2px 4px;
+  }
+}
+
+/* footer 戻るボタン */
+.master-page footer{
+  width:1024px;
+  margin:0 auto;
+  text-align:center;
+  display:block;
+  padding:40px 0 40px;
+  a{
+    font-size: 13px;
+    background: #F3981D;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 2px;
+    border: none;    
+  }
+}
+/*------------------------------------------------------------------------*/
+.master-page{
+  .tit{
+    font-weight:normal;
+    background:#F3981D;
+    color:#fff;
+    text-align:center;
+    font-size:13px;
+  }
+}
+/*----------------------------------------------------------------------------------------
+ tab
+----------------------------------------------------------------------------------------*/ 
+.tab-add,
+body,
+html {
+    overflow: visible !important;
+}
+.tab-add {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+  .tabs{
+    display:flex;
+    padding:0;
+    margin:0;
+    list-style:none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* 背景ないと透けるので重要 */
+    background:#fff;
+  }
+  .tabs li{
+      flex:1;
+      text-align:center;
+      padding:5px 0;
+      background:#eee;
+      border:1px solid #ccc;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:bold;
+  }
+  .tabs li.active{
+      background:#f39a18;
+      color:#fff;
+  }
+}
+.table_head th{
+    position: sticky;
+    top: 38px;
+    z-index: 10;
+    background: #F3981D;
+}
+.mode_change{
+  border:1px solid #f00;
+  text-align:center;
+  padding:50px;
+  input[type="radio"]{
+      display:none;
+  }
+  input[type="radio"]:not(:checked) + span{
+      border:1px solid #f39a18;
+      background:#eee;
+      color:#000;
+      border-radius:4px;
+      padding:8px 0;
+      width:200px;
+      display:inline-block;
+  }
+  input[type="radio"]:checked + span{
+      background:#f39a18;
+      color:#fff;
+      border-radius:4px;
+      padding:8px 0;
+      width:200px;
+      display:inline-block;
+  }
+  label{
+    display:inline-block;
+    padding:8px 0;
+    width:200px;
+    text-align:center;
+    cursor:pointer;
+    border-radius:4px;
+    margin-right:5px;
+    font-weight:bold;
+  }
+}

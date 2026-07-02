@@ -1,0 +1,870 @@
+*{
+  box-sizing:border-box;
+}
+li{
+  list-style:none;
+}
+
+
+/*------------------------------------------------------
+* month_select
+--------------------------------------------------------*/
+.month_archive .table_content{
+  border:1px solid #000;
+  border-collapse:collapse;
+  width:99.0%;
+  margin:2px auto 0;
+  overflow:hidden;
+  text-align:center;
+  font-size:14px;
+  position:relative;
+  z-index:-2;
+  left:0px;
+  background:#fff;
+  padding:0 0 3px;
+  box-sizing:border-box;
+}
+.month_archive .table_content th{
+  background:#F3981D;
+  color:#fff;
+  padding:8px 0 6px;
+  text-align:center;
+  border:1px solid #000;
+  font-weight:normal;
+}
+.month_archive td{
+  border:1px solid #000;
+  padding:10px;
+}
+.place td{
+  background:#fff;
+}
+.bg_color1{
+  background:#555;
+  color:#fff;
+}
+.bg_color2{
+  background: rgba(243, 152, 29, 0.3);
+  color:#000;
+}
+.bg_color3{
+  background:#F2CFB1;
+  color:#000;
+}
+.bg_color4{
+  background: #F2F0F0;
+  color:#000;
+}
+.month_archive .user_information{
+  padding:10px 20px 2px 10px;
+  overflow:hidden;
+}
+.month_archive .user_information ul{
+  /*display:inline-block;*/
+  float:left;
+}
+.month_archive .user_information ul li{
+  display:inline-block;
+}
+.month_archive .user_information ul dl{
+  display:block;
+  overflow:hidden;
+  font-size:13px;
+}
+.month_archive .user_information ul dl dt{
+  display:block;
+  float:left;
+  background:#555;
+  color:#fff;
+  border-radius:4px;
+  padding:4px 3px 1px;
+  line-height:1em;
+}
+.month_archive .user_information ul dl dd{
+  display:block;
+  float:left;
+  padding:1px 10px 0;
+}
+.month_archive .user_information a{
+  font-size:12px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 9px 4px 10px;
+  border-radius:8px;
+  float:right;
+  text-decoration:none;
+  position:relative;
+  top:-3px;
+  right:-11px;
+}
+.month_archive .prevPage{
+  display:block;
+  text-align:center;
+  margin:40px auto 70px;
+}
+.month_archive .prevPage a{
+  text-decoration:none;
+  font-size:13px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 50px;
+  border-radius:2px;
+}
+  .month_archive .place{
+    width:99%;
+    margin:50px auto;
+    display:flex;
+    justify-content:space-between;
+  }
+  .month_archive .place .inner{
+    width:33.3333%;
+    font-size:14px;
+  }
+  .month_archive .place .inner table{
+    border-collapse:collapse;
+    width:100%;
+  }
+  .month_archive .place .inner th{
+    background: #F3981D;
+    color: #fff;
+    padding: 8px 0 6px;
+    text-align: center;
+    border: 1px solid #000;
+    width:100%;  
+  }
+  .month_archive .place .inner:nth-child(2){
+    position:relative;
+    left:-1px;
+  }
+  .month_archive .place .inner:last-child{
+    position:relative;
+    left:-2px;
+  }
+  .month_archive .place .inner td:not(:last-of-type){
+    background:#fff;
+    width:80%;
+  }
+  .month_archive .place .inner td:first-child{
+    text-align:center;
+    width:10%;
+    background:#EFEFEF;
+  }
+  .month_archive .place .inner td:last-child{
+    background:rgba(243, 152, 29, 0.3);
+    text-align:center;
+    width:10%;
+  }
+  .month_archive .place .inner td:nth-child(2){
+    text-align:left;
+    padding:10px 20px;
+  }
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+* print-archive-page
+--------------------------------------------------------*/
+.archive-page form table.tb{
+  /*width:90%;*/
+  /*margin:0 auto;*/
+  margin:36px auto;
+  /*padding:40px;*/
+  background:#fff;
+  box-sizing:border-box;
+
+  /*width:98%;*/
+
+  /*width:100%;*/
+  table-layout:fixed;
+  width:auto;
+}
+.archive-page form table.tb caption{
+  display:none;
+}
+.archive-page form table.tb,
+.archive-page form table.tb th,
+.archive-page form table.tb td{
+  border:1px solid #000;
+  border-collapse: collapse;
+  text-align:center;
+  padding:10px;
+}
+.archive-page form table.tb th{
+  font-size:8px;
+  color:#000;
+}
+.archive-page form table.tb td{
+  font-size:8px;
+  text-align:center;
+}
+/*---------------------------------------------*/
+.archive-page form table.tb tr td:nth-child(1),
+.archive-page form table.tb tr td:nth-child(6){
+  font-size:15px;
+  width:0;
+  white-space:nowrap;
+}
+.hit{
+  display:block;
+  width:94%;
+  margin:0 auto;
+}
+/*---------------------------------------------*/
+.archive-page form table.tb td .hospital_name,
+.archive-page form table.tb td .user_name{
+    visibility:hidden;
+    width:0;
+    height:0;
+}
+.archive-page form table.tb td .select{
+  /*width:120px;*/
+  text-align:center;
+}
+.archive-page form table.tb td .distance,
+.archive-page form table.tb td .price{
+  /*width:30px;*/
+  text-align:center;
+}
+.archive-page form table.tb td .remarks,
+.archive-page form table.tb td .any{
+  text-align: center;
+  color:#f00;
+}
+.archive-page form table.tb td select.to_and_from{
+  text-align:center;
+}
+.archive-page .fixed{
+  width:100%;
+  background:#555;
+  position:fixed;
+  left:0;
+  bottom:0;
+  padding:10px;
+}
+.archive-page .inner{
+  overflow:hidden;
+}
+/*
+.archive-page .fixed .inner .item{
+  display:block;
+  width:180px;
+  text-align:left;
+  color:#fff;
+  font-size:15px;
+  float:left;
+}
+.archive-page .insert_btn{
+  position:fixed;
+  right:0;
+  bottom:0;
+  padding:5px 10px 7px;
+}
+.archive-page .insert_btn .post_btn{
+  font-size:13px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 50px;
+  border-radius:8px;
+}
+.archive-page .fixed .inner .item input[type="text"]{
+  padding:4px;
+  margin:0 auto;
+  width:100px;
+  text-align:center;
+  margin:0 0 0 10px;
+}
+.archive-page .fixed .inner .item .fixed_input{
+  padding:5px;
+  margin:0 0 0 10px;
+}
+.archive-page .user_information{
+  padding:10px 20px 2px 10px;
+  overflow:hidden;
+}
+.archive-page .user_information ul{
+  display:inline-block;
+  float:left;
+}
+.archive-page .user_information ul li{
+  display:inline-block;
+}
+.archive-page .user_information ul dl{
+  display:block;
+  overflow:hidden;
+  font-size:13px;
+}
+.archive-page .user_information ul dl dt{
+  display:block;
+  float:left;
+  background:#555;
+  color:#fff;
+  border-radius:4px;
+  padding:4px 3px 1px;
+  line-height:1em;
+}
+.archive-page .user_information ul dl dd{
+  display:block;
+  float:left;
+  padding:1px 10px 0;
+}
+.archive-page .user_information a{
+  font-size:13px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 10px 2px;
+  border-radius:8px;
+  float:right;
+  text-decoration:none;
+  position:relative;
+  top:-3px;
+  right:-11px;
+}*/
+/*
+.archive-page .prevPage{
+  text-align:center;
+  margin:40px auto 0;
+}
+.archive-page .prevPage a{
+  text-decoration:none;
+  font-size:13px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 50px;
+  border-radius:2px;
+}
+.archive-page .month_t{
+  color:#fff;
+  text-align:left;
+  display:block;
+}
+*/
+.archive-page .month_t b{
+  width:100%;
+  padding:4px 0 1px;
+  line-height:1em;
+  display:block;
+  text-align:center;
+  font-weight:normal;
+}
+.archive-page td{
+  background:#fff;
+}
+.archive-page .tb_bg{
+  background:#555;
+}
+.archive-page table{
+   table-layout: fixed;
+   width: 100%;
+}
+.archive-page .box{
+  width:100%;
+  height:5px;
+  /*border:1px solid #f00;*/
+}
+.tb37 th,
+.tb74 th,
+.tb111 th,
+.tb148 th,
+.tb185 th{
+  display:table-cell;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+* print-page
+--------------------------------------------------------*/
+.print-page .print_content{
+  width:1280px;
+  margin:50px auto 0;
+  background:#fff;
+  box-sizing:border-box;
+  padding:50px;
+}
+.print-page h1{
+  display:block;
+  text-align:center;
+  font-size:24px;
+  font-weight:normal;
+  padding:0 0 30px;
+}
+.print-page .head{
+  width:100%;
+  overflow:hidden;
+}
+.print-page .head .l{
+  width:33%;
+  box-sizing:border-box;
+  float:left;
+  padding:10px;
+}
+.print-page .head .c{
+  width:33%;
+  box-sizing:border-box;
+  float:left;
+  text-align:center;
+  padding:10px;
+}
+.print-page .head .r{
+  width:33%;
+  box-sizing:border-box;
+  float:left;
+  text-align:right;
+  padding:10px;
+}
+.print-page .print_tb{
+  width:100%;
+  border-collapse:collapse;
+}
+.print-page .print_tb td{
+  border:1px solid #000;
+  text-align:center;
+  font-size:13px;
+}
+.print-page .print_tb .tr_2 td{
+  padding:1px;
+}
+.print-page .bottom{
+  width:100%;
+  border-bottom:1px solid #000;
+  overflow:hidden;
+}
+.print-page .bottom .item:first-child{
+  width:29%;
+  float:left;
+}
+.print-page .bottom .item:nth-child(n+2){
+  width:14%;
+  border-top:none;
+  float:left;
+}
+.print-page .bottom .item:last-child{
+  width:15%;
+  border-top:none;
+  float:left;
+  border-right:1px solid #000;
+}
+.print-page .bottom .item:first-child dl{
+  display:block;
+  overflow:hidden;
+}
+.print-page .bottom .item:first-child dt{
+  display:block;
+  width:10%;
+  border-left:1px solid #000;
+  float:left;
+  height:106px;
+  padding:0 10px;
+  text-align:center;
+}
+.print-page .bottom .item:first-child dt b{
+  font-weight:normal;
+  position:relative;
+  top:30px;
+  left:-1px;
+}
+.print-page .bottom .item:first-child dd{
+  display:block;
+  width:90%;
+  float:left;
+  position:relative;
+  border:1px solid #000;
+  border-top:none;
+  border-bottom:none;
+}
+.print-page .bottom .item:first-child dd span{
+  padding:96px 0 0 5px;
+  display:block;
+  font-size:7px;
+}
+.print-page .bottom .item:nth-child(n+2) dt{
+  display:block;
+  width:10%;
+  float:left;
+  height:106px;
+  padding:0;
+  text-align:center;
+  -ms-writing-mode:tb-rl;
+  writing-mode:vertical-rl;
+}
+.print-page .bottom .item:nth-child(n+2) dt span{
+  position:relative;
+  left:-2px;
+  font-size:10px;
+  display:block;
+  text-align:center;
+}
+.print-page .bottom .item:nth-child(n+2) dd{
+  display:block;
+  width:89%;
+  float:left;
+  position:relative;
+  font-size:7px;
+  border-left:1px solid #000;
+  border-right:1px solid #000;
+  height:106px;
+}
+.print-page .bottom .item:nth-child(n+2) dd ul li{
+  display:block;
+  padding:5px 3px;
+  border-bottom:1px solid #000;
+  border-left:none;
+  border-top:none;
+  position:relative;
+}
+.print-page .bottom .item:nth-child(n+2) dd ul li span{
+  font-size:20px;
+  position:absolute;
+  right:3px;
+  top:-5px;
+}
+.print-page .bottom .item:nth-child(n+2) dd ul li:last-child{
+  border-bottom:none;
+}
+.print-page .bottom .item:last-child dl{
+  position:relative;
+}
+.print-page .bottom .item:last-child dl dd{
+  width:101%;
+  border:none;
+  position:relative;
+  left:-2px;
+}
+.print-page .print_tb tr:first-child td{
+  position:relative;
+}
+.print-page .print_tb tr:nth-child(n+2) td{
+  position:relative;
+}
+.print-page .print_tb tr:first-child td.u_admin{
+  text-align:left;
+}
+.print-page .left{
+  display:block;
+  position:absolute;
+  left:4px;
+  top:4px;
+  font-size:8px;
+}
+.print-page .right{
+  display:block;
+  position:absolute;
+  right:2px;
+  bottom:2px;
+  font-size:8px;
+}
+.print-page .print-off {
+display: none;
+}
+.print-page .user_information{
+  padding:10px 20px 2px 10px;
+  overflow:hidden;
+}
+.print-page .user_information ul{
+  /*display:inline-block;*/
+  float:left;
+}
+.print-page .user_information ul li{
+  display:inline-block;
+}
+.print-page .user_information ul dl{
+  display:block;
+  overflow:hidden;
+  font-size:13px;
+}
+.print-page .user_information ul dl dt{
+  display:block;
+  float:left;
+  background:#000;
+  color:#fff;
+  border-radius:4px;
+  padding:4px 3px 1px;
+  line-height:1em;
+}
+.print-page .user_information ul dl dd{
+  display:block;
+  float:left;
+  padding:1px 10px 0;
+}
+.print-page .user_information a{
+  font-size:12px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 10px 2px;
+  border-radius:8px;
+  float:right;
+  text-decoration:none;
+  position:relative;
+  top:-3px;
+  right:-11px;
+}
+.print-page .prevPage{
+  display:block;
+  text-align:center;
+  margin:40px auto 0;
+}
+.print-page .prevPage a{
+  text-decoration:none;
+  font-size:13px;
+  background:#F3981D;
+  color:#fff;
+  padding:5px 50px;
+  border-radius:2px;
+}
+.print-page .prevPage a:hover{
+  cursor:pointer;
+}
+.print-page .print_content{
+  width:1280px;
+  margin:50px auto 0;
+  background:#fff;
+  box-sizing:border-box;
+  padding:50px;
+}
+.print-page .print-page h1{
+  display:block;
+  text-align:center;
+  font-size:24px;
+  font-weight:normal;
+  padding:0 0 30px;
+}
+.print-page .head{
+  width:100%;
+  overflow:hidden;
+}
+.print-page .head .l{
+  width:33%;
+  box-sizing:border-box;
+  float:left;
+  padding:0;
+  position:relative;
+  top:20px;
+}
+.print-page .head .c{
+  width:33%;
+  box-sizing:border-box;
+  float:left;
+  text-align:center;
+  padding:0;
+  position:relative;
+  top:20px;
+}
+.print-page .head .r{
+  width:33%;
+  box-sizing:border-box;
+  float:left;
+  text-align:right;
+  padding:10px;
+}
+.print-page .head .r dl{
+  display:block;
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  left:20px;
+}
+.print-page .head .r dt{
+  display:inline-block;              
+}
+.print-page .head .r dd{
+  display:inline-block;                
+}
+.print-page .head .r dd ul li{
+  list-style:none;
+  font-size:20px;
+  text-align:left;
+  letter-spacing:1px;
+}
+.print-page .head .r dd ul li:first-child{
+  font-size:12px;
+}
+.print-page .print_tb{
+  width:100%;
+  border-collapse:collapse;
+}
+.print-page .print_tb td{
+  border:1px solid #000;
+  text-align:center;
+  font-size:12px;
+  line-height:1em;
+  padding:5px 0 4px;
+}
+.print-page .bottom{
+  width:100%;
+  border-bottom:1px solid #000;
+  overflow:hidden;
+}
+.print-page .bottom .item:first-child{
+  width:29%;
+  float:left;
+}
+.print-page .bottom .item:nth-child(n+2){
+  width:14%;
+  border-top:none;
+  float:left;
+}
+.print-page .bottom .item:last-child{
+  width:15%;
+  border-top:none;
+  float:left;
+  border-right:1px solid #000;
+}
+.print-page .bottom .item:first-child dl{
+  display:block;
+  overflow:hidden;
+}
+.print-page .bottom .item:first-child dt{
+  display:block;
+  width:10%;
+  border-left:1px solid #000;
+  float:left;
+  height:106px;
+  padding:0 10px;
+  text-align:center;
+}
+.print-page .bottom .item:first-child dt b{
+  font-weight:normal;
+  position:relative;
+  top:30px;
+  left:-1px;
+}
+.print-page .bottom .item:first-child dd{
+  display:block;
+  width:90%;
+  float:left;
+  position:relative;
+  border:1px solid #000;
+  border-top:none;
+  border-bottom:none;
+}
+.print-page .bottom .item:first-child dd span{
+  padding:96px 0 0 5px;
+  display:block;
+  font-size:7px;
+}
+.print-page .bottom .item:nth-child(n+2) dt{
+  display:block;
+  width:10%;
+  float:left;
+  height:106px;
+  padding:0;
+  text-align:center;
+  -ms-writing-mode:tb-rl;
+  writing-mode:vertical-rl;
+}
+.print-page .bottom .item:nth-child(n+2) dt span{
+  position:relative;
+  left:-2px;
+  font-size:10px;
+  display:block;
+  text-align:center;
+}
+.print-page .bottom .item:nth-child(n+2) dd{
+  display:block;
+  width:89%;
+  float:left;
+  position:relative;
+  font-size:7px;
+  border-left:1px solid #000;
+  border-right:1px solid #000;
+  height:106px;
+}
+.print-page .bottom .item:nth-child(n+2) dd ul li{
+  display:block;
+  padding:5px 3px;
+  border-bottom:1px solid #000;
+  border-left:none;
+  border-top:none;
+  position:relative;
+}
+.print-page .bottom .item:nth-child(n+2) dd ul li span{
+  font-size:20px;
+  position:absolute;
+  right:3px;
+  top:-5px;
+}
+.print-page .bottom .item:nth-child(n+2) dd ul li:last-child{
+  border-bottom:none;
+}
+.print-page .bottom .item:last-child dl{
+  position:relative;
+}
+.print-page .bottom .item:last-child dl dd{
+  width:101%;
+  border:none;
+  position:relative;
+  left:-2px;
+}
+.print-page .print_tb tr:first-child td{
+  position:relative;
+}
+.print-page .print_tb tr:nth-child(n+2) td{
+  position:relative;
+}
+.print-page .print_tb tr:first-child td.u_admin{
+  text-align:left;
+}
+.print-page .left{
+  display:block;
+  position:absolute;
+  left:4px;
+  top:4px;
+  font-size:8px;
+}
+.print-page .right{
+  display:block;
+  position:absolute;
+  right:2px;
+  bottom:2px;
+  font-size:8px;
+}
+.print-page .print-off{
+display: none;
+}
+.position{
+  width:130px;
+}
+.alignRight,
+.val1,
+.val2,
+.val3{
+  text-align:center;
+  display:block;
+  width:100%;
+  position:relative;
+  left:13px;
+  top:1px;
+}
+.alignRight2{
+  text-align:center;
+  display:block;
+  width:100%;
+  position:relative;
+  left:0;
+  top:1px;
+}
+@media print{
+  .no-print{
+    display:none;
+  }
+  @page{
+    size:auto;
+    margin:0mm;
+    mso-header:none;
+    mso-footer:none;
+  }
+}

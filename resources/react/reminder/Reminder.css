@@ -1,0 +1,98 @@
+    .select_page .inner .osirase{
+      display:block;
+      margin:-17px auto 0;
+      position:relative;
+    }
+    .select_page .inner .osirase b{
+      position: absolute;
+      opacity:0;
+      width:34%;
+      top: 8%;
+      left: 86.4%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      font-size:13px;
+    }
+    .select_page .inner .osirase b i{
+      font-size:17px;
+    }
+    .select_page .inner .osirase span{
+      display:block;
+      background:url(/image/mokume4.jpg);
+      background-size:100% 100%;
+      color:#fff!important;
+      padding:6px 5px 4px;
+      margin:0 auto;
+      line-height:1.8em;
+      font-size:14px;
+      letter-spacing:1px;
+      width:100%;
+      border-radius:4px;
+      text-align:left;
+      position:relative;
+      top:-30px;
+      text-align:center;
+    }
+    .select_page .inner .osirase img{
+      display:block;
+      width:95px;
+      float:none;
+      margin:0 auto;
+    }
+    .select_page .inner .osirase::after{
+      display:none;
+    }
+
+
+
+
+
+
+@media screen and (min-width:769px){
+                                             .select_page .inner .osirase{
+                                                display:block;
+                                                margin:20px auto 0;
+                                                position:relative;
+                                              }
+                                              .select_page .inner .osirase b{
+                                                position: absolute;
+                                                /*display:none;*/
+                                                opacity:0;
+                                                width:40%;
+                                                top: 7%;
+                                                left: 79.4%;
+                                                transform: translate(-50%, -50%);
+                                                -webkit-transform: translate(-50%, -50%);
+                                                -ms-transform: translate(-50%, -50%);
+                                                font-size:13px;
+                                              }
+                                              .select_page .inner .osirase b i{
+                                                font-size:17px;
+                                              }
+                                              .select_page .inner .osirase span{
+                                                display:block;
+                                                background:#f00;
+                                                color:#fff!important;
+                                                padding:6px 5px 4px;
+                                                margin:0 auto;
+                                                line-height:1.8em;
+                                                font-size:14px;
+                                                letter-spacing:1px;
+                                                width:100%;
+                                                border-radius:4px;
+                                                text-align:left;
+                                                position:relative;
+                                                top:-48px;
+                                                text-align:center;
+                                              }
+                                              .select_page .inner .osirase img{
+                                                display:block;
+                                                width:110px;
+                                                float:none;
+                                                margin:0 auto;
+                                              }
+                                              .select_page .inner .osirase::after{
+                                                display:none;
+                                              }
+}
