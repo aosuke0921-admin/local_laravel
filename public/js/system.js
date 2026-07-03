@@ -85,9 +85,11 @@ setInterval(function () {
 const queryString = window.location.search;
 // URLSearchParamsオブジェクトを作成してクエリ文字列を解析
 const params = new URLSearchParams(queryString);
-// 特定のパラメータの値を取得
-const success = params.get('success');
-const error = params.get('error');
+
+// 特定のパラメータの値を取得  page-feedback.jsに移動済み
+/*const success = params.get('success');
+const error = params.get('error');*/
+
 // ファイル名を取得
 var fileName = window.location.pathname.split("/").pop();
 //----------------------------------------------------------------------------------------
