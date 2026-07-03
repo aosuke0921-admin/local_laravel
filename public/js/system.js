@@ -9,14 +9,11 @@ $.ajaxSetup({
   cache: false
 });
 
-// すでにリダイレクト済みかどうかのフラグ
-// → 何回もアラートやリダイレクトが出るのを防ぐ
+// すでにリダイレクト済みかどうかのフラグ / 何回もアラートやリダイレクトが出るのを防ぐ
 let redirected = false;
 
-// セッション確認の間隔（5分）
-// 分ごとにサーバーへ確認リクエストを送る
-//const checkInterval = 5 * 60 * 1000; // 5分
-const checkInterval = 60 * 1000; // 1分
+// セッション確認の間隔（5分）分ごとにサーバーへ確認リクエストを送る
+const checkInterval = 60 * 1000; // ← 1分 / (例) 5 * 60 * 1000; // 5分
 
 // 一定間隔で処理を繰り返す（セッション監視）
 setInterval(function () {
@@ -24,9 +21,7 @@ setInterval(function () {
     // サーバーにAjaxリクエストを送信
     $.ajax({
 
-        // セッション状態を確認する専用ルート
-        // サーバー（Laravel）に用意した「セッション確認用のURL」
-        // 「今ログイン状態ですか？」ってサーバーに聞いてる
+        // セッション状態を確認する専用ルート / サーバー（Laravel）に用意した「セッション確認用のURL」 / 「今ログイン状態ですか？」ってサーバーに聞いてる
         url: '/ping-session',
 
         // GETリクエスト
@@ -35,8 +30,7 @@ setInterval(function () {
         // ===== 通信成功時 =====
         success: function (res) {
 
-            // res.auth が false → セッション切れ（ログアウト状態）
-            // かつ まだリダイレクトしていない場合
+            // res.auth が false → セッション切れ（ログアウト状態）/ かつ まだリダイレクトしていない場合
             if (!res.auth && !redirected) {
 
                 // リダイレクト済みにする（多重防止）
@@ -59,9 +53,7 @@ setInterval(function () {
         // ===== 通信エラー時 =====
         error: function (xhr) {
 
-            // HTTPステータスコードで判定
-            // 419 → CSRFトークン切れ
-            // 401 → 未認証（ログアウト状態）
+            // HTTPステータスコードで判定 / 419 → CSRFトークン切れ / 401 → 未認証（ログアウト状態）
             if ((xhr.status === 419 || xhr.status === 401) && !redirected) {
 
                 // リダイレクト済みにする（多重防止）
@@ -81,154 +73,16 @@ setInterval(function () {
 }, checkInterval);
 
 // =============================================================================================
+/*
 // URLのクエリ文字列を取得
 const queryString = window.location.search;
 // URLSearchParamsオブジェクトを作成してクエリ文字列を解析
 const params = new URLSearchParams(queryString);
-
-// 特定のパラメータの値を取得  page-feedback.jsに移動済み
-/*const success = params.get('success');
-const error = params.get('error');*/
+*/
 
 // ファイル名を取得
 var fileName = window.location.pathname.split("/").pop();
-//----------------------------------------------------------------------------------------
-/*
-if(fileName === "reservation_search"){
 
-  $('.hanei2').closest('tr').css('backgroundColor', '#fff');
-
-}
-*/
-//----------------------------------------------------------------------------------------
-if(fileName === "dashboard"){
-
-  // 数値（小数OK）しか入力できないようにする
-  $('#start_distance').on('input', function() {
-      // 入力された値から「数字(0-9)とドット(.)以外」をすべて削除する
-      // 例: "abc123.4d" → "123.4"
-      this.value = this.value.replace(/[^0-9.]/g, '');
-
-      // ドット(.)を基準に分割（小数点チェックのため）
-      const parts = this.value.split('.');
-
-      // ドットが2つ以上ある場合（例: 12.3.4）
-      if(parts.length > 2) {
-          // 1つ目のドットだけ残して、それ以降はすべて結合して1つの小数にする
-          // 例: ["12","3","4"] → "12.34"
-          this.value = parts[0] + '.' + parts.slice(1).join('');
-      }
-  });
-  //----------------------------------------------------------------------------------------
-  // 「2026年4月4日」のような日付文字列を
-  // 「2026-04-04」のDB用フォーマットに変換する関数
-  function formatDateToDB(dateStr) {
-
-    // 正規表現で「年・月・日」の数字を抽出
-    // (\d+) → 数字を1つ以上取得
-    // 例: "2026年4月4日" → ["2026年4月4日", "2026", "4", "4"]
-    const match = dateStr.match(/(\d+)年(\d+)月(\d+)日/);
-
-    // マッチしなかった場合（形式が違う場合）は空文字を返す
-    if (!match) return '';
-
-    // 年を取得（配列の2番目）
-    const year  = match[1];
-
-    // 月を取得し、2桁にする（例: 4 → 04）
-    const month = String(match[2]).padStart(2, '0');
-
-    // 日を取得し、2桁にする（例: 4 → 04）
-    const day   = String(match[3]).padStart(2, '0');
-
-    // 「YYYY-MM-DD」の形式に組み立てて返す
-    // 例: "2026-04-04"
-    return `${year}-${month}-${day}`;
-  }
-  //----------------------------------------------------------------------------------------
-  // 始業距離をDBから取得して、入力欄に自動反映する関数
-  function updateStartDistance() {
-
-      // カレンダー入力欄（#ymd）から選択された日付を取得
-      const rawDate = $('#ymd').val();
-
-      // 「2026年4月4日」→「2026-04-04」に変換（DB用フォーマット）
-      const date = formatDateToDB(rawDate);
-
-      // 車種（#car）の選択値を取得
-      const car  = $('#car').val();
-
-      // 日付または車種が未選択の場合
-      if (!date || !car) {
-
-          // 始業距離を0にリセット
-          $('#start_distance').val(0);
-
-          // それ以上処理しない（Ajaxを送らない）
-          return;
-      }
-
-      // サーバー（Laravel）にAjaxリクエストを送信
-      $.ajax({
-
-          // データ取得用のURL（web.phpで定義したルート）
-          url: '/get-start-distance',
-
-          // GETメソッドで送信
-          type: 'GET',
-
-          // サーバーに送るデータ（クエリパラメータ）
-          // 例: /get-start-distance?dates=2026-04-04&car=アルファード
-          data: { dates: date, car: car },
-
-          // 成功時の処理（LaravelからJSONが返ってくる）
-          success: function(res) {
-
-              // コンソールにレスポンスを表示（デバッグ用）
-              //console.log('成功データ↓↓↓', res);
-
-              // 取得した始業距離を入力欄にセット
-              // 値がnull/undefinedなら0を入れる
-              $('#start_distance').val(res.start_distance ?? 0);
-          },
-
-          // エラー時の処理（通信失敗・500エラーなど）
-          error: function(err) {
-
-              // エラー内容をコンソールに出力
-              console.error('Ajax Error:', err);
-
-              // 安全のため0をセット
-              $('#start_distance').val(0);
-          }
-      });
-  }
-  //----------------------------------------------------------------------------------------
-  const paramStartDistance = params.get('start_distance');
-
-  // #carの変更時だけ発火
-  $('#car, #ymd').on('change', updateStartDistance);
-
-  // URLにパラメータがついていればパラメータ優先
-  if (paramStartDistance !== null) {
-
-      $('#start_distance').val(paramStartDistance);
-
-  } else {
-
-      // DBから取得
-      updateStartDistance();
-
-  }
-}
-
-/* SPページTOPボタン
-------------------------------------------------------------------------------*/
-/*
-$(".pagetop_btn").on("click",function(){
-  $("html, body").animate({ scrollTop: 0 },600);
-});
-*/
 
 window.js_array = [];
 
@@ -347,6 +201,7 @@ if(fileName == "reservation_search"
 || fileName == "month-archive"
 || location.pathname.includes("/edit")){
 
+  /*
   if(fileName == "preview" || fileName == "post"){
     // アンカーリンク
     function linkscroll(target) {
@@ -362,6 +217,7 @@ if(fileName == "reservation_search"
 
     }
   }
+  */
 
   $('.open_window').hide();
 
@@ -583,15 +439,16 @@ $('.user_name_select,.user_name_selects').on('click',function(){
 
     }
 
-    if(fileName == "preview" || fileName == "post"){
+    //if(fileName == "preview" || fileName == "post"){
 
         //linkscroll('#' + tr_id);
 
-        if (tr_id) {
+        /*if (tr_id) {
             linkscroll('#' + tr_id);
-        }
+        }*/
 
-    }else if(fileName == "reservation_search" || fileName == "archive" || fileName == "month-archive"){
+    //}else if(fileName == "reservation_search" || fileName == "archive" || fileName == "month-archive"){
+    if(fileName == "reservation_search" || fileName == "archive" || fileName == "month-archive"){
 
       const text = $(this).text().trim();
 
@@ -642,14 +499,7 @@ $(document).on('click', '.open_window ul li:not(.cap)', function () {
 });
 //------------------------------------------------------------------------------------------------
 }/*  if(fileName == "reservation_search"
-|| fileName == "boarding_reservation"
-|| fileName == "user_destination_registration"
-|| fileName == "preview"
-|| fileName == "post"
-|| fileName == "archive"
-|| fileName == "month-archive"
-|| location.pathname.includes("/edit")){ end */
-
+|| fileName == "boarding_reservation"・・・・・・*/
 //------------------------------------------------------------------------------------------------
 
 var $w = $(window).width(); //現在のwindow幅を取得
@@ -1022,17 +872,11 @@ $('.preview-page #form').on('submit', function(e){
 
 //----------------------------------------------------------------------------------------
 
-if (fileName === "dashboard") {
-
-  sessionStorage.removeItem('open_rows');
-
-}
-
-//----------------------------------------------------------------------------------------
-
 if($w < 768 && fileName == "post"){
 
   let count = parseInt(sessionStorage.getItem('open_rows')) || 0;
+
+  console.log(count);
 
   let num = count;
 
@@ -1066,8 +910,6 @@ if($w < 768 && fileName == "post"){
 
 //--------------------------------------------------------------------------------
 
-//var $w = $(window).width(); //現在のwindow幅を取得
-
 $('.preview-page caption:last').on('click',function(){
   //alert('last');
   $(this).toggleClass("on");
@@ -1077,27 +919,7 @@ $('.preview-page caption:last').on('click',function(){
     $(this).css('marginBottom','0');
   }
 });
-//--------------------------------------------------------------------------------
-if (fileName === "dashboard") {
-  const paramStartDistance = params.get('start_distance');
 
-  //alert(paramStartDistance);
-
-  // urlにパラメータがついていればパラメータ優先
-  if (paramStartDistance !== null) {
-
-      $('#start_distance').val(paramStartDistance);
-
-  } else {
-
-      // changeイベント登録
-      $('#ymd, #car').on('change', updateStartDistance);
-
-      // 初回実行
-      updateStartDistance();
-
-  }
-}
 //--------------------------------------------------------------------------------
 $('.end_distance,.start_distance').on('blur',function(){
 

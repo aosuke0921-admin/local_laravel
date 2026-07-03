@@ -8,7 +8,18 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
 
 {{-- ---------------------------------------------------------------------------------------- --}}
+
+
+<script src="{{ asset('js/startDistanceApi.js') }}?v={{ time() }}" charset="utf-8"></script>
+<?php /*<script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>*/ ?>
+
+
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+
+<script src="{{ asset('js/dashboard.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
