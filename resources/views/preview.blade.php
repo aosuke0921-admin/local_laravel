@@ -7,20 +7,18 @@
 <script type="text/javascript" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
-
-
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 <?php /*<script src="{{ asset('js/form.js') }}?v={{ time() }}" charset="utf-8"></script>*/ ?>
+<script src="{{ asset('js/time_validation.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/date_picker.js') }}?v={{ time() }}"></script>
 <link href="{{ asset('css/date_picker.css') }}?v={{ time() }}" rel="stylesheet">
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
-
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/Calendar/Calendar.js') }}?v={{ time() }}" charset="utf-8"></script>
 <link rel="stylesheet" href="{{ asset('js/Calendar/Calendar.css') }}?v={{ time() }}" charset="utf-8">
