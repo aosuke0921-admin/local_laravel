@@ -111,6 +111,15 @@ localhost:5176
 localhost:5174
 
 --------------------------------------------
+
+◯　ローカルからgitHubへアップ
+
+git status
+git add .
+git commit -m "update"
+git push origin main
+
+--------------------------------------------
  
 ◯　GitHubへ更新したファイルだけアップ
 
