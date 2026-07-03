@@ -27,7 +27,7 @@
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 
-<script src="{{ asset('js/form.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/form_load_save.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/time_validation.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 

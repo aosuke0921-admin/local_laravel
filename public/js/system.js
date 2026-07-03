@@ -399,33 +399,6 @@ if(fileName == "reservation_search"
 
   });
 
-  //------------------------------------------------------------------------------------------------------------
-  /* 使ってなさそう。とりあえずコメントアウト
-  const kanaGroupMap = {
-    'ア': 'a','イ': 'a','ウ': 'a','エ': 'a','オ': 'a',
-    'カ': 'ka','キ': 'ka','ク': 'ka','ケ': 'ka','コ': 'ka',
-    'サ': 'sa','シ': 'sa','ス': 'sa','セ': 'sa','ソ': 'sa',
-    'タ': 'ta','チ': 'ta','ツ': 'ta','テ': 'ta','ト': 'ta',
-    'ナ': 'na','ニ': 'na','ヌ': 'na','ネ': 'na','ノ': 'na',
-    'ハ': 'ha','ヒ': 'ha','フ': 'ha','ヘ': 'ha','ホ': 'ha',
-    'マ': 'ma','ミ': 'ma','ム': 'ma','メ': 'ma','モ': 'ma',
-    'ヤ': 'ya','ユ': 'ya','ヨ': 'ya',
-    'ラ': 'ra','リ': 'ra','ル': 'ra','レ': 'ra','ロ': 'ra',
-    'ワ': 'other','ヲ': 'other','ン': 'other'
-  };
-
-  function getGroup(first) {
-    return kanaGroupMap[first] ?? 'other';
-  }
-
-  $('.open_window ul.open_1, .open_window ul.open_2').each(function () {
-
-    const first = $(this).find('.cap').text().trim().charAt(0);
-    const group = getGroup(first);
-    $(this).addClass(group);
-
-  });
-  */
 //------------------------------------------------------------------------------------------------
 
 $('.user_name_select,.user_name_selects').on('click',function(){
@@ -898,9 +871,21 @@ if(fileName != "dashboard" && fileName != "inspection_check"){
         var $row = $(this).closest('tr');
         var distance__val = $row.find('.distance');
         var price__val    = $row.find('.price');
-
-        if(distance__val.val() != 0){
-            distance__val.closest('tr').find('.sharedRide').prop('disabled', true);
+            
+        // 距離取得、なければ0
+        const distance = parseFloat(distance__val.val() || 0);
+        // 区分取得
+        const classification = $row.find('.classification').val();
+        // 乗合取得
+        const $check = $row.find('.sharedRide');
+        // 距離が0と違う　　区分が保険外
+        if (distance !== 0 && classification === '保険外') {
+            // 乗合選択不可ON
+            $check.prop('disabled', true).prop('checked', false);
+        } else {
+            // 乗合選択不可OFF
+            $check.prop('disabled', false);
+            syncRowDisabledState();
         }
 
         // ★ 既に値があるときは触らない
@@ -911,7 +896,6 @@ if(fileName != "dashboard" && fileName != "inspection_check"){
         if (!price__val.val()) {
             price__val.val(0);
         }
-
     }
 
     //------------------------------------------------------------------------------------------------------------------------------
