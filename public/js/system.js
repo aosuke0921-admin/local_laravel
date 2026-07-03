@@ -93,11 +93,13 @@ const error = params.get('error');*/
 // ファイル名を取得
 var fileName = window.location.pathname.split("/").pop();
 //----------------------------------------------------------------------------------------
+/*
 if(fileName === "reservation_search"){
 
   $('.hanei2').closest('tr').css('backgroundColor', '#fff');
 
 }
+*/
 //----------------------------------------------------------------------------------------
 if(fileName === "dashboard"){
 
@@ -220,19 +222,13 @@ if(fileName === "dashboard"){
   }
 }
 
-/* td 0非表示
-------------------------------------------------------------------------------*/
-$(".table_content td").each(function(i, elem) {
-    if($(elem).text() == 0){
-      $(this).css('color','rgb(255,0,0,0)');
-    }
-});
-
 /* SPページTOPボタン
 ------------------------------------------------------------------------------*/
+/*
 $(".pagetop_btn").on("click",function(){
   $("html, body").animate({ scrollTop: 0 },600);
 });
+*/
 
 window.js_array = [];
 

@@ -29,6 +29,7 @@
 
 <script src="{{ asset('js/form_load_save.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/time_validation.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">

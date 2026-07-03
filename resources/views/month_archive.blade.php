@@ -12,10 +12,12 @@ use Carbon\Carbon;
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 
-
+{{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/system.js') }}?v={{ time() }}"></script>
-<link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">
+<script src="{{ asset('js/ui-table-style.js') }}?v={{ time() }}"></script>
+{{-- ---------------------------------------------------------------------------------------- --}}
 
+<link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">
 
 </head>
 <body class="month_archive">

@@ -4,6 +4,18 @@ function recordError() {
 
   const rows = document.querySelectorAll('tr');
 
+//----------------------------------------------------------------------------------------
+
+  // 未反映・背景色
+  document.querySelectorAll('.hanei2').forEach(el => {
+    const tr = el.closest('tr');
+    if (tr) {
+      tr.style.backgroundColor = '#fff';
+    }
+  });
+
+//----------------------------------------------------------------------------------------
+  // 料金発生・背景色
   rows.forEach(row => {
 
     const text = row.textContent.trim();
@@ -17,7 +29,6 @@ function recordError() {
     } else if (text === '0') {
       row.style.backgroundColor = '#f9b4b4';
     }
-
   });
 }
 
