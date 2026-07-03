@@ -439,15 +439,6 @@ $('.user_name_select,.user_name_selects').on('click',function(){
 
     }
 
-    //if(fileName == "preview" || fileName == "post"){
-
-        //linkscroll('#' + tr_id);
-
-        /*if (tr_id) {
-            linkscroll('#' + tr_id);
-        }*/
-
-    //}else if(fileName == "reservation_search" || fileName == "archive" || fileName == "month-archive"){
     if(fileName == "reservation_search" || fileName == "archive" || fileName == "month-archive"){
 
       const text = $(this).text().trim();
@@ -498,34 +489,10 @@ $(document).on('click', '.open_window ul li:not(.cap)', function () {
   $('.open_window').hide();
 });
 //------------------------------------------------------------------------------------------------
-}/*  if(fileName == "reservation_search"
-|| fileName == "boarding_reservation"・・・・・・*/
+}/*  if(fileName == "reservation_search"・・・・・・*/
 //------------------------------------------------------------------------------------------------
 
 var $w = $(window).width(); //現在のwindow幅を取得
-
-let $img = $('.page404').children('img');
-let images = ['./image/40041.webp', './image/40042.webp'];
-
-for (let i = 0; i < 10; i++) {
-  setTimeout(() => {
-    $img.attr('src', images[i % 2]);
-  }, i * 200);
-}
-
-if($w <= 768){
-  if(fileName == "preview" || fileName == "delete"){
-    var user_name_value = $('body.delete .user_name').val();
-    if(user_name_value == null){
-    }
-  }
-}
-
-for (let i = 0; i < 10; i++) {
-  setTimeout(function () {
-    $('.inner404').children('img').attr('src', images[i % 2]);
-  }, i * 200);
-}
 
 if(fileName != "dashboard" && fileName != "inspection_check"){
 
@@ -908,49 +875,6 @@ if($w < 768 && fileName == "post"){
   });
 }
 
-//--------------------------------------------------------------------------------
-
-$('.preview-page caption:last').on('click',function(){
-  //alert('last');
-  $(this).toggleClass("on");
-  if($(this).hasClass("on")){
-    $(this).css('marginBottom','160px');
-  }else{
-    $(this).css('marginBottom','0');
-  }
-});
-
-//--------------------------------------------------------------------------------
-$('.end_distance,.start_distance').on('blur',function(){
-
-  if ($(this).val().length === 0) {
-
-    $(this).css('backgroundColor','#F9CAA7');
-
-    $(this).val(0);
-
-  }else{
-
-    $(this).css('backgroundColor','#fff');
-
-  }
-
-  if($(this).val().match(/^\d+(?:.\d+)?$/)){
-
-    // 数値の時
-    $(this).css('backgroundColor','#fff');
-
-  } else {
-
-    // それ以外
-    $(this).css('backgroundColor','#F9CAA7');
-
-    //page-feedback.js内の関数を実行▼
-    flashImage(10, 200,'./image/4041.webp','./image/40412.webp');
-    alertMessage("走行距離は半角数字で正しく入力してください");
-    //page-feedback.js内の関数を実行▲
-  }
-});
 //--------------------------------------------------------------------------------
 
 });
