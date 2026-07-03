@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // =========================
     // 初期化（これはOK）
     // =========================
+    //idが error_ で始まる要素を全部取得して処理する
+    //見つけた要素を1個ずつ処理 forEach(el => {
     document.querySelectorAll('[id^="error_"]').forEach(el => {
         el.textContent = '';
         el.style.display = 'none';
