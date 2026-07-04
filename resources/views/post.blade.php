@@ -35,6 +35,10 @@
 <script src="{{ asset('js/openRows.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/sharedRide.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/checkboxControl.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/hospitalSelectHandler.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/rowSelectHandler.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">
