@@ -21,10 +21,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 
 {{-- ---------------------------------------------------------------------------------------- --}}
-<script src="{{ asset('js/calcPrice.js') }}?v={{ time() }}" charset="utf-8"></script><!--まだsystem.jsにあるsystemより上に書く-->
-
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
 
+<script src="{{ asset('js/calcPrice.js') }}?v={{ time() }}" charset="utf-8"></script><!--まだsystem.jsにあるsystemより上に書く-->
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
