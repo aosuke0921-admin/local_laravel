@@ -4,18 +4,15 @@ $(function(){
 
 let isInit = true; // ←ここ
 //------------------------------------------------------------------------
-// Ajax キャッシュ防止
+// jQuery(Ajax) キャッシュ防止 / javaScriptでは不要
 $.ajaxSetup({
   cache: false
 });
-
-
 
 // =============================================================================================
 
 // ファイル名を取得
 const fileName = window.location.pathname.split("/").pop();
-
 
 window.js_array = [];
 
@@ -69,6 +66,8 @@ if(fileName == "post" || fileName == "preview"){
       }, 0);
       
   }); //非同期完了後に処理ここまで
+
+  
   //--------------------------------------------------------------------------------
 
   $('.user_name_select').on('change', function () {
@@ -411,23 +410,6 @@ var $w = $(window).width(); //現在のwindow幅を取得
 
 if(fileName != "dashboard" && fileName != "inspection_check"){
 
-  function controlSharedRide() {
-    $('.classification').each(function () {
-
-    let $row = $(this).closest('tr');
-    let $check = $row.find('.sharedRide');
-
-    if ($(this).val().trim() === '保険外') {
-      $check.prop('checked', false);
-      $check.prop('disabled', true);
-    } else {
-      $check.prop('disabled', false);
-    }
-
-    });
-  }
-  // ★ 初期表示時に実行
-  controlSharedRide();
   //------------------------------------------------------------------------------------------------------------------------------
 
   $(document).on('change', '.classification', function(){
