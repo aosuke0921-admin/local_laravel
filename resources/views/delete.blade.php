@@ -10,6 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 
 {{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>

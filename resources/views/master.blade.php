@@ -9,15 +9,13 @@
 <script src="https://logute.com/js/plugin/DeleteCheck/DeleteCheck.js?v=1778639541" charset="utf-8"></script>
 <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/master.css') }}" rel="stylesheet" type="text/css">
-
-
 {{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/master.js') }}?id={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
-
-
 </head>
 <body class="master-page">
   <div class="gnav">

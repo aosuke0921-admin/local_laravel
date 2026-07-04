@@ -73,15 +73,9 @@ setInterval(function () {
 }, checkInterval);
 
 // =============================================================================================
-/*
-// URLのクエリ文字列を取得
-const queryString = window.location.search;
-// URLSearchParamsオブジェクトを作成してクエリ文字列を解析
-const params = new URLSearchParams(queryString);
-*/
 
 // ファイル名を取得
-var fileName = window.location.pathname.split("/").pop();
+const fileName = window.location.pathname.split("/").pop();
 
 
 window.js_array = [];
@@ -200,24 +194,6 @@ if(fileName == "reservation_search"
 || fileName == "archive"
 || fileName == "month-archive"
 || location.pathname.includes("/edit")){
-
-  /*
-  if(fileName == "preview" || fileName == "post"){
-    // アンカーリンク
-    function linkscroll(target) {
-      //$('html, body').animate({scrollTop: $(target).offset().top -86 }, 0, 'swing');//86px上にずらす
-
-      if (!$(target).length) {
-          return;
-      }
-
-      $('html, body').animate({
-          scrollTop: $(target).offset().top - 86
-      }, 0, 'swing');
-
-    }
-  }
-  */
 
   $('.open_window').hide();
 
@@ -734,146 +710,6 @@ if(fileName != "dashboard" && fileName != "inspection_check"){
     }
   });
 } // if(fileName != "dashboard" && fileName != "inspection_check"){ end
-
-// 料金 ----------------------------------------------------------------------------------------
-let calcRunning = false;
-
-function calcPrice($row, force = false) {
-
-  if (calcRunning && !force) return;
-
-  calcRunning = true;
-
-  let km = Number($row.find('.distance').val() || 0);
-
-  let basePrice = km < 5
-      ? 200
-      : 200 + Math.ceil(km - 5) * 60;
-
-  const $price = $row.find('.price');
-  const isShared = $row.find('.sharedRide').prop('checked');
-
-  // ★ここがポイント：必ず「ベースから計算」
-  let finalPrice = basePrice;
-
-  if (isShared) {
-      finalPrice = Math.floor(basePrice / 2);
-  }
-
-  $price.val(finalPrice);
-
-  calcRunning = false;
-}
-
-//----------------------------------------------------------------------------------------
-
-$(document).on('change', '.sharedRide', function () {
-
-    const $row = $(this).closest('tr');
-
-    // ★これだけでOK
-    calcPrice($row);
-
-    //total.js内の関数を実行▼
-    total_amount();
-    //total.js内の関数を実行▲
-
-});
-//----------------------------------------------------------------------------------------
-
-// 各行のチェックボックス状態を見て、同じ行の入力欄を有効/無効に揃える関数
-function syncRowDisabledState() {
-  $("input[type='checkbox']").each(function(){
-    let row = $(this).closest('tr');
-    let isChecked = $(this).prop('checked');
-    row.find('.user_name_select, .hospital_select').prop('disabled', isChecked);
-  });
-}
-
-if(fileName === "post" || fileName === "preview" || fileName === "delete"){
-  //total.js内の関数を実行▼
-  total_amount();
-  total_distance();
-  //total.js内の関数を実行▲
-}
-//----------------------------------------------------------------------------------------
-
-syncRowDisabledState();
-
-// チェックON/OFF時
-$("input[type='checkbox']").on('change', function(){
-
-    let row = $(this).closest('tr');
-    let isChecked = $(this).prop('checked');
-
-    row.find('.user_name_select, .hospital_select').prop('disabled', isChecked);
-
-});
-
-$('.preview-page #form').on('submit', function(e){
-
-    let error = false;
-
-    $('.start_distance').each(function(index){
-
-        let start = parseInt($(this).val());
-        let end   = parseInt($('.end_distance').eq(index).val());
-
-        if (start > end) {
-            error = true;
-        }
-    });
-
-    if (error) {
-
-      e.preventDefault(); // ← これが本命
-
-        //page-feedback.js内の関数を実行▼
-        flashImage(10, 200,'./image/40041.webp','./image/40042.webp');
-        alertMessage("終業距離は開始距離より<br>大きい値を入力してください");
-        //page-feedback.js内の関数を実行▲
-
-        syncRowDisabledState();
-    }
-});
-
-//----------------------------------------------------------------------------------------
-
-if($w < 768 && fileName == "post"){
-
-  let count = parseInt(sessionStorage.getItem('open_rows')) || 0;
-
-  console.log(count);
-
-  let num = count;
-
-  // ① 全部閉じる（0以外）
-  for (let i = 1; i <= 13; i++) {
-    $('.input_area_c' + i).hide();
-    $('.input_area_t' + i).hide();
-  }
-
-  // ② 保存分だけ開く
-  for (let i = 1; i <= count; i++) {
-    $('.input_area_c' + i).show();
-    $('.input_area_t' + i).show();
-  }
-      
-  $('.addition_button').on('click',function(){
-
-    num++;
-    for(var i = 1; i <= 14; i++){
-      if(num == i){
-        $('.input_area_c' + i).css('display','block');
-        $('.input_area_t' + i).css('display','block');
-      }
-    }
-
-    // ★ここ修正
-    sessionStorage.setItem('open_rows', num);
-
-  });
-}
 
 //--------------------------------------------------------------------------------
 

@@ -6,7 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <title>始業開始点検</title>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+{{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/system.js') }}?id={{ time() }}" charset="utf-8"></script>
+{{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">
 </head>
 <body class="inspection_check">
@@ -141,9 +144,7 @@
                 'car' => session('car'),
                 'start_distance' => session('start_distance')
             ]) }}">戻る</a></div>
-
-            <?php /*<div class="flex-item"><input type="button" value="戻る" onclick="location.href='{{ url('/dashboard') }}';"></div>*/ ?>
-          
+         
             <div class="flex-item"><input type="submit" name="submitText1" value="次へ"></div>
           </div>
         </form>

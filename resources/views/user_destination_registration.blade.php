@@ -9,11 +9,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 
 {{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ rand() }}"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/open_window_expansion.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/user_destination_registration.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 

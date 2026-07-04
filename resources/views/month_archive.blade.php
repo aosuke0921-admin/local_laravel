@@ -13,6 +13,8 @@ use Carbon\Carbon;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 
 {{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ time() }}"></script>
 <script src="{{ asset('js/ui-table-style.js') }}?v={{ time() }}"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}

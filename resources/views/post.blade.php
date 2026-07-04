@@ -21,15 +21,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 
 {{-- ---------------------------------------------------------------------------------------- --}}
-<script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/calcPrice.js') }}?v={{ time() }}" charset="utf-8"></script><!--まだsystem.jsにあるsystemより上に書く-->
+
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/form_load_save.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/time_validation.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/openRows.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/sharedRide.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/checkboxControl.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">

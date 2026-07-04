@@ -13,6 +13,8 @@
     window.records = @json($records);
 </script>
 {{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ rand() }}"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
