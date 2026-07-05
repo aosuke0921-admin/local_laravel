@@ -24,6 +24,10 @@
 <script src="{{ asset('js/sharedRide.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/checkboxControl.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/hospitalSelectHandler.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/classification.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/userDestination.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/date_picker.js') }}?v={{ time() }}"></script>

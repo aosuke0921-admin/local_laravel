@@ -16,114 +16,6 @@ $.ajaxSetup({
 //const fileName = window.location.pathname.split("/").pop();
 window.fileName = window.location.pathname.split("/").pop();
 
-window.js_array = [];
-
-if(fileName == "post" || fileName == "preview"){
-
-  //--------------------------------------------------------------------------------
-
-  fetch('/api/user-destinations')
-  .then(res => res.json())
-  .then(data => {
-
-      window.js_array = Array.isArray(data) ? data : [];
-
-      // -----------------------------
-      // ★ ① 初期はまだロック状態
-      // -----------------------------
-      isInit = true;
-      // -----------------------------
-      // ★ ② changeは必ず遅延させる
-      // -----------------------------
-
-      setTimeout(() => {
-
-          // 初期change発火（まだロック中）
-          $('.user_name_select').trigger('change');
-
-          // -----------------------------
-          // ★ original確定
-          // -----------------------------
-          $('.user_name_select').each(function(){
-
-              let $row = $(this).closest('tr');
-              let $checkbox = $row.find('.sharedRide');
-              let $price = $row.find('.price');
-
-              // 現在の価格を基準にする
-              let original = Number($price.val()) || 0;
-
-              $price.data('original', original);
-
-          });
-
-          // 表示
-          $('.distance, .price').css('visibility', 'visible');
-
-          // -----------------------------
-          // ★ 最後に解除（最重要）
-          // -----------------------------
-          isInit = false;
-
-      }, 0);
-      
-  }); //非同期完了後に処理ここまで
-
-  
-  //--------------------------------------------------------------------------------
-
-  $('.user_name_select').on('change', function () {
-
-    //--------------------------------------------------------------------------------
-    // 6.4追加
-    const classification =
-        $(this).find('option:selected').data('classification');
-
-    // 値がセットされていたら実行
-    if (classification) {
-      $(this)
-          .closest('tr')
-          .find('.classification')
-          .val(classification || '');
-    }
-    //--------------------------------------------------------------------------------
-
-    const user_select = ($(this).val() || '').trim();   // ←ここ重要
-
-    const targetSelect = $(this).closest('tr').find('.hospital_select');
-
-    const currentChild = targetSelect.val();
-
-    targetSelect.empty().append('<option value="">選択してください</option>');
-
-    const seen = new Set();
-
-    $.each(js_array, function (_, value) {
-
-        if (value.user !== user_select) return;
-
-        const label = value.pickup_location
-            ? `${value.destination}←→${value.pickup_location}`
-            : value.destination;
-
-        // ★ 重複チェック
-        if (seen.has(label)) return;
-          seen.add(label);
-
-          targetSelect.append(
-              `<option value="${label}">${label}</option>`
-        );
-    });
-
-    if (
-            currentChild &&
-            targetSelect.find(`option[value="${currentChild}"]`).length
-        ) {
-            targetSelect.val(currentChild);
-        }
-    });
-} // end post preview
-
 /* window open
 ------------------------------------------------------------------------------*/ 
 if(fileName == "reservation_search"
@@ -258,6 +150,7 @@ $('.user_name_select,.user_name_selects').on('click',function(){
       }
       $('.open_window ul li.cap').css('display','none');
     }); // open_window ul onclick
+    
   } // 768以上 ここまで
 
   var tr_id = $(this).parent().parent('tr').attr('id');
@@ -407,49 +300,4 @@ $(document).on('click', '.open_window ul li:not(.cap)', function () {
 //------------------------------------------------------------------------------------------------
 }/*  if(fileName == "reservation_search"・・・・・・*/
 //------------------------------------------------------------------------------------------------
-
-var $w = $(window).width(); //現在のwindow幅を取得
-
-if(fileName != "dashboard" && fileName != "inspection_check"){
-
-  //------------------------------------------------------------------------------------------------------------------------------
-
-  $(document).on('change', '.classification', function(){
-
-      let $row   = $(this).closest('tr');
-      let $check = $row.find('.sharedRide');
-      let val    = $(this).val();
-
-      if (val === '保険外') {
-
-          // ① 乗合チェック外す＆無効化
-          $check.prop('checked', false).prop('disabled', true);
-
-          // ② 利用者・行き先を選択可能に戻す
-          $row.find('.user_name_select, .hospital_select').prop('disabled', false);
-
-          // ③ 金額を通常に戻す（←ここ重要）
-          calcPrice($row);
-
-      } else {
-
-          // ④ 乗合チェックを有効化
-          $check.prop('disabled', false);
-
-          // ⑤ チェックされてなければ select も有効
-          if (!$check.prop('checked')) {
-              $row.find('.user_name_select, .hospital_select').prop('disabled', false);
-          }
-      }
-      //total.js内の関数を実行▼
-      total_amount();
-      //total.js内の関数を実行▲
-  });
-
-  //------------------------------------------------------------------------------------------------------------------------------
-
-} // if(fileName != "dashboard" && fileName != "inspection_check"){ end
-
-//--------------------------------------------------------------------------------
-
 });

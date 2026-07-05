@@ -39,6 +39,10 @@
 <script src="{{ asset('js/hospitalSelectHandler.js') }}?v={{ time() }}" charset="utf-8"></script>
 
 <script src="{{ asset('js/rowSelectHandler.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/classification.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/userDestination.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">

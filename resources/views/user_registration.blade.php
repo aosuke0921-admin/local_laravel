@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <option value="">選択してください</option>
                                 <option value="介護保険">介護保険</option>
                                 <option value="障害福祉">障害福祉</option>
-                                <option value="保険外">保険外</option>
+                                <!-- <option value="保険外">保険外</option> -->
 
                             </select>
 
