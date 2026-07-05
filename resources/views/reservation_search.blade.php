@@ -14,6 +14,8 @@
 
 <script src="{{ asset('js/recordError.js') }}?v={{ rand() }}"></script>
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 </head>

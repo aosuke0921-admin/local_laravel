@@ -16,6 +16,8 @@
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/open_window_expansion.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/user_destination_registration.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 <link href="{{ asset('css/style.css') }}?v={{ rand() }}" rel="stylesheet">

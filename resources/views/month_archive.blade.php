@@ -17,6 +17,9 @@ use Carbon\Carbon;
 
 <script src="{{ asset('js/system.js') }}?v={{ time() }}"></script>
 <script src="{{ asset('js/ui-table-style.js') }}?v={{ time() }}"></script>
+<script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">

@@ -19,6 +19,9 @@
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/boarding_reservation.js') }}?v={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ rand() }}" rel="stylesheet">
 </head>

@@ -28,6 +28,10 @@
 <script src="{{ asset('js/classification.js') }}?v={{ time() }}" charset="utf-8"></script>
 
 <script src="{{ asset('js/userDestination.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/date_picker.js') }}?v={{ time() }}"></script>
