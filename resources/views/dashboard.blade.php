@@ -7,6 +7,7 @@
 <script type="text/javascript" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
 
+
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
 
@@ -20,6 +21,7 @@
 <script src="{{ asset('js/Calendar/Calendar.js') }}?v={{ time() }}" charset="utf-8"></script>
 <link rel="stylesheet" href="{{ asset('js/Calendar/Calendar.css') }}?v={{ time() }}" charset="utf-8">
 {{-- ---------------------------------------------------------------------------------------- --}}
+
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 
 

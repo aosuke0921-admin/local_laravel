@@ -235,6 +235,7 @@ $user_destination_records = DB::table('user_destination_records as udr')
             'kana' => $request->kana,
             'support_notes' => $request->support_notes,
             'classification' => $request->classification,
+            'status' => $request->status,
 
         ]);
 

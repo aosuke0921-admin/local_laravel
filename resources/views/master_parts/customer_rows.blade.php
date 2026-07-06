@@ -44,6 +44,14 @@
         </select>
     </td>
 
+    <td>{{ $val->status }}
+        <input type="checkbox"
+            name="status"
+            value="1"
+            {{ $val->status ? 'checked' : '' }}
+            form="update_{{ $val->id }}">
+    </td>
+
     <td>
         <input type="text"
                name="support_notes"
