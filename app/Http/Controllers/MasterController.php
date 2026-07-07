@@ -227,7 +227,11 @@ $user_destination_records = DB::table('user_destination_records as udr')
     public function customerUpdate(Request $request, $id)
     {
 
-        //dd($id);
+        //dd($request->status);
+
+        //dd($request->all());
+
+        dd($request->all(), $request->input('status'));
 
         Customer::where('id', $id)->update([
 

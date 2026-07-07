@@ -183,7 +183,6 @@
         @include('master_parts.user_destination_rows', [
             'records' => $user_destination_records
         ])
-
         
       </tbody>
 

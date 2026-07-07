@@ -15,6 +15,7 @@ function initDestination() {
         const isSpecial = (id == 1);
 
         if (isSupport && isSpecial) {
+            
             destinationWrap.style.display = 'none';
             dest.value = '';
             dest.disabled = true;
