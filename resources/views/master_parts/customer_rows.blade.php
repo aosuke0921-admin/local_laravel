@@ -45,7 +45,12 @@
     </td>
 
     <td>
-        {{-- $val->status --}}
+
+        <input type="hidden"
+            name="status"
+            value="0"
+            form="update_{{ $val->id }}">
+
         <input type="checkbox"
             name="status"
             value="1"
