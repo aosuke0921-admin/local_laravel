@@ -1,8 +1,6 @@
 $(function () {
 window.js_array = [];
 
-//if(fileName == "post" || fileName == "preview"){
-
   //--------------------------------------------------------------------------------
 
   fetch('/api/user-destinations')
@@ -95,8 +93,12 @@ window.js_array = [];
         if (seen.has(label)) return;
           seen.add(label);
 
-          targetSelect.append(
-              `<option value="${label}">${label}</option>`
+        targetSelect.append(
+            `<option
+                value="${label}"
+                data-transport-fee="${value.transport_fee}">
+                ${label}
+            </option>`
         );
     });
 
@@ -107,5 +109,27 @@ window.js_array = [];
             targetSelect.val(currentChild);
         }
     });
+
+    $('.hospital_select').on('change', function () {
+
+        const transportFee = $(this)
+            .find('option:selected')
+            .data('transport-fee');
+
+        const $row = $(this).closest('tr');
+        const $classification = $row.find('.classification');
+
+        if (transportFee == 1) {
+            $classification.val('保険外');
+        } else {
+            // 利用者の区分へ戻す
+            const classification = $row
+                .find('.user_name_select option:selected')
+                .data('classification');
+
+            $classification.val(classification || '');
+        }
+    });
+
 //} // end post preview
 });
