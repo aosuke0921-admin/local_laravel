@@ -188,7 +188,15 @@
 
                 {{-- 受付日時 --}}
 
-                <td>{{ optional($row->created_at)->format('Y/n/j G:i') }}</td>
+                <td>
+                    {{-- optional($row->created_at)->format('Y/n/j G:i') --}}
+
+                    @if($row->input_date != $row->updated_at)
+                        {{ optional($row->updated_at)->format('Y/n/j G:i') }}
+                    @else
+                        {{ optional($row->input_date)->format('Y/n/j G:i') }}
+                    @endif
+                </td>
 
                 {{-- 反映日 --}}
                 @if($mode !== 'support')

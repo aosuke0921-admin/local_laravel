@@ -12,10 +12,11 @@ class UserService
     public function getGroupedUsers()
     {
     $users = DB::table('customers')
-        ->select('name', 'kana', 'support_notes','classification') // ★追加
+        ->select('name', 'kana', 'support_notes','classification','status') // ★追加
         ->distinct()
         ->whereNotNull('kana')
         ->where('kana', '!=', '')
+        ->where('status', 1)   // ← これを追加
         ->get()
         ->unique('name') // ←これ追加
         ->map(function ($item) {

@@ -44,7 +44,8 @@
         </select>
     </td>
 
-    <td>{{ $val->status }}
+    <td>
+        {{-- $val->status --}}
         <input type="checkbox"
             name="status"
             value="1"

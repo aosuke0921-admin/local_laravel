@@ -4,58 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Services\UserService;
 use Illuminate\Http\Request;
-
 use App\Models\SmileYoyaku;
 use App\Models\SmileCancel;
 use App\Models\Customer;
-
-
-
-
 use App\Services\NotificationService;
-
-
-
-////////////////////////////////////////////////////////////
-//use App\Services\BadgeService;
-////////////////////////////////////////////////////////////
-
-
 
 class BoardingReservationController extends Controller
 {
-
-
-
-
-
-////////////////////////////////////////////////////////////
-/*
-    private BadgeService $badgeService;
-
-    public function __construct(BadgeService $badgeService)
-    {
-
-
-        $this->badgeService = $badgeService;
-
-    }
-*/
-////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
     // =========================
     // 一覧・登録画面
     // =========================
     public function index(Request $request, UserService $service)
     {
-
 
 ////////////////////////////////////////////////////////////
 /*
@@ -383,6 +343,9 @@ public function edit(Request $request, $id, UserService $service)
             // 変更チェック
             // =========================
             $isChanged = json_encode($before) !== json_encode($after);
+
+            // 比較が終わってから追加
+            $after['updated_at'] = now();
 
             // =========================
             // 更新

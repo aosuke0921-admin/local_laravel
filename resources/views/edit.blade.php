@@ -197,6 +197,9 @@ $action = ($mode === 'support')
                                         @enderror
                                     </div>
                                 </td>
+
+
+                                <?php /*
                                 <td>
                                     <span>入力日</span>
                                     @php
@@ -209,6 +212,27 @@ $action = ($mode === 'support')
                                         class="readonly_i input"
                                         name="input_date"
                                         value="{{ old('input_date', $inputDate) }}"
+                                        readonly>
+                                </td>
+                                */ ?>
+
+                                <td>
+                                    <span>入力日</span>
+
+                                    @php
+                                        $displayDate = $data->updated_at != $data->input_date
+                                            ? $data->updated_at
+                                            : $data->input_date;
+
+                                        $displayDate = $displayDate
+                                            ? \Carbon\Carbon::parse($displayDate)->format('Y/m/d H:i')
+                                            : '';
+                                    @endphp
+
+                                    <input type="text"
+                                        class="readonly_i input"
+                                        name="input_date"
+                                        value="{{ old('input_date', $displayDate) }}"
                                         readonly>
                                 </td>
                                 <td>
