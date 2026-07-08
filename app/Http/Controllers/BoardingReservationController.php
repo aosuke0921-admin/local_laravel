@@ -179,10 +179,11 @@ class BoardingReservationController extends Controller
     {
         $yoyaku = SmileYoyaku::findOrFail($id);
 
+        $yoyaku->timestamps = false;
+
         $yoyaku->update([
             'is_reflected' => 1,
             'reflected_at' => now(),
-            //'receptionist' => auth()->user()->full_name ?? null,
             'reflected_by' => auth()->user()->full_name ?? null,
         ]);
 
@@ -344,21 +345,19 @@ public function edit(Request $request, $id, UserService $service)
             // =========================
             $isChanged = json_encode($before) !== json_encode($after);
 
-            // 比較が終わってから追加
-            $after['updated_at'] = now();
-
             // =========================
             // 更新
             // =========================
-            $data->update($after);
-
-            // 変更があったら未反映に戻す
+            // 変更があった場合だけ編集日時を保存
             if ($isChanged) {
-                $data->update([
-                    'is_reflected' => 0,
-                    'reflected_at' => null,
-                ]);
+                $after['edited_at'] = now();
+
+                $after['is_reflected'] = 0;
+                $after['reflected_at'] = null;
             }
+
+            // 更新
+            $data->update($after);
         }
 
         return redirect()->route('reservation_search.page', [

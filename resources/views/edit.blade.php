@@ -220,10 +220,14 @@ $action = ($mode === 'support')
                                     <span>入力日</span>
 
                                     @php
+                                    // 受付日時(input_date)と更新日時(updated_at)を比較
+                                    // 異なる場合は編集・反映などで更新されたと判断してupdated_atを表示
+                                    // 同じ場合は初回登録なのでinput_dateを表示
                                         $displayDate = $data->updated_at != $data->input_date
                                             ? $data->updated_at
                                             : $data->input_date;
-
+                                            
+                                    // 表示形式を YYYY/MM/DD HH:mm に変換
                                         $displayDate = $displayDate
                                             ? \Carbon\Carbon::parse($displayDate)->format('Y/m/d H:i')
                                             : '';

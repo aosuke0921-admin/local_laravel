@@ -23,11 +23,14 @@ class SmileYoyaku extends Model
         'is_reflected',
         'reflected_at',
         'reflected_by',
+        'edited_at', //←追加
     ];
 
     protected $casts = [
         'reservation_datetime' => 'datetime',
         'input_date' => 'datetime',
+        'edited_at' => 'datetime', //←追加
+        'reflected_at' => 'datetime',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];

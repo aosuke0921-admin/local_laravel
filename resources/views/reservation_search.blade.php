@@ -148,7 +148,7 @@
             <th>利用者</th>
             <th>行き先</th>
             <th>{{ $mode === 'support' ? 'キャンセル費用' : '場所' }}</th>
-            <th>受付者</th>
+            {{-- <th>受付者</th> --}}
             <th>依頼者</th>
             <th>受付日時</th>
             @if($mode !== 'support')
@@ -182,7 +182,7 @@
 
                 <td>{{ $row->place }}</td>
 
-                <td>{{ $row->receptionist }}</td>
+                {{-- <td>{{ $row->receptionist }}</td> --}}
 
                 <td>{{ $row->client_name }}</td>
 
@@ -192,9 +192,9 @@
                     {{-- optional($row->created_at)->format('Y/n/j G:i') --}}
 
                     @if($row->input_date != $row->updated_at)
-                        {{ optional($row->updated_at)->format('Y/n/j G:i') }}
+                        {{ optional($row->updated_at)->format('Y/n/j G:i') }}【受付者 : {{ $row->receptionist }}】
                     @else
-                        {{ optional($row->input_date)->format('Y/n/j G:i') }}
+                        {{ optional($row->input_date)->format('Y/n/j G:i') }}【受付者 : {{ $row->receptionist }}】
                     @endif
                 </td>
 

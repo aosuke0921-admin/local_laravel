@@ -1,4 +1,68 @@
 ------------------------------------------------------------------------------------------
+🟣　進行中 [2026.7.7] [WIP]  乗降予約・登録日時・更新日時・反映日時、修正
+------------------------------------------------------------------------------------------
+🟢 BoardingReservationController.php
+
+    // =========================
+    // 変更チェック
+    // =========================
+    $isChanged = json_encode($before) !== json_encode($after);
+
+    // =========================
+    // 更新
+    // =========================
+    // 変更があった場合だけ編集日時を保存
+    if ($isChanged) {
+        $after['edited_at'] = now();　←DBにカラム追加⭐️
+
+        $after['is_reflected'] = 0;
+        $after['reflected_at'] = null;
+    }
+
+    // 更新
+    $data->update($after);
+------------------------------------------------------------------------------------------
+◯ 環境別・進行状況
+logute.com / NO ←まだ
+test-sistem.jp / OK
+GitHub / OK
+------------------------------------------------------------------------------------------
+🟢 SmileYoyaku.php
+
+class SmileYoyaku extends Model
+{
+    protected $table = 'smile_yoyaku';
+
+    protected $fillable = [
+        'user',
+        'destination',
+        'reservation_datetime',
+        'client_name',
+        'receptionist',
+        'input_date',
+        'attention',
+        'remarks_txt',
+        'place',
+        'is_reflected',
+        'reflected_at',
+        'reflected_by',
+        'edited_at', //←追加　⭐️
+    ];
+
+    protected $casts = [
+        'reservation_datetime' => 'datetime',
+        'input_date' => 'datetime',
+        'edited_at' => 'datetime', //←追加　⭐️
+        'reflected_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+------------------------------------------------------------------------------------------
+◯ 環境別・進行状況
+logute.com / NO ←まだ
+test-sistem.jp / OK
+GitHub / OK
+------------------------------------------------------------------------------------------
 🟣　進行中 [2026.7.7] [WIP]  更新ページ・DBのinput_dateとupdate_atが異なればupdate_atを入力日に表示
 ------------------------------------------------------------------------------------------
 🟢 edit.php
@@ -22,6 +86,11 @@
             value="{{ old('input_date', $displayDate) }}"
             readonly>
     </td>
+------------------------------------------------------------------------------------------
+◯ 環境別・進行状況
+logute.com / NO ←まだ
+test-sistem.jp / OK
+GitHub / OK
 ------------------------------------------------------------------------------------------
 🟣　進行中 [2026.7.7] [WIP]  乗降予約・編集後、「受付日時」を編集した時刻に更新 (一覧ページ)
 ------------------------------------------------------------------------------------------
