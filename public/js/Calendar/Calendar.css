@@ -140,6 +140,7 @@ body:not(:has(.select_page)) .yy {
    .select_page #calendar td{
       font-size:12px;
       color:#555;
+      padding:15px 0;
    }
    .select_page .wp{
       font-size:12px;
@@ -149,13 +150,15 @@ body:not(:has(.select_page)) .yy {
    .prev i,
    .ynext i,
    .yprev i{
-      line-height:22px;
+      line-height:23px;
       font-style:normal;
+      position:relative;
+      top:-1px;
    }
    .mm,
    .yy{
       position:relative;
-      top:2px;
+      top:3px;
    }
 }
 /* pc */
