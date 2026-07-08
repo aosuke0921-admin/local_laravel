@@ -39,6 +39,7 @@
       border-radius:50%;
       background:#fff;
       display:inline-block;
+      font-style:normal;
    }
    .next{
       width:16.666%;
@@ -170,7 +171,15 @@ body:not(:has(.select_page)) .yy {
       z-index:9999;
       top:6px;
    }
-
+   .select_page{
+      .next i,
+      .prev i,
+      .ynext i,
+      .yprev i{
+         font-size:12px;
+         line-height:23px;
+      }
+   }
    .select_page .wp{
       font-size:16px;
    }
