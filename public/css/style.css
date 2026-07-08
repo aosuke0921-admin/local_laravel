@@ -3438,7 +3438,7 @@ select:focus{
     background:#f1939c;
     color:#fff;
     padding:10px;
-    font-size:15px;
+    font-size:16px; /* iPhone サファリ 16px以下はタップで拡大される */
     border-radius:20px;
     box-sizing:border-box;
     text-align:center;
@@ -4595,9 +4595,6 @@ select:focus{
     .preview-page.delete .user_information ul{
       display:block;
       width:100%;
-    }
-    .preview-page.delete .user_information ul li:last-child{
-      display:none;
     }
     .preview-page.delete .user_information ul li{
       display:block;

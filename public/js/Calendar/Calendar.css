@@ -10,9 +10,9 @@
    margin:0 auto;
    font-weight:bold;
    background-color:#F3981D;
-   font-size:13px;
-
+   font-size:12px;
 }
+
 .prev{
    width:16.666%;
    padding:5px 0;
@@ -30,6 +30,24 @@
 }
 .yprev{
    border-left:1px solid #F3981D;
+}
+.next i,
+.prev i,
+.ynext i,
+.yprev i{
+   color:#F3981D;
+   width:22px;
+   height:22px;
+   /*line-height:24px;*/
+   border-radius:50%;
+   background:#fff;
+   display:inline-block;
+}
+body:not(:has(.select_page)) .next i,
+body:not(:has(.select_page)) .prev i,
+body:not(:has(.select_page)) .ynext i,
+body:not(:has(.select_page)) .yprev i{
+   line-height:24px;
 }
 .next{
    width:16.666%;
@@ -53,6 +71,13 @@
    color:#fff;
    text-align:center;
 }
+body:not(:has(.select_page)) .mm,
+body:not(:has(.select_page)) .yy {
+   color:#fff;
+   position:relative;
+   top:2px;
+}
+
 #calendar td,
 .yprev:hover,
 .ynext:hover,
@@ -72,10 +97,14 @@
    padding:10px;
    border:1px solid #F3981D;
    background:#fff;
-   color:#555;
+   /*color:#555;*/
+   color:#1a89bc;
 }
+
 #calendar tr:nth-child(1) td {
-    background: #F9E7D2;
+    /*background: #F9E7D2;*/
+    background:#f7f5b3;
+    color:#555;
 }
 #calendar tr:nth-child(1) td:nth-child(1) {
     color: #f00;
@@ -97,29 +126,66 @@
 }
 /*------------------------------------------------------------*/
 .cl_wp{
-   width:300px;
-   margin:0 auto;
-   position:relative;
-   z-index:9999;
-   top:7px;
+
    .cl_toggle{
       margin:0;
-      border:1px solid #7b6e45;
+      border:1px solid #dddddd;
+      padding:1px;
+      background:#eeeeee;
    }
    #calendar{
       margin:0;
    }
    #calendar td{
-      padding:10px;
+      padding:12px 6px 8px;
    }
 }
-@media screen and (min-width:768px){
-   .wp{
-      font-size:14px;
+/* sp */
+@media screen and (max-width:769px){
+   .select_page #calendar td{
+      font-size:12px;
+      color:#555;
    }
+   .select_page .wp{
+      font-size:12px;
+      overflow:hidden;
+   }
+   .next i,
+   .prev i,
+   .ynext i,
+   .yprev i{
+      line-height:22px;
+      font-style:normal;
+      /*position:relative;
+      top:-3px;*/
+   }
+   .mm,
+   .yy{
+      position:relative;
+      top:2px;
+   }
+}
+/* pc */
+@media screen and (min-width:768px){
+   .cl_wp{
+      width:300px;
+      margin:0 auto;
+      position:relative;
+      z-index:9999;
+      top:6px;
+   }
+
+   .select_page .wp{
+      font-size:16px;
+   }
+
    #calendar td{
       padding:30px;
-      font-size:14px;
+      font-size:13px;
+   }
+   .select_page #calendar td{
+      font-size:18px;
+      color:#555;
    }
 }
 /*------------------------------------------------------------*/

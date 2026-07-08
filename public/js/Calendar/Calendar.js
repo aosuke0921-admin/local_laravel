@@ -71,13 +71,13 @@ class Calendar {
 
     // 年・月のUIをHTMLで生成
     header.innerHTML = `
-      <div class="yprev">◀</div>
-      <div class="yy">${this.year}</div>
-      <div class="ynext">▶</div>
+      <div class="yprev"><i>◀</i></div>
+      <div class="yy">${this.year}年</div>
+      <div class="ynext"><i>▶</i></div>
 
-      <div class="prev">◀</div>
-      <div class="mm">${this.month}</div>
-      <div class="next">▶</div>
+      <div class="prev"><i>◀</i></div>
+      <div class="mm">${this.month}月</div>
+      <div class="next"><i>▶</i></div>
     `;
 
     // #calendar の前にヘッダーを挿入
@@ -242,8 +242,10 @@ class Calendar {
     const yy = document.querySelector('.yy');
     const mm = document.querySelector('.mm');
 
-    if (yy) yy.textContent = this.year;
-    if (mm) mm.textContent = this.month;
+    /*if (yy) yy.textContent = this.year;
+    if (mm) mm.textContent = this.month;*/
+    if (yy) yy.textContent = `${this.year}年`;
+    if (mm) mm.textContent = `${this.month}月`;
   }
   /*
   clearHighlight() {
@@ -344,7 +346,7 @@ class Calendar {
         const cellDate = `${this.year}-${String(this.month).padStart(2,'0')}-${String(val).padStart(2,'0')}`;
 
         if (targetDate === cellDate) {
-          td.style.backgroundColor = '#F2B46B';
+          td.style.backgroundColor = '#f9dabb';
         }
       });
 
@@ -367,7 +369,7 @@ class Calendar {
           this.month === m &&
           val === d
         ) {
-          td.style.backgroundColor = '#F2B46B';
+          td.style.backgroundColor = '#f9dabb';
         }
       });
 
