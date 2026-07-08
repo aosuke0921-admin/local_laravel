@@ -11,37 +11,57 @@
    font-weight:bold;
    background-color:#F3981D;
    font-size:12px;
-}
-
-.prev{
-   width:16.666%;
-   padding:5px 0;
-   background-color:#F3981D;
-   color:#fff;
-   text-align:center;
-}
-.ynext,
-.yprev{
-   width:16.666%;
-   padding:5px 0;
-   background-color:#F3981D;
-   color:#fff;
-   text-align:center;
-}
-.yprev{
-   border-left:1px solid #F3981D;
-}
-.next i,
-.prev i,
-.ynext i,
-.yprev i{
-   color:#F3981D;
-   width:22px;
-   height:22px;
-   /*line-height:24px;*/
-   border-radius:50%;
-   background:#fff;
-   display:inline-block;
+   .prev{
+      width:16.666%;
+      padding:5px 0;
+      background-color:#F3981D;
+      color:#fff;
+      text-align:center;
+   }
+   .ynext,
+   .yprev{
+      width:16.666%;
+      padding:5px 0;
+      background-color:#F3981D;
+      color:#fff;
+      text-align:center;
+   }
+   .yprev{
+      border-left:1px solid #F3981D;
+   }
+   .next i,
+   .prev i,
+   .ynext i,
+   .yprev i{
+      color:#F3981D;
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      background:#fff;
+      display:inline-block;
+   }
+   .next{
+      width:16.666%;
+      padding:5px 0;
+      background-color:#F3981D;
+      border-right:1px solid #F3981D;
+      color:#fff;
+      text-align:center;
+   }
+   .yy{
+      width:16.666%;
+      padding:5px 0;
+      background-color:#F3981D;
+      color:#fff;
+      text-align:center;
+   }
+   .mm{
+      width:16.666%;
+      padding:5px 0;
+      background-color:#F3981D;
+      color:#fff;
+      text-align:center;
+   }
 }
 body:not(:has(.select_page)) .next i,
 body:not(:has(.select_page)) .prev i,
@@ -49,35 +69,12 @@ body:not(:has(.select_page)) .ynext i,
 body:not(:has(.select_page)) .yprev i{
    line-height:24px;
 }
-.next{
-   width:16.666%;
-   padding:5px 0;
-   background-color:#F3981D;
-   border-right:1px solid #F3981D;
-   color:#fff;
-   text-align:center;
-}
-.yy{
-   width:16.666%;
-   padding:5px 0;
-   background-color:#F3981D;
-   color:#fff;
-   text-align:center;
-}
-.mm{
-   width:16.666%;
-   padding:5px 0;
-   background-color:#F3981D;
-   color:#fff;
-   text-align:center;
-}
 body:not(:has(.select_page)) .mm,
 body:not(:has(.select_page)) .yy {
    color:#fff;
    position:relative;
    top:2px;
 }
-
 #calendar td,
 .yprev:hover,
 .ynext:hover,
@@ -97,12 +94,9 @@ body:not(:has(.select_page)) .yy {
    padding:10px;
    border:1px solid #F3981D;
    background:#fff;
-   /*color:#555;*/
    color:#1a89bc;
 }
-
 #calendar tr:nth-child(1) td {
-    /*background: #F9E7D2;*/
     background:#f7f5b3;
     color:#555;
 }
@@ -116,22 +110,23 @@ body:not(:has(.select_page)) .yy {
    border:1px solid #F3981D;
    background:#F3981D;
    margin:0 auto 20px;
-   /*width:266px;*/
    width:100%;
    box-sizing: border-box;
+   border-radius:0 0 5px 5px;
 }
+/* ダッシュボード・下層ページ両方 */
 .cl_toggle{
    display:none;
    margin:10px auto 0;
 }
-/*------------------------------------------------------------*/
+/* 下層ページ */
 .cl_wp{
-
    .cl_toggle{
       margin:0;
       border:1px solid #dddddd;
       padding:1px;
       background:#eeeeee;
+      border-radius:5px;
    }
    #calendar{
       margin:0;
@@ -156,8 +151,6 @@ body:not(:has(.select_page)) .yy {
    .yprev i{
       line-height:22px;
       font-style:normal;
-      /*position:relative;
-      top:-3px;*/
    }
    .mm,
    .yy{
