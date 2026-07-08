@@ -214,7 +214,15 @@ $(function(){
         let val = $(this).data('value') || $(this).text().trim();
 
         if(type === 'user'){
-            $('.user_name_select').val(val).trigger('change');
+
+            const $select = $('.user_name_select');
+
+            $select.val(val);
+
+            const notes = $select.find(':selected').data('notes') ?? '';
+
+            $('.attention').val(notes);
+
         }else if(type === 'destination'){
             $('.user_name_selects').val(val).trigger('change');
         }

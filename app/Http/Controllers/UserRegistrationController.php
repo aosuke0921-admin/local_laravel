@@ -22,7 +22,7 @@ class UserRegistrationController extends Controller
             'user_hurigana2' => ['required', 'regex:/^[ァ-ヶー　]+$/u'],
             'classification' => [
                 'required',
-                'in:介護保険,障害福祉,保険外'
+                'in:介護保険,障害福祉'
             ],
         ], [
             'user1.required' => '日本語で正しく入力してください',
@@ -40,6 +40,8 @@ class UserRegistrationController extends Controller
 
         $fullName = $request->user1 . ' ' . $request->user2;
         $fullNameKana = $request->user_hurigana1 . ' ' . $request->user_hurigana2;
+
+        //dd($request->classification);
 
         //DB::table('user_names')->insert([
         DB::table('customers')->insert([

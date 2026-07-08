@@ -35,12 +35,12 @@
                 {{ $val->classification == '障害福祉' ? 'selected' : '' }}>
                 障害福祉
             </option>
-
+<?php /*
             <option value="保険外"
                 {{ $val->classification == '保険外' ? 'selected' : '' }}>
                 保険外
             </option>
-
+*/ ?>
         </select>
     </td>
 

@@ -150,7 +150,7 @@
             <th>{{ $mode === 'support' ? 'キャンセル費用' : '場所' }}</th>
             {{-- <th>受付者</th> --}}
             <th>依頼者</th>
-            <th>受付日時</th>
+            <th>受付日時 / 受付者</th>
             @if($mode !== 'support')
                 <th>反映日 / 反映者</th>
             @endif

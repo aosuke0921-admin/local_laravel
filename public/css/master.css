@@ -46,6 +46,7 @@ body.master-page{
   }
   .page_top{
     position:fixed;
+    z-index:9999;
     bottom:5px;
     right:35px;
     width:120px;

@@ -15,7 +15,6 @@ function initDestination() {
         const isSpecial = (id == 1);
 
         if (isSupport && isSpecial) {
-            
             destinationWrap.style.display = 'none';
             dest.value = '';
             dest.disabled = true;
@@ -175,13 +174,21 @@ function initDestinationList() {
 }
 //------------------------------------------------------------------------------------------------------------------------
 function initUserNotes() {
+
+    console.log(document.querySelector('.user_name_select'));
+
     const userSelect = document.querySelector('.user_name_select');
     const attention = document.querySelector('.attention');
     const close_btn = document.querySelector('.close_btn');
     const error = document.getElementById('error_user_name');
 
+    console.log('A');
+
     if (!userSelect || !attention) return;
 
+    console.log('B');
+
+    /*
     userSelect.addEventListener('click', function () {
 
         const selected = userSelect.options[userSelect.selectedIndex];
@@ -192,6 +199,7 @@ function initUserNotes() {
 
         if (error) error.style.display = 'none';
     });
+    */
 
     close_btn.addEventListener('click', function () {
 
