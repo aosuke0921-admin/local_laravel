@@ -329,51 +329,52 @@ class Calendar {
   toDay() {
 
     const path = window.location.pathname;
+   
+    const value = document.querySelector('[name="dates"]').value;
+
+    let y, m, d;
 
     if (path === '/dashboard') {
 
-      const cells = document.querySelectorAll('#calendar table td');
+        if (this.selectedDate) {
 
-      const targetDate =
-        this.selectedDate ??
-        `${this.year}-${String(this.month).padStart(2,'0')}-${String(this.day).padStart(2,'0')}`;
+            [y, m, d] = this.selectedDate
+                .split('-')
+                .map(Number);
 
-      cells.forEach(td => {
+        } else {
 
-        const val = Number(td.textContent);
-        if (!val) return;
+            const now = new Date();
 
-        const cellDate = `${this.year}-${String(this.month).padStart(2,'0')}-${String(val).padStart(2,'0')}`;
-
-        if (targetDate === cellDate) {
-          td.style.backgroundColor = '#f9dabb';
+            [y, m, d] = [
+                now.getFullYear(),
+                now.getMonth() + 1,
+                now.getDate()
+            ];
         }
-      });
 
     } else {
 
-      const value = document.querySelector('[name="dates"]').value;
-
-      const [y, m, d] = value
-        .split('-')
-        .map(Number);
-
-      const cells = document.querySelectorAll('#calendar table td');
-
-      cells.forEach(td => {
-
-        const val = Number(td.textContent);
-
-        if (
-          this.year === y &&
-          this.month === m &&
-          val === d
-        ) {
-          td.style.backgroundColor = '#f9dabb';
-        }
-      });
+        [y, m, d] = value
+            .split('-')
+            .map(Number);
 
     }
+
+    const cells = document.querySelectorAll('#calendar table td');
+
+    cells.forEach(td => {
+
+      const val = Number(td.textContent);
+
+      if (
+        this.year === y &&
+        this.month === m &&
+        val === d
+      ) {
+        td.style.backgroundColor = '#f9dabb';
+      }
+    });
   }
 }
 
