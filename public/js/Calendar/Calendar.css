@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+*{
+   margin:0;
+   padding:0;
+}
 .wp{
    overflow:hidden;
    text-align:center;
@@ -12,12 +15,13 @@
    font-weight:bold;
    /*background-color:#F3981D;*/
    /*font-size:12px;*/
+   background: linear-gradient(#f7c077, #f6a631);
    font-size:10px;
    border:1px solid #e78f08;
    .prev{
       width:16.666%;
       padding:5px 0;
-      background-color:#F3981D;
+      /*background-color:#F3981D;*/
       color:#fff;
       text-align:center;
    }
@@ -25,7 +29,7 @@
    .yprev{
       width:16.666%;
       padding:5px 0;
-      background-color:#F3981D;
+      /*background-color:#F3981D;*/
       color:#fff;
       text-align:center;
    }
@@ -49,15 +53,15 @@
    .next{
       width:16.666%;
       padding:5px 0;
-      background-color:#F3981D;
+      /*background-color:#F3981D;*/
       border-right:1px solid #F3981D;
       color:#fff;
       text-align:center;
    }
    .yy{
       width:16.666%;
-      padding:7px 0 0;
-      background-color:#F3981D;
+      /*padding:7px 0 0;*/
+      /*background-color:#F3981D;*/
       color:#fff;
       text-align:center;
       /*position:relative;
@@ -65,19 +69,15 @@
    }
    .mm{
       width:16.666%;
-      padding:7px 0 0;
-      background-color:#F3981D;
+      /*padding:7px 0 0;*/
+      /*background-color:#F3981D;*/
       color:#fff;
       text-align:center;
       /*position:relative;
       top:1px;*/
    }
 }
-.select_page .mm,
-.select_page .yy{
-   position:relative;
-   top:1px;
-}
+
 body:not(:has(.select_page)) .next i,
 body:not(:has(.select_page)) .prev i,
 body:not(:has(.select_page)) .ynext i,
@@ -92,8 +92,7 @@ body:not(:has(.select_page)) .yprev i{
 body:not(:has(.select_page)) .mm,
 body:not(:has(.select_page)) .yy {
    color:#fff;
-   /*position:relative;
-   top:2px;*/
+   line-height:2.5em;
 }
 #calendar td,
 .yprev:hover,
@@ -158,7 +157,8 @@ body:not(:has(.select_page)) .yy {
 /* sp */
 @media screen and (max-width:769px){
    .wp{
-      background:#F3981D;
+      position:relative;
+      top:2px;
    }
    .select_page #calendar td{
       font-size:12px;
@@ -180,19 +180,32 @@ body:not(:has(.select_page)) .yy {
    }
    .select_page .mm,
    .select_page .yy{
+      /*position:relative;
+      top:2px;*/
+      line-height:2.8em;
       position:relative;
-      top:2px;
+      top:1px;
       /*border:1px solid #f00;*/
    }
 }
 /* pc */
 @media screen and (min-width:768px){
+   .select_page .mm,
+   .select_page .yy{
+      line-height:2.2em;
+      position:relative;
+      top:2px;
+   }
    .cl_wp{
       width:250px;
       margin:0 auto;
       position:relative;
       z-index:9999;
       top:6px;
+   }
+   .wp{
+      position:relative;
+      top:2px;
    }
    .select_page{
       .next i,
@@ -205,7 +218,7 @@ body:not(:has(.select_page)) .yy {
    }
    .select_page .wp{
       font-size:16px;
-      background:#F3981D;
+      /*background:#F3981D;*/
    }
 
    #calendar td{
