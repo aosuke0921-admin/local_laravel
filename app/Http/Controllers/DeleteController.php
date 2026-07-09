@@ -40,22 +40,6 @@ class DeleteController extends Controller
         // DB取得（Serviceに移動）
         $posts = $deleteService->getPosts($user, $car, $dates);
 
-
-
-        //dump($posts);
-
-        
-        // データなし
-        /*
-        if ($posts->isEmpty()) {
-            
-            return redirect()->route('dashboard', [
-                'error' => 'no_data'
-            ]);
-            
-            //dd('nodata');
-        }
-        */
         $referer = request()->headers->get('referer');
 
        if ($posts->isEmpty()) {
@@ -76,7 +60,6 @@ class DeleteController extends Controller
         $day   = $dateObj->day;
 
         return view('delete', [
-            //'date' => \Carbon\Carbon::parse($dates)->format('Y年n月j日'),
             'date' => $dateObj->toDateString(),
             'posts'      => $posts,
             'headerPost' => $headerPost,

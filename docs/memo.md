@@ -214,7 +214,10 @@ php artisan optimize:clear
 ユーザー：r6092895
 鍵：sistem.pem（デスクトップ）
 
+◯ デスクトップに置いてある方。自宅とスマイル別
 ssh -i ~/Desktop/sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp
+
+ssh -i ~/Desktop/test-sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp
 
 cd public_html/test-sistem.jp/example-app
 
