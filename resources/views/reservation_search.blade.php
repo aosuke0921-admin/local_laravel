@@ -247,7 +247,17 @@
                     @if($mode === 'support')
 
                         {{-- キャンセル一覧 --}}
+                        <?php /*
                         <a href="{{ route('boarding_reservation.edit', ['id' => $row->id, 'mode' => 'support']) }}">
+                            編集
+                        </a>
+                        */ ?>
+                        <a href="{{ route('boarding_reservation.edit', [
+                            'id' => $row->id,
+                            'mode' => 'support',
+                            'year_select' => request('year_select'),
+                            'month_select' => request('month_select')
+                        ]) }}">
                             編集
                         </a>
 
@@ -268,7 +278,17 @@
                         {{-- 乗降予約一覧 --}}
                         <a href="{{ route('yoyaku.reflect', $row->id) }}">反映</a>
 
+                        <?php /*
                         <a href="{{ route('boarding_reservation.edit', $row->id) }}">編集</a>
+                        */ ?>
+                        <a href="{{ route('boarding_reservation.edit', [
+                            'id' => $row->id,
+                            'year_select' => request('year_select'),
+                            'month_select' => request('month_select')
+                        ]) }}">
+                            編集
+                        </a>
+
 
                         <form action="{{ route('yoyaku.delete', $row->id) }}"
                               method="POST"

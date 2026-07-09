@@ -263,7 +263,11 @@ public function edit(Request $request, $id, UserService $service)
     // =========================
     public function update(Request $request, $id)
     {
-        $mode = $request->query('mode', 'boarding');
+        //$mode = $request->query('mode', 'boarding');
+
+        $mode = $request->input('mode', 'boarding'); // 2026.7.9
+
+
         $isSupport = ($mode === 'support');
 
         $ymd = $request->ymdselect ?? [];
@@ -361,7 +365,9 @@ public function edit(Request $request, $id, UserService $service)
         }
 
         return redirect()->route('reservation_search.page', [
-            'mode' => $mode
+            'mode' => $mode,
+            'year_select' => $request->year_select, // ←2026.7.9追加
+            'month_select' => $request->month_select, // ←2026.7.9追加
         ]);
     }
 }

@@ -175,7 +175,10 @@ class ReservationController extends Controller
         ]);
 
         return redirect()->route('reservation_search.page', [
-            'mode' => 'support'
+            'mode' => 'support',
+
+            'year_select' => $request->year_select,
+            'month_select' => $request->month_select,
         ]);
     }
 }

@@ -41,6 +41,21 @@ $action = ($mode === 'support')
 <form action="{{ $action }}" method="post">
 
         @csrf
+
+
+
+    {{-- 検索画面の状態保持 --}}
+    <input type="hidden" name="mode" value="{{ request('mode') }}">
+    <input type="hidden" name="year_select" value="{{ request('year_select') }}">
+    <input type="hidden" name="month_select" value="{{ request('month_select') }}">
+
+
+
+
+
+
+
+
             <div class="wrap">
                 <div class="wrap__inner">
                     <div class="fbox">
