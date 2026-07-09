@@ -12,6 +12,8 @@
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
 
+<script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
+
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>

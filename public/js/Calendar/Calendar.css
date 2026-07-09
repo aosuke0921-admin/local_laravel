@@ -3,14 +3,17 @@
 .wp{
    overflow:hidden;
    text-align:center;
-   padding:5px 0 0;
+   /*padding:5px 0 0;*/
+   padding:0;
    display:flex;
    width:100%;
    box-sizing:border-box;
    margin:0 auto;
    font-weight:bold;
-   background-color:#F3981D;
-   font-size:12px;
+   /*background-color:#F3981D;*/
+   /*font-size:12px;*/
+   font-size:10px;
+   border:1px solid #e78f08;
    .prev{
       width:16.666%;
       padding:5px 0;
@@ -40,6 +43,8 @@
       background:#fff;
       display:inline-block;
       font-style:normal;
+      position:relative;
+      top:1px;
    }
    .next{
       width:16.666%;
@@ -51,30 +56,44 @@
    }
    .yy{
       width:16.666%;
-      padding:5px 0;
+      padding:7px 0 0;
       background-color:#F3981D;
       color:#fff;
       text-align:center;
+      /*position:relative;
+      top:1px;*/
    }
    .mm{
       width:16.666%;
-      padding:5px 0;
+      padding:7px 0 0;
       background-color:#F3981D;
       color:#fff;
       text-align:center;
+      /*position:relative;
+      top:1px;*/
    }
+}
+.select_page .mm,
+.select_page .yy{
+   position:relative;
+   top:1px;
 }
 body:not(:has(.select_page)) .next i,
 body:not(:has(.select_page)) .prev i,
 body:not(:has(.select_page)) .ynext i,
 body:not(:has(.select_page)) .yprev i{
    line-height:24px;
+   width:14px;
+   height:14px;
+   line-height:15px;
+   position:relative;
+   top:1px;
 }
 body:not(:has(.select_page)) .mm,
 body:not(:has(.select_page)) .yy {
    color:#fff;
-   position:relative;
-   top:2px;
+   /*position:relative;
+   top:2px;*/
 }
 #calendar td,
 .yprev:hover,
@@ -89,7 +108,7 @@ body:not(:has(.select_page)) .yy {
  }
 #calendar td{
    text-align:center;
-   font-size:12px;
+   /*font-size:12px;*/
    font-weight:bold;
    line-height:1em;
    padding:10px;
@@ -125,7 +144,7 @@ body:not(:has(.select_page)) .yy {
    .cl_toggle{
       margin:0;
       border:1px solid #dddddd;
-      padding:1px;
+      padding:3px;
       background:#eeeeee;
       border-radius:5px;
    }
@@ -165,7 +184,7 @@ body:not(:has(.select_page)) .yy {
 /* pc */
 @media screen and (min-width:768px){
    .cl_wp{
-      width:300px;
+      width:250px;
       margin:0 auto;
       position:relative;
       z-index:9999;
@@ -177,19 +196,21 @@ body:not(:has(.select_page)) .yy {
       .ynext i,
       .yprev i{
          font-size:12px;
-         line-height:23px;
+         line-height:25px;
       }
    }
    .select_page .wp{
       font-size:16px;
+      background:#F3981D;
    }
 
    #calendar td{
       padding:30px;
-      font-size:13px;
+      /*font-size:13px;*/
+      font-size:10px;
    }
    .select_page #calendar td{
-      font-size:18px;
+      font-size:22px;
       color:#555;
    }
 }
