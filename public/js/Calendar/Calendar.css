@@ -157,6 +157,9 @@ body:not(:has(.select_page)) .yy {
 }
 /* sp */
 @media screen and (max-width:769px){
+   .wp{
+      background:#F3981D;
+   }
    .select_page #calendar td{
       font-size:12px;
       color:#555;
@@ -175,10 +178,11 @@ body:not(:has(.select_page)) .yy {
       position:relative;
       top:-1px;
    }
-   .mm,
-   .yy{
+   .select_page .mm,
+   .select_page .yy{
       position:relative;
-      top:3px;
+      top:2px;
+      /*border:1px solid #f00;*/
    }
 }
 /* pc */
@@ -210,7 +214,7 @@ body:not(:has(.select_page)) .yy {
       font-size:10px;
    }
    .select_page #calendar td{
-      font-size:22px;
+      font-size:18px;
       color:#555;
    }
 }
