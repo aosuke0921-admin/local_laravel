@@ -166,20 +166,9 @@ $action = ($mode === 'support')
                                 <td>
                                     <span>受付者</span>
 
-                                    <?php /*              
-                                    <select class="input receptionist" name="receptionist">
-                                        <option value="">選択してください</option>
+<input type="text" class="readonly_i input" name="receptionist" value="{{ auth()->user()->full_name }}" readonly>
 
-                                        @foreach(config('employees.list') as $name)
-                                            <option value="{{ $name }}"
-                                                {{ (old('receptionist', $data->receptionist) == $name) ? 'selected' : '' }}>
-                                                {{ $name }}
-                                            </option>
-                                        @endforeach
-
-                                    </select>
-                                    */ ?>
-
+<?php /*
 <select class="input receptionist" name="receptionist">
     <option value="">選択してください</option>
 
@@ -190,6 +179,7 @@ $action = ($mode === 'support')
         </option>
     @endforeach
 </select>
+*/ ?>
 
                                     <div class="error_msg" id="error_receptionist">
                                         @error('receptionist')
@@ -220,6 +210,7 @@ $action = ($mode === 'support')
                                     <span>入力日</span>
 
                                     @php
+                                    /*
                                     // 受付日時(input_date)と更新日時(updated_at)を比較
                                     // 異なる場合は編集・反映などで更新されたと判断してupdated_atを表示
                                     // 同じ場合は初回登録なのでinput_dateを表示
@@ -231,12 +222,13 @@ $action = ($mode === 'support')
                                         $displayDate = $displayDate
                                             ? \Carbon\Carbon::parse($displayDate)->format('Y/m/d H:i')
                                             : '';
+                                    */
                                     @endphp
 
                                     <input type="text"
                                         class="readonly_i input"
                                         name="input_date"
-                                        value="{{ old('input_date', $displayDate) }}"
+                                        value="{{ now()->format('Y/m/d H:i') }}"
                                         readonly>
                                 </td>
                                 <td>

@@ -169,16 +169,24 @@
                                 <td>
                                     <span>受付者</span>
 
-                                    <select class="input receptionist" name="receptionist">
+                                    <input type="text" class="readonly_i input" name="receptionist" value="{{ auth()->user()->full_name }}" readonly>
+                                    
+                                    <?php /*
+                                    <select class="input receptionist" name="receptionist" readonly_i readonly>
                                         <option value="">選択してください</option>
 
                                         @foreach($members as $name)
+                                            <option value="{{ $name }}"
+                                                {{ old('receptionist', auth()->user()->full_name) == $name ? 'selected' : '' }}>
+                                                {{ $name }}
+                                            </option>
+                                            <?php /*
                                             <option value="{{ $name }}"
                                                 {{ old('receptionist') == $name ? 'selected' : '' }}>
                                                 {{ $name }}
                                             </option>
                                         @endforeach
-                                    </select>
+                                    </select>*/ ?>
 
                                     <div class="error_msg" id="error_receptionist">
                                         @error('error_receptionist')

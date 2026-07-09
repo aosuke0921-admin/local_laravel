@@ -92,9 +92,40 @@
                 </select>
             </div>
 
+            @if($mode === 'boarding')
+                <div class="inner">
+                    反映状況
+                    <select class="is_reflected" name="is_reflected">
+                        <option value="">すべて</option>
+                        <option value="0" {{ request('is_reflected') === '0' ? 'selected' : '' }}>
+                            未反映
+                        </option>
+                        <option value="1" {{ request('is_reflected') === '1' ? 'selected' : '' }}>
+                            反映済み
+                        </option>
+                    </select>
+                </div>
+            @else
+                <div class="inner">
+                    キャンセル料金
+                    <select class="cancel_fee" name="cancel_fee">
+                        <option value="">すべて</option>
+
+                        <option value="1"
+                            {{ request('cancel_fee') === '1' ? 'selected' : '' }}>
+                            有り
+                        </option>
+
+                        <option value="0"
+                            {{ request('cancel_fee') === '0' ? 'selected' : '' }}>
+                            無し
+                        </option>
+                    </select>
+                </div>
+            @endif
+
             {{-- 留意点 --}}
             <div class="inner">
-
 
                 {{-- dd($attentions); --}}
 

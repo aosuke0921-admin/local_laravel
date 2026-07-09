@@ -39,6 +39,11 @@ class ReservationController extends Controller
         $user = $request->input('user_name_select');
         $sien = $request->input('sien_select');
 
+
+        $reflected = $request->input('is_reflected'); // ←追加 2026.7.9
+        $cancelFee = $request->input('cancel_fee'); // ←追加 2026.7.9
+
+
         if (!empty($user)) {
             $query->where('user', $user);
         }
@@ -46,6 +51,24 @@ class ReservationController extends Controller
         if (!empty($sien) && $sien !== '選択してください') {
             $query->where('attention', $sien);
         }
+
+        
+
+        if ($reflected !== null && $reflected !== '') { // ←追加 2026.7.9
+            $query->where('is_reflected', $reflected);
+        }
+
+        if ($cancel && $cancelFee !== null && $cancelFee !== '') {
+
+            if ($cancelFee == '1') {
+                $query->where('place', '!=', 'キャンセル料なし');
+            } else {
+                $query->where('place', 'キャンセル料なし');
+            }
+        }
+        
+
+
 
         $query->with('customer');
 

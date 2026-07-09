@@ -493,13 +493,17 @@ select:focus{
   top:-4px;
   display:inline-block;
 }
+
+.sarch_t .cancel_fee,
+.sarch_t .is_reflected,
 .sarch_t .day_select,
 .sarch_t .member_select,
 .sarch_t .month_select,
 .sarch_t .user_name_select{
   border:1px solid #F3981D;
   padding:5px;
-  width:200px;
+  /*width:200px;*/
+  width:150px;
   border-radius:4px;
   background:#fff;
   color:#000;
@@ -530,7 +534,8 @@ select:focus{
 }
 .sarch_t .inner:nth-child(2),
 .sarch_t .inner:nth-child(3),
-.sarch_t .inner:nth-child(4){
+.sarch_t .inner:nth-child(4),
+.sarch_t .inner:nth-child(5){
   padding:0 0 0 10px;
 }
 .reservation_search .link_box{
@@ -641,7 +646,8 @@ select:focus{
 .reservation_search .year_select{
     border: 1px solid #F3981D;
     padding: 5px;
-    width: 200px;
+    /*width: 200px;*/
+    width: 150px;
     border-radius: 4px;
     background: #fff;
     color: #000;
