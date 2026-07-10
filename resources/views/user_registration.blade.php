@@ -37,6 +37,8 @@
                                     {{ $message }}
                                 @enderror
                             </div>
+                        </td>
+                        <td>
                             フリガナ
                             <input type="text" class="input kana js-kana" name="user_hurigana1" value="{{ old('user_hurigana1') }}" placeholder="(例) ミエ">
                             <div class="error_msg" id="error_user_hurigana1">
@@ -44,6 +46,8 @@
                                     {{ $message }}
                                 @enderror
                             </div>
+                        </td>
+                        <td>
                             (名)
                             <input type="text" class="input ja js-check" name="user2" value="{{ old('user2') }}" placeholder="(例) 太郎">
                             <div class="error_msg" id="error_user2">
@@ -51,6 +55,8 @@
                                     {{ $message }}
                                 @enderror
                             </div>
+                        </td>
+                        <td>
                             フリガナ
                             <input type="text" class="input kana js-kana" name="user_hurigana2" value="{{ old('user_hurigana2') }}" placeholder="(例) タロウ">
                             <div class="error_msg" id="error_user_hurigana2">
@@ -58,7 +64,8 @@
                                     {{ $message }}
                                 @enderror
                             </div>
-
+                        </td>
+                        <td>
 <!------------------------------------------------------------------------------------------------------------>
                             区分
                             <select name="classification" class="select">
@@ -75,7 +82,8 @@
                                     {{ $message }}
                                 @enderror
                             </div>
-
+                        </td>
+                        <td>
 <!------------------------------------------------------------------------------------------------------------>
 
                             <div class="support_txt">

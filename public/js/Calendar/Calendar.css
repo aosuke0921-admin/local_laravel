@@ -178,14 +178,12 @@ body:not(:has(.select_page)) .yy {
       position:relative;
       top:-1px;
    }
+   /* line-heightはemで小数点のほうがiPhoneとAndroidずれずにしやすい */
    .select_page .mm,
    .select_page .yy{
-      /*position:relative;
-      top:2px;*/
       line-height:2.8em;
       position:relative;
       top:1px;
-      /*border:1px solid #f00;*/
    }
 }
 /* pc */

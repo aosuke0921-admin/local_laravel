@@ -2541,7 +2541,8 @@ select:focus{
                                                   color:#F3981D;
                                                   text-align:left;
                                                   padding:0;
-                                                  margin:20px 0 14px;
+                                                  /*margin:20px 0 14px;*/
+                                                  margin:20px 0 0;
                                                   font-weight:bold;
                                                   font-size:18px;
                                                 }
@@ -2549,15 +2550,27 @@ select:focus{
                                                 .f_box tr td{
                                                     list-style:none;
                                                     display:block;
-                                                    padding:20px 0;
+                                                    padding:20px 0 0;
                                                     width:100%;
+                                                    color:#F3981D;
+                                                    font-weight:bold;
+                                                }
+                                                .f_box tr td label{
+                                                  font-weight:normal;
+                                                  color:#000;
                                                 }
                                                 .f_box .tit + table tr td{
                                                   padding:0;
                                                 }
+                                                .f_box .tit + table tr:nth-child(4) td,
+                                                .f_box .tit + table tr:nth-child(5) td,
+                                                .f_box .tit + table tr:nth-child(6) td{
+                                                  /*background:#f00;*/
+                                                  padding:20px 0 0;
+                                                }
                                                 .f_box tr td .select,
                                                 .f_box tr td .input{
-                                                    margin:10px auto;
+                                                    margin:10px auto 20px;
                                                     padding:7px;
                                                     width:100%;
                                                     border:1px solid #F3981D;
@@ -2565,7 +2578,7 @@ select:focus{
                                                 }
                                                 .f_box .tit + table tr td .select,
                                                 .f_box .tit + table tr td .input{
-                                                    margin:10px auto;
+                                                    margin:10px auto 20px;
                                                     padding:7px;
                                                     width:100%;
                                                     border:1px solid #F3981D;
@@ -3142,6 +3155,7 @@ select:focus{
     background:none;
     color:#F3981D;
     font-size:20px;
+    padding:0 0 0 10px;
   }
   .f_box tr th{
       list-style:none;
@@ -3157,11 +3171,13 @@ select:focus{
       font-weight:bold;
       font-size:20px;
       line-height:1em;
+      padding:10px 10px 15px;
   }
   .destination_registration .f_box tr td{
       list-style:none;
       display:block;
-      padding:0;
+      /*padding:0;*/
+      padding:0 10px 25px;
       width:100%;
       color:#F3981D;
       font-weight:bold;
@@ -3175,11 +3191,12 @@ select:focus{
   .destination_registration .f_box tr td label{
     display:inline-block;
     padding:10px 0 0;
-    margin:0 20px 30px 0;
+    margin:0 20px 0 0;
   }
   .f_box tr td .select,
   .f_box tr td .input{
-      margin:14px auto 20px;
+      /*margin:14px auto 20px;*/
+      margin:14px auto 0;
       padding:7px;
       width:100%;
   }

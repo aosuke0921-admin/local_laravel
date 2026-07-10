@@ -125,7 +125,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     {{ $message }}
                                 @enderror
                             </div>
-
+                        </td>
+                        <td>
 
                             フリガナ
                             <input type="text" class="input kana" name="destination_hurigana" value="{{ old('destination_hurigana') }}" placeholder="(例) トオヤマビョウイン">

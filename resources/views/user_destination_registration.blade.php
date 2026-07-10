@@ -20,7 +20,7 @@
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 
-<link href="{{ asset('css/style.css') }}?v={{ rand() }}" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">
 
 </head>
 <body class="user_destination_registration destination_registration">
