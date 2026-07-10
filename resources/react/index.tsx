@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom/client';
 import PopSelect from './pop_select/PopSelect';
 import Reminder from './reminder/Reminder';
 import PushNotification from './push_notification/PushNotification';
-
 import PageTop from './page_top/PageTop';
+
+import UserAddFields from './userAddFields/UserAddFields';
 
 const components: Record<string, React.ComponentType> = {
     PopSelect,
     Reminder,
     PushNotification,
     PageTop,
+    UserAddFields,
 };
 
 const containers = document.querySelectorAll<HTMLElement>('.react');

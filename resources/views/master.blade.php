@@ -84,9 +84,7 @@
       novalidate>
       @csrf
 
-        社員名<input type="text" name="full_name" class="input full_name">&nbsp;&nbsp;&nbsp;
-        ユーザー<input type="text" name="user_name" class="input user">&nbsp;&nbsp;&nbsp;
-        パスワード<input type="password" name="user_pass" class="input pass">
+        <div class="react UserAddFields" data-component="UserAddFields"></div>
         <input type="submit" class="submit" value="新規追加">
 
       </form>

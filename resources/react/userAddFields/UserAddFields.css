@@ -1,0 +1,31 @@
+.master-page .new_addition{
+  margin:0 auto;
+  text-align:right;
+  padding:10px;
+  a{
+    display:block;
+    width:100px;
+    height:20px;
+    line-height:20px;
+    color:#fff;
+    background:#000;
+    text-align:center;
+    float:right;
+    text-decoration:none;
+    border:none;
+  }
+  .input{
+    margin:0 10px 0 10px;
+    width:auto;
+    padding:1px;
+  }
+  .submit{
+    background:#38be65;
+    color:#fff;
+    border:none;
+    padding:2px 4px;
+  }
+}
+.UserAddFields{
+    display:inline-block;
+}
