@@ -21,10 +21,12 @@ $(function(){
 
   });
 
+  /*   react移行済み
   $('.page_top').on('click',function(){
     $('html, body').animate({scrollTop: 0}, 1500, 'swing'); // 500msかけて移動
     return false; // リンクのデフォルト動作を無効化
   });
+  */
 
   $(document).on('submit', 'form[id^="update_"]', function () {
 

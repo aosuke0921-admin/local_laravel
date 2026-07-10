@@ -4,10 +4,13 @@ import PopSelect from './pop_select/PopSelect';
 import Reminder from './reminder/Reminder';
 import PushNotification from './push_notification/PushNotification';
 
+import PageTop from './page_top/PageTop';
+
 const components: Record<string, React.ComponentType> = {
     PopSelect,
     Reminder,
     PushNotification,
+    PageTop,
 };
 
 const containers = document.querySelectorAll<HTMLElement>('.react');

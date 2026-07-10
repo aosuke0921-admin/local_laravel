@@ -16,6 +16,11 @@
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/master.js') }}?id={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="master-page">
   <div class="gnav">
@@ -192,9 +197,9 @@
 
   <footer>
     <a href="{{ route('dashboard') }}">戻る</a>
-    <div class="page_top">
-      <img src="{{ asset('image/pagetop.png') }}"><span>PAGE TOP</span>
-    </div>
+
+    <div class="react" data-component="PageTop"></div>
+
   </footer>
 
   <div id="overflow"><div class="conf"><img src="{{ asset('image/404.webp') }}" alt=""><p></p><button class="closeBtn">閉じる</button></div></div>

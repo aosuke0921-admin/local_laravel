@@ -44,36 +44,6 @@ body.master-page{
     color:#bcbcbc;
     font-size:10px;
   }
-  .page_top{
-    position:fixed;
-    z-index:9999;
-    bottom:5px;
-    right:35px;
-    width:120px;
-    font-weight:bold;
-    img{
-      display:block;
-      width:84%;
-      margin:0 auto;
-      position:relative;
-      right:5px;
-    }
-    span{
-      background:#F3981D;
-      color:#fff;
-      display:block;
-      width:120px;
-      padding:3px 10px;
-      position:fixed;
-      bottom:5px;
-      right:32px;
-      border:1px solid #F3981D;
-      font-size:12px;
-    }
-  }
-  .page_top:hover{
-    cursor:pointer;
-  }
 }
 
 /*----------------------------------------------------------------------------------------
