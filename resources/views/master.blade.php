@@ -11,7 +11,6 @@
 <link href="{{ asset('css/master.css') }}" rel="stylesheet" type="text/css">
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/master.js') }}?id={{ time() }}" charset="utf-8"></script>
@@ -141,7 +140,7 @@
 
     <div class="react" data-component="ModeChange"></div>
 
-    <div class="react" data-component="InitialTabs"></div>
+    <div class="react sticky" data-component="InitialTabs"></div>
 
     <table>
 
