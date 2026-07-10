@@ -155,7 +155,8 @@
             <a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" class="prev_btn"></a>
             @if(!$posts->isEmpty())
                 <input type="submit" name="submit" class="post_btn delete_btn" value="削除">
-                <span class="clone_btn">削除</span>
+                <button type="button" class="clone_btn">削除</button>
+                <?php /*<span class="clone_btn">削除</span>*/?>
             @endif
             <img src="{{ asset('image/pagetop.png') }}" class="pagetop_btn">
         </div>
