@@ -139,24 +139,7 @@
       @endforeach
     </table>
 
-    <div class="mode_change">
-
-      <label>
-        <input type="radio" name="mode" value="customers">
-        <span>利用者</span>
-      </label>
-
-      <label>
-        <input type="radio" name="mode" value="destinations">
-        <span>行き先</span>
-      </label>
-
-      <label>
-        <input type="radio" name="mode" value="user_destination_records" checked>
-        <span>利用者・行き先</span>
-      </label>
-
-    </div>
+    <div class="react" data-component="ModeChange"></div>
 
     <div class="tab-add">
         <ul class="tabs">

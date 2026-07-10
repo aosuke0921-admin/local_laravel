@@ -7,12 +7,15 @@ import PageTop from './page_top/PageTop';
 
 import UserAddFields from './userAddFields/UserAddFields';
 
+import ModeChange from './modeChange/ModeChange';
+
 const components: Record<string, React.ComponentType> = {
     PopSelect,
     Reminder,
     PushNotification,
     PageTop,
     UserAddFields,
+    ModeChange,
 };
 
 const containers = document.querySelectorAll<HTMLElement>('.react');

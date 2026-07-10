@@ -223,38 +223,3 @@ html {
     z-index: 10;
     background: #F3981D;
 }
-.mode_change{
-  border:1px solid #f00;
-  text-align:center;
-  padding:50px;
-  input[type="radio"]{
-      display:none;
-  }
-  input[type="radio"]:not(:checked) + span{
-      border:1px solid #f39a18;
-      background:#eee;
-      color:#000;
-      border-radius:4px;
-      padding:8px 0;
-      width:200px;
-      display:inline-block;
-  }
-  input[type="radio"]:checked + span{
-      background:#f39a18;
-      color:#fff;
-      border-radius:4px;
-      padding:8px 0;
-      width:200px;
-      display:inline-block;
-  }
-  label{
-    display:inline-block;
-    padding:8px 0;
-    width:200px;
-    text-align:center;
-    cursor:pointer;
-    border-radius:4px;
-    margin-right:5px;
-    font-weight:bold;
-  }
-}
