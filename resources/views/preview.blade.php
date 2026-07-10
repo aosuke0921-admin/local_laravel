@@ -76,7 +76,7 @@
 
     <li><dl><dt>車種</dt><dd><span>{{ session('car') }}</span></dd></dl></li>
 
-    <li><dl><dt>日付</dt><dd><span>{{ $date }}</span></dd></dl></li>
+    <li><dl><dt>日付</dt><dd><span>{{ \Carbon\Carbon::parse($date)->format('Y年n月j日') }}</span></dd></dl></li>
   </ul>
   
   {{-- Laravelはセキュリティ（CSRF対策）のためにログアウトを POSTで行う --}}

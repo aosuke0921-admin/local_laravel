@@ -57,8 +57,8 @@
   <?php //---------------------------------------------------------------------------------------?>
     <ul><!-- 登録画面は、登録してあるデータを取得して表示でないので、全てsession -->
       <li><dl><dt>乗務者</dt><dd><span>{{ session('user_name') }}</span></dd></dl></li>
-      <li><dl><dt>日付</dt><dd><span>{{ $displayDate }}</span></dd></dl></li>
       <li><dl><dt>車種</dt><dd><span>{{ session('car') }}</span></dd></dl></li>
+      <li><dl><dt>日付</dt><dd><span>{{ $displayDate }}</span></dd></dl></li>
       <li><dl><dt>始業距離</dt><dd><span>{{ session('start_distance') }}</span></dd></dl></li>
     </ul>
 

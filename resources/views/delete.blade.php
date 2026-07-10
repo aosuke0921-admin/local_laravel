@@ -54,7 +54,7 @@
   <ul>
     <li><dl><dt>乗務者</dt><dd><span>{{ session('user_name') }}</span></dd></dl></li>
     <li><dl><dt>車種</dt><dd><span>{{ session('car') }}</span></dd></dl></li>
-    <li><dl><dt>日付</dt><dd><span>{{ $date }}</span></dd></dl></li>
+    <li><dl><dt>日付</dt><dd><span>{{ \Carbon\Carbon::parse($date)->format('Y年n月j日') }}</span></dd></dl></li>
   </ul>
 
   <!--Laravelはセキュリティ（CSRF対策）のためにログアウトを POSTで行う-->
@@ -143,12 +143,14 @@
     </div>
 
     <div class="fixed">
+        <?php /*
         <div class="inner">
             @if(!$posts->isEmpty())
                 <div class="item">合計距離<input type="text" class="total_distance fixed_input" value="" readonly></div>
                 <div class="item">合計金額<input type="text" class="total_amount fixed_input" value="" readonly></div>
             @endif
         </div>
+        */ ?>
         <div class="insert_btn">
             <a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" class="prev_btn"></a>
             @if(!$posts->isEmpty())
