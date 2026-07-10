@@ -1542,17 +1542,17 @@ select:focus{
                                             /* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆ */
                                             .post-page .fixed{
                                               width:100%;
-                                              background:#555;
+                                              background:#7b6e45;
                                               position:fixed;
                                               left:0;
                                               bottom:0;
-                                              padding:10px;
+                                              padding:20px;
                                             }
                                             .post-page .insert_btn{
                                               position:fixed;
                                               right:80px;
                                               bottom:1px;
-                                              padding:5px 10px 7px;
+                                              padding:5px 15px 15px;
                                             }
                                             .post-page .insert_btn .post_btn{
                                               font-size:13px;
@@ -1603,7 +1603,7 @@ select:focus{
                                             .post-page .user_information ul dl dt{
                                               display:block;
                                               float:left;
-                                              background:#555;
+                                              background:#7b6e45;
                                               color:#fff;
                                               border-radius:4px;
                                               padding:4px 3px 1px;
@@ -1776,17 +1776,17 @@ select:focus{
                                             /* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆ */
                                             .preview-page .fixed{
                                               width:100%;
-                                              background:#555;
+                                              background:#7b6e45;
                                               position:fixed;
                                               left:0;
                                               bottom:0;
-                                              padding:10px;
+                                              padding:17px;
                                             }
                                             .preview-page .insert_btn{
                                               position:fixed;
                                               right:80px;
-                                              bottom:1px;
-                                              padding:5px 10px 7px;
+                                              bottom:0;
+                                              padding:5px 15px 15px;
                                             }
                                             .preview-page .insert_btn .post_btn{
                                               font-size:13px;
@@ -1840,7 +1840,7 @@ select:focus{
                                             .preview-page .user_information ul dl dt{
                                               display:block;
                                               float:left;
-                                              background:#555;
+                                              background:#7b6e45;
                                               color:#fff;
                                               border-radius:4px;
                                               padding:4px 3px 1px;
@@ -4938,9 +4938,10 @@ select:focus{
       padding:0;
     }
     .preview-page.delete .inner{
-      width:100%;
+      /*width:100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between;*/
+      display:none;
     }
     .preview-page.delete .insert_btn{
       position:relative;

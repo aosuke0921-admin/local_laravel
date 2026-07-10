@@ -83,6 +83,12 @@
             </tr>
         @endif
 
+        @php
+            //合計入れる変数
+            $totalDistance = 0;
+            $totalPrice = 0;
+        @endphp
+
         @foreach($posts as $index => $post)
             <caption>運行{{ $index + 1}}<span>ー</span></caption>
             <tbody>
@@ -130,6 +136,11 @@
                     <td><input type="text" class="p0 price" name="price[]" value="{{ $post->price }}" disabled="disabled"></td>
                 </tr>
                 </tbody>
+            @php
+                $totalDistance += $post->distance;
+                $totalPrice += $post->price;
+            @endphp
+
         @endforeach
     </table>
 
@@ -143,14 +154,14 @@
     </div>
 
     <div class="fixed">
-        <?php /*
+
         <div class="inner">
             @if(!$posts->isEmpty())
-                <div class="item">合計距離<input type="text" class="total_distance fixed_input" value="" readonly></div>
-                <div class="item">合計金額<input type="text" class="total_amount fixed_input" value="" readonly></div>
+                <div class="item">合計距離<input type="text" class="total_distance fixed_input" value="{{ $totalDistance }}" readonly></div>
+                <div class="item">合計金額<input type="text" class="total_amount fixed_input" value="{{ $totalPrice }}" readonly></div>
             @endif
         </div>
-        */ ?>
+
         <div class="insert_btn">
             <a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" class="prev_btn"></a>
             @if(!$posts->isEmpty())
@@ -161,11 +172,9 @@
             <img src="{{ asset('image/pagetop.png') }}" class="pagetop_btn">
         </div>
     </div>
-
     
     <input type="hidden" name="dates" value="{{ $date }}">
-    
-    
+        
 </form>
 
 <x-recaptcha />
