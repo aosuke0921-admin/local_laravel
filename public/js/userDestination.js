@@ -117,17 +117,29 @@ window.js_array = [];
             .data('transport-fee');
 
         const $row = $(this).closest('tr');
-        const $classification = $row.find('.classification');
+        let $classification = $row.find('.classification');
 
         if (transportFee == 1) {
             $classification.val('保険外');
+
         } else {
+
             // 利用者の区分へ戻す
-            const classification = $row
+            classification = $row
                 .find('.user_name_select option:selected')
                 .data('classification');
 
-            $classification.val(classification || '');
+                console.log(classification);
+
+            const userName = $row
+                .find('.user_name_select')
+                .val();
+
+            if (classification) {
+                $classification.val(classification);
+            }else{
+                alert(`${userName}さんの区分が未設定です。\nマスター保守ページで設定してください。`);
+            }
         }
     });
 

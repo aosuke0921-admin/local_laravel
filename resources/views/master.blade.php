@@ -164,5 +164,7 @@
 
   </footer>
 
+  <div id="overflow"><div class="conf"><img src="{{ asset('image/404.webp') }}" alt=""><p></p><button class="closeBtn">閉じる</button></div></div>
+  
 </body>
 </html>

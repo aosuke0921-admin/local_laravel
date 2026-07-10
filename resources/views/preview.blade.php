@@ -126,12 +126,13 @@
                 <input type="hidden" name="id[]" value="{{ $post->id }}">
                     <td>
                         <select class="select user_name_select" name="user[]">
-                            <option value="">選択してください</option> 
                             
                             @foreach($groupedUsers as $kana => $users)
 
                                 @foreach($users as $user)
-                                    <option value="{{ $user->name }}"
+                                    <option 
+                                        value="{{ $user->name }}"
+                                        data-classification="{{ $user->classification }}"
                                         @selected($post->user === $user->name)
                                     >
                                         {{ $user->name }}

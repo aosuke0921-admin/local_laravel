@@ -72,6 +72,8 @@ class PreviewController extends Controller
         // --------------------------------------------------
         $groupedUsers = $userService->getGroupedUsers();
 
+        //dd($groupedUsers);
+
         $selectedUser = $headerPost->user ?? '';
 
         // --------------------------------------------------
