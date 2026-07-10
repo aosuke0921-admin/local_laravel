@@ -219,10 +219,17 @@ ssh -i ~/Desktop/sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp
 
 ssh -i ~/Desktop/test-sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp
 
+ssh -i ~/Desktop/aoyama_key.pem -p 8022 r6092895@www1152.onamae.ne.jp
+
 cd public_html/test-sistem.jp/example-app
 
 キャッシュクリア
 php artisan optimize:clear
+
+
+
+ssh -p 22 r6092895@www1152.onamae.ne.jp
+
 
 --------------------------------------------
 

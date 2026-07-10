@@ -3133,7 +3133,7 @@ select:focus{
       display:block;
       max-width:768px;
       margin:0 auto 0;
-      padding:20px 20px 0;
+      padding:20px 10px 0;
   }
   .f_box table{
       width:100%;
