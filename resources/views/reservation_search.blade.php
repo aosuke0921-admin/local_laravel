@@ -18,6 +18,11 @@
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="reservation_search {{ $mode === 'support' ? 'cancel_true' : 'cancel_false' }}">
 
@@ -170,6 +175,9 @@
         <a href="{{ route('dashboard') }}">TOPへ</a>
 
 </div>
+
+<div class="react" data-component="GlobalNav"></div>
+
 <div id="form">
     <table class="reservation_search_tb">
         <tbody>

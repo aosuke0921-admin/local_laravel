@@ -110,6 +110,8 @@ window.js_array = [];
         }
     });
 
+    console.log('isRestoring:', window.isRestoring);
+
     $('.hospital_select').on('change', function () {
 
         const transportFee = $(this)
@@ -138,7 +140,11 @@ window.js_array = [];
             if (classification) {
                 $classification.val(classification);
             }else{
-                alert(`${userName}さんの区分が未設定です。\nマスター保守ページで設定してください。`);
+                // ajax Storage復元中でなければtrue
+                if (!window.isRestoring) {
+                    console.log('alert', window.isRestoring);
+                    alert(`${userName}さんの区分が未設定です。\nマスター保守ページで設定してください。`);
+                }
             }
         }
     });

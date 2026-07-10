@@ -30,11 +30,11 @@
 <script src="{{ asset('js/DeleteCheck.js') }}"></script>
 <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 <script src="https://www.google.com/recaptcha/api.js?render={{ config('recaptcha.site_key') }}"></script>
-<script>
-/*
-    $('.delete').DeleteCheck_Plugin();
-});*/
-</script>
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="preview-page delete">
 {{-- --------- PC --------- --}}
@@ -66,6 +66,10 @@
   </form>
   <a href="{{ route('dashboard') }}">TOPへ</a>
 </div>
+
+
+<div class="react" data-component="GlobalNav"></div>
+
 <form action="{{ route('smile_posts.deleteMultiple') }}" method="POST" id="form" onsubmit="return confirm('削除しますか？')">
     @csrf
     <input type="hidden" name="recaptcha_token" class="recaptcha_token">

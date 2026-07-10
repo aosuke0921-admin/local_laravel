@@ -10,14 +10,18 @@
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-bobx;
+  box-sizing: border-box;
 }
 html,body{
   text-align:left;
   /*touch-action:manipulation;*/
 }
 body{
-  font-family: "メイリオ", Meiryo, Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family:
+      "Hiragino Kaku Gothic ProN",
+      "Yu Gothic",
+      "Meiryo",
+      sans-serif;
   background:#F9E9D7;
   text-align:left;
   height:100%;
@@ -196,6 +200,7 @@ select:focus{
   padding:10px 20px 2px 10px;
   overflow:hidden;
   width: max(1400px, 100%);
+  position:relative;
 }
 .month_archive .user_information form{
   display:inline;
@@ -1592,6 +1597,9 @@ select:focus{
                                             .post-page .user_information ul{
                                               /*display:inline-block;*/
                                               float:left;
+                                              position:relative;
+                                              left:160px;
+                                              top:2px;
                                             }
                                             .post-page .user_information ul li{
                                               display:inline-block;

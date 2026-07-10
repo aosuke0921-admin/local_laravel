@@ -8,6 +8,8 @@ import UserAddFields from './userAddFields/UserAddFields';
 import ModeChange from './modeChange/ModeChange';
 import InitialTabs from './initialTabs/InitialTabs';
 
+import GlobalNav from './globalNav/GlobalNav';
+
 
 
 const components: Record<string, React.ComponentType> = {
@@ -18,6 +20,7 @@ const components: Record<string, React.ComponentType> = {
     UserAddFields,
     ModeChange,
     InitialTabs,
+    GlobalNav,
 };
 
 const containers = document.querySelectorAll<HTMLElement>('.react');

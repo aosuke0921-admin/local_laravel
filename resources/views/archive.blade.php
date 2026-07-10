@@ -20,10 +20,15 @@
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 <script>
-  $(function(){
+  /*$(function(){
     $.fn.recordError_Plugin();
-  });
+  });*/
 </script>
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="archive-page">
 
@@ -99,6 +104,7 @@
   <a href="{{ route('dashboard') }}">TOPへ</a>
 </div>
 
+<div class="react" data-component="GlobalNav"></div>
 
 @if(!$posts->isEmpty())
 <form name="form" action="#" method="post" id="form" autocomplete="on" enctype="multipart/form-data">

@@ -22,14 +22,16 @@
 
 </head>
 <body class="master-page">
-  <div class="gnav">
+  <?php /*<div class="gnav">*/ ?>
 
     @php
       $y = date('Y');
       $m = date('m');
     @endphp
 
-    <p>ようこそ、特定非営利活動法人スマイルハート さん</p>
+    
+  <?php /*
+  <p>ようこそ、特定非営利活動法人スマイルハート さん</p>
   <ul>
     <li><a href="{{ route('dashboard') }}"><i>●</i>TOP</a></li>
     <li><a href="{{ route('archive.page') }}"><i>●</i>検索</a></li>
@@ -71,6 +73,8 @@
     </li>
   </ul>
   </div>
+  */ ?>
+  
   
   {{-- 社員登録 --}}
   <div class="user_admin">
@@ -89,6 +93,8 @@
       </form>
 
     </div>
+
+<div class="react" data-component="GlobalNav"></div>
 
     <table>
 

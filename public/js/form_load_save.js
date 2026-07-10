@@ -82,64 +82,57 @@ window.addEventListener('load', function () { // 全部終わってから発火�
   // =========================================================
   (function restoreForm() {
 
-    const raw = localStorage.getItem('post_form');
-    if (!raw) return;
+      // ★ 復元開始
+      window.isRestoring = true;
 
-    let data = {};
-
-    try {
-      data = JSON.parse(raw);
-    } catch (e) {
-      console.error('JSON error', e);
-      return;
-    }
-
-    // 値復元
-    document.querySelectorAll('input, select, textarea').forEach(el => {
-
-      const name = el.name;
-      if (!name || !(name in data)) return;
-
-      const type = el.type;
-      let val = data[name];
-
-      if (type === 'checkbox') {
-
-        el.checked = val == 1;
-
-      } else if (type === 'time') {
-
-        if (val) {
-          const parts = val.split(':');
-          if (parts.length >= 2) {
-            val =
-              parts[0].padStart(2, '0') + ':' +
-              parts[1].slice(0, 2);
-          }
-        }
-
-        el.value = val;
-
-      } else {
-
-        el.value = val;
+      const raw = localStorage.getItem('post_form');
+      if (!raw) {
+          window.isRestoring = false;
+          return;
       }
-    });
 
-    // select再適用（少し遅延）
-    setTimeout(() => {
+      let data = {};
 
-      document.querySelectorAll('select').forEach(el => {
+      try {
+          data = JSON.parse(raw);
+      } catch (e) {
+          console.error('JSON error', e);
+          window.isRestoring = false;
+          return;
+      }
 
-        const name = el.name;
-        if (!name || !(name in data)) return;
+      // 値復元
+      document.querySelectorAll('input, select, textarea').forEach(el => {
 
-        el.value = data[name];
+          const name = el.name;
+          if (!name || !(name in data)) return;
 
-        el.dispatchEvent(new Event('change'));
+          const type = el.type;
+          let val = data[name];
+
+          if (type === 'checkbox') {
+              el.checked = val == 1;
+          } else {
+              el.value = val;
+          }
       });
 
-    }, 300);
+      // select再適用
+      setTimeout(() => {
+
+          document.querySelectorAll('select').forEach(el => {
+
+              const name = el.name;
+              if (!name || !(name in data)) return;
+
+              el.value = data[name];
+              el.dispatchEvent(new Event('change'));
+          });
+
+          // ★ 復元終了
+          window.isRestoring = false;
+
+      }, 300);
 
   })();
 

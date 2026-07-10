@@ -1,0 +1,32 @@
+    .gnav{
+      border-top:2px solid #F3981D;
+      /* 1400pxまでは100%、1400pxを超えたら1400pxで固定 */
+      width: max(1400px, 100%);
+      margin:0 auto 3px;
+      background: linear-gradient(180deg, #ffffff, #e2e2e2);
+      font-size:12px;
+      padding:2px 0 0;
+      ul{
+        display: flex;
+        gap: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+          flex: 1;
+          border-right:1px dotted #ccc;
+          a{
+            color:#333;
+            text-decoration:none;
+            display:block;
+            padding:5px 0;
+            text-align:center;
+          }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+        .gnav {
+            display: none;
+        }
+    }

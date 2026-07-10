@@ -44,6 +44,11 @@
 <script src="https://www.google.com/recaptcha/api.js?render={{ config('recaptcha.site_key') }}"></script>
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">
 {{-- ---------------------------------------------------------------------------------------- --}}
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="post-page">
 
@@ -52,7 +57,32 @@
   ])
 
 <div id="wrapper">
-  <div class="user_information">
+
+  <style>
+    h1{
+      font-size:18px;
+      color:#7b6e45;
+      height:0;
+      display:block;
+      margin:0 0 0 20px;
+      position:relative;
+      top:1px;
+      img{
+      width:30px;
+      position:relative;
+      top:5px;
+      left:-8px;
+      }
+    }
+    @media screen and (max-width:768px){
+      h1{
+        display:none;
+      }
+    }
+  </style>
+  <h1><img src="{{ asset('image/h1.gif') }}" alt="">LOGUTE</h1>
+  
+  <div class="user_information">   
 
   <?php //---------------------------------------------------------------------------------------?>
     <ul><!-- 登録画面は、登録してあるデータを取得して表示でないので、全てsession -->
@@ -73,6 +103,8 @@
     <a href="{{ route('dashboard') }}">TOPへ</a>
   </div>
 
+  <div class="react" data-component="GlobalNav"></div>
+ 
   <!--Laravelはセキュリティ（CSRF対策）のためにPOSTで行う-->
   <form action="{{ route('post.store') }}" method="POST">
   @csrf
@@ -118,22 +150,6 @@
             @endif
             <tr id="name{{ $i }}" class="row">  
               <td>
-
-              <?php /*
-                  <select class="select user_name_select" name="user[{{ $i }}]">
-                    <option value="">選択してください</option>
-                    @foreach($groupedUsers as $initial => $list)
-                        @foreach($list as $item)
-                            <option 
-                                value="{{ $item->name }}"
-                                data-notes="{{ $item->support_notes ?? '' }}"
-                            >
-                                {{ $item->name }}
-                            </option>
-                        @endforeach
-                    @endforeach
-                </select>
-              */ ?>
 
               <select class="select user_name_select" name="user[{{ $i }}]">
                   <option value="">選択してください</option>

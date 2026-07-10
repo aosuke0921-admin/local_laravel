@@ -24,6 +24,10 @@ use Carbon\Carbon;
 
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">
 
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="month_archive">
 
@@ -118,6 +122,8 @@ use Carbon\Carbon;
       <a href="{{ route('dashboard') }}">TOPへ</a>
     </div>
 
+    <div class="react" data-component="GlobalNav"></div>
+    
 <?php
 //------------------------------------------------------------------------------------------------------------------
 // 配列をオブジェクトに変換

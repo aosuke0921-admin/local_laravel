@@ -44,6 +44,11 @@
 <script src="{{ asset('js/Calendar/Calendar.js') }}?v={{ time() }}" charset="utf-8"></script>
 <link rel="stylesheet" href="{{ asset('js/Calendar/Calendar.css') }}?v={{ time() }}" charset="utf-8">
 {{-- ---------------------------------------------------------------------------------------- --}}
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="preview-page">
 
@@ -89,6 +94,9 @@
   </form>
   <a href="{{ route('dashboard') }}">TOPへ</a>
 </div>
+
+
+<div class="react" data-component="GlobalNav"></div>
 
 {{-- Laravelはセキュリティ（CSRF対策）のためにPOSTで行う --}}
 <form name="form" action="{{ route('ride.bulkUpdate') }}" method="POST" id="form">
