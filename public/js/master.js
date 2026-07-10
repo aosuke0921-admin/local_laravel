@@ -1,32 +1,6 @@
 $(function(){
 
-  const ERROR_MESSAGE = '社員名・ユーザー名・パスワードを正しく入力してください';
-
-  let sbtn = $('#new_addition_form .submit');
-
-  let user = $('.user');
-
-  let pass = $('.pass');
-
-  let full_name = $('.full_name');
-
-  $(sbtn).on('click',function(){
-
-    if(full_name.val() == null || full_name.val() == "" || user.val() == null || user.val() == "" || pass.val() == null || pass.val() == "" ){
-      alert(ERROR_MESSAGE);
-      return false;
-    }else{
-      //alert('登録完了しました');
-    }
-
-  });
-
-  /*   react移行済み
-  $('.page_top').on('click',function(){
-    $('html, body').animate({scrollTop: 0}, 1500, 'swing'); // 500msかけて移動
-    return false; // リンクのデフォルト動作を無効化
-  });
-  */
+  //------------------------------------------------------------------------------------------------
 
   $(document).on('submit', 'form[id^="update_"]', function () {
 
