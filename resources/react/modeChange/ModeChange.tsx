@@ -18,7 +18,7 @@ export default function ModeChange() {
                     type="radio"
                     name="mode"
                     value="destinations"
-                />n
+                />
                 <span>行き先</span>
             </label>
 

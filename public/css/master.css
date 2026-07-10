@@ -169,6 +169,7 @@ body.master-page .gnav{
   }
 }
 /*------------------------------------------------------------------------*/
+/*
 .master-page{
   .tit{
     font-weight:normal;
@@ -178,6 +179,7 @@ body.master-page .gnav{
     font-size:13px;
   }
 }
+*/
 /*----------------------------------------------------------------------------------------
  tab
 ----------------------------------------------------------------------------------------*/ 
@@ -186,37 +188,7 @@ body,
 html {
     overflow: visible !important;
 }
-.tab-add {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: #fff;
-  .tabs{
-    display:flex;
-    padding:0;
-    margin:0;
-    list-style:none;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    /* 背景ないと透けるので重要 */
-    background:#fff;
-  }
-  .tabs li{
-      flex:1;
-      text-align:center;
-      padding:5px 0;
-      background:#eee;
-      border:1px solid #ccc;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:bold;
-  }
-  .tabs li.active{
-      background:#f39a18;
-      color:#fff;
-  }
-}
+
 .table_head th{
     position: sticky;
     top: 38px;

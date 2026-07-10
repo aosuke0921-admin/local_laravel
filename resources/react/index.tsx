@@ -4,10 +4,11 @@ import PopSelect from './pop_select/PopSelect';
 import Reminder from './reminder/Reminder';
 import PushNotification from './push_notification/PushNotification';
 import PageTop from './page_top/PageTop';
-
 import UserAddFields from './userAddFields/UserAddFields';
-
 import ModeChange from './modeChange/ModeChange';
+import InitialTabs from './initialTabs/InitialTabs';
+
+
 
 const components: Record<string, React.ComponentType> = {
     PopSelect,
@@ -16,6 +17,7 @@ const components: Record<string, React.ComponentType> = {
     PageTop,
     UserAddFields,
     ModeChange,
+    InitialTabs,
 };
 
 const containers = document.querySelectorAll<HTMLElement>('.react');

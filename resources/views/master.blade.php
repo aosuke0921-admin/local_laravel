@@ -124,15 +124,15 @@
 
             <td class="td_last">
               <button type="submit">更新</button>
-          </form>
+              </form>
 
-          {{-- 削除フォーム --}}
-          <form method="POST" action="{{ route('member.delete', $val->id) }}" style="display:inline;">
-            @csrf
-            @method('DELETE')
+              {{-- 削除フォーム --}}
+              <form method="POST" action="{{ route('member.delete', $val->id) }}" style="display:inline;">
+                @csrf
+                @method('DELETE')
 
-            <button type="submit" class="delete_btn">削除</button>
-          </form>
+                <button type="submit" class="delete_btn">削除</button>
+              </form>
             </td>
 
         </tr>
@@ -141,20 +141,7 @@
 
     <div class="react" data-component="ModeChange"></div>
 
-    <div class="tab-add">
-        <ul class="tabs">
-          <li class="initial_tab active" data-initial="あ">あ</li>
-          <li class="initial_tab" data-initial="か">か</li>
-          <li class="initial_tab" data-initial="さ">さ</li>
-          <li class="initial_tab" data-initial="た">た</li>
-          <li class="initial_tab" data-initial="な">な</li>
-          <li class="initial_tab" data-initial="は">は</li>
-          <li class="initial_tab" data-initial="ま">ま</li>
-          <li class="initial_tab" data-initial="や">や</li>
-          <li class="initial_tab" data-initial="ら">ら</li>
-          <li class="initial_tab" data-initial="わ">わ</li>
-        </ul>
-    </div>
+    <div class="react" data-component="InitialTabs"></div>
 
     <table>
 
@@ -183,6 +170,5 @@
 
   </footer>
 
-  <div id="overflow"><div class="conf"><img src="{{ asset('image/404.webp') }}" alt=""><p></p><button class="closeBtn">閉じる</button></div></div>
 </body>
 </html>
