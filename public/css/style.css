@@ -1418,7 +1418,8 @@ select:focus{
                                             /*.select_page .inner form .button .flex-item input[type=submit]{*/
                                             .select_page .inner form .button .flex-item button[type=submit]{
                                               text-decoration:none;
-                                              background:#F3981D;
+                                              /*background:#F3981D;*/
+                                              background: linear-gradient(#f7b76b, #ef8c14);
                                               display:block;
                                               padding:17px 8px 15px;
                                               border-radius:100px;
