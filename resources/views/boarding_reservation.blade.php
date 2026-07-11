@@ -24,8 +24,15 @@
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ rand() }}" rel="stylesheet">
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="reservation_edit" data-mode="{{ $mode }}">
+
+<div class="react" data-component="LogoTitle"></div>
 
     @include('components.user-group-list', [
         'groupedUsers' => $groupedUsers
