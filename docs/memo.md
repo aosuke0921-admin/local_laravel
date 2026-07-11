@@ -215,6 +215,9 @@ php artisan optimize:clear
 鍵：sistem.pem（デスクトップ）
 
 ◯ デスクトップに置いてある方。自宅とスマイル別
+
+ssh -i ~/Desktop/logute_admin.pem -p 8022 r6092895@www1152.onamae.ne.jp
+
 ssh -i ~/Desktop/sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp
 
 ssh -i ~/Desktop/test-sistem.pem -p 8022 r6092895@www1152.onamae.ne.jp

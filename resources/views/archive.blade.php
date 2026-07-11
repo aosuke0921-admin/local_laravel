@@ -17,6 +17,8 @@
 <script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/highlightRows.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 <script>
@@ -147,9 +149,15 @@
             <td><span>{{ $post->shareRide == 1 ? '乗合' : '-' }}</span></td>
 
             <td><span>{{ $post->classification ?? '-' }}</span></td>
-            <td><span>{{ $post->any ?? '-' }}</span></td>          
-            <td><span>{{ $post->distance }}</span></td>
-            <td><span>{{ $post->price }}</span></td>
+            <td><span>{{ $post->any ?? '-' }}</span></td>
+
+            <td class="check-error"><span>{{ $post->distance }}</span></td>
+            <td class="check-error"><span>{{ $post->price }}</span></td>
+
+            <!--0 Nullでエラー表示確認デバッグ用 
+            <td class="check-error"><span>{{ $post->distance }}</span></td>
+            <td class="check-error"><span>{{ $post->price }}</span></td>
+            -->
         </tr>
     @empty
 

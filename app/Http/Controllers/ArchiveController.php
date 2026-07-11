@@ -179,7 +179,8 @@ class ArchiveController extends Controller
                     $post->destination,
 
                     //$post->rideType ?? '',
-                    $post->shareRide ? '乗合' : '',
+                    //$post->shareRide ? '乗合' : '',
+                    $post->shareRide == 1 ? '乗合' : '',
 
                     $post->member,
                     $post->insurance ?? '',
