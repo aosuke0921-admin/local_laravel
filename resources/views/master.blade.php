@@ -20,62 +20,27 @@
 
 @vite('resources/react/index.tsx')
 
+<style>
+  .welcome{
+    display:block;
+    height:0;
+    position:absolute;
+    top:13px;
+    left:150px;
+  }
+</style>
 </head>
 <body class="master-page">
-  <?php /*<div class="gnav">*/ ?>
+
+  <div class="react" data-component="LogoTitle"></div>
+
+    <p class="welcome">ようこそ、特定非営利活動法人スマイルハート {{ $members->user_login }} さん</p>
 
     @php
       $y = date('Y');
       $m = date('m');
     @endphp
-
-    
-  <?php /*
-  <p>ようこそ、特定非営利活動法人スマイルハート さん</p>
-  <ul>
-    <li><a href="{{ route('dashboard') }}"><i>●</i>TOP</a></li>
-    <li><a href="{{ route('archive.page') }}"><i>●</i>検索</a></li>
-    <li><a href="{{ route('month_archive.page') }}"><i>●</i>月報</a></li>
-    <li><a href="{{ route('user_registration.page') }}"><i>●</i>利用者・登録</a></li>
-    <li><a href="{{ route('destination_registration.page') }}"><i>●</i>行き先・登録</a></li>
-    <li><a href="{{ route('user_destination_registration.page') }}"><i>●</i>利用者・行き先・登録</a></li>
-    <li><a href="{{ route('boarding_reservation.page') }}"><i>●</i>乗降予約</a></li>
-    <li>
-      <a href="{{ route('reservation_search.page', [
-        'year_select' => $y . '年',
-        'month_select' => $m . '月',
-        'user_select' => '選択してください',
-        'sien_select' => '選択してください'
-      ]) }}">
-        <i>●</i>乗降一覧検索
-      </a>
-    </li>
-    <li><a href="{{ route('boarding_reservation.page', ['cancel' => true]) }}"><i>●</i>キャンセル登録</a></li>
-    <li>
-      <a href="{{ route('reservation_search.page', [
-        'cancel' => true,
-        'year_select' => $y . '年',
-        'month_select' => $m . '月',
-        'user_select' => '選択してください',
-        'sien_select' => '選択してください'
-      ]) }}">
-        <i>●</i>キャンセル一覧検索
-      </a>
-    </li>
-    <li>
-      <form method="POST" action="{{ route('logout') }}">
-          @csrf
-
-          <button type="submit">
-              ログアウト
-          </button>
-      </form>
-    </li>
-  </ul>
-  </div>
-  */ ?>
-  
-  
+ 
   {{-- 社員登録 --}}
   <div class="user_admin">
     <div class="new_addition">

@@ -10,6 +10,8 @@ import InitialTabs from './initialTabs/InitialTabs';
 
 import GlobalNav from './globalNav/GlobalNav';
 
+import LogoTitle from './logoTitle/LogoTitle';
+
 
 
 const components: Record<string, React.ComponentType> = {
@@ -21,6 +23,7 @@ const components: Record<string, React.ComponentType> = {
     ModeChange,
     InitialTabs,
     GlobalNav,
+    LogoTitle,
 };
 
 const containers = document.querySelectorAll<HTMLElement>('.react');

@@ -37,6 +37,9 @@
 
 </head>
 <body class="preview-page delete">
+
+  <div class="react" data-component="LogoTitle"></div>
+  
 {{-- --------- PC --------- --}}
     <form method="POST" action="{{ route('change.date') }}" id="change_date">
         @csrf

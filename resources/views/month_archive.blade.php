@@ -31,6 +31,8 @@ use Carbon\Carbon;
 </head>
 <body class="month_archive">
 
+<div class="react" data-component="LogoTitle"></div>
+
 @include('components.user-group-list', [
     'groupedUsers' => $groupedUsers
 ])

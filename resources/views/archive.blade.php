@@ -32,6 +32,8 @@
 </head>
 <body class="archive-page">
 
+<div class="react" data-component="LogoTitle"></div>
+
     @include('components.user-group-list', [
         'groupedUsers' => $groupedUsers
     ])

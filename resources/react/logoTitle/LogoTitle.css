@@ -1,0 +1,23 @@
+h1{
+    font-size:18px;
+    height:0;
+    display:block;
+    margin:0 0 0 20px;
+    position:relative;
+    top:1px;
+}
+h1 a{
+    color:#7b6e45;
+    text-decoration:none;
+}
+h1 img{
+    width:30px;
+    position:relative;
+    top:5px;
+    left:-8px;
+}
+@media screen and (max-width:768px){
+    h1{
+    display:none;
+    }
+}

@@ -1,4 +1,5 @@
     .gnav{
+      clear:both;
       border-top:2px solid #F3981D;
       /* 1400pxまでは100%、1400pxを超えたら1400pxで固定 */
       width: max(1400px, 100%);

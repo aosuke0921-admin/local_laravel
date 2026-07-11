@@ -92,6 +92,8 @@ class MasterController extends Controller
 
         $startIndex = $existingCount + 1;
 
+        $members = auth()->user();
+
         return view('master', compact(
             'groupedUsers',
             'startIndex',
@@ -102,7 +104,8 @@ class MasterController extends Controller
             'displayDate',
             'member',
             'user_destination_records',
-            'groupedDestinations'
+            'groupedDestinations',
+            'members'
         ));
     }
 

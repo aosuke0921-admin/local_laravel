@@ -26,6 +26,8 @@
 </head>
 <body class="reservation_search {{ $mode === 'support' ? 'cancel_true' : 'cancel_false' }}">
 
+<div class="react" data-component="LogoTitle"></div>
+
 @include('components.user-group-list', [
     'groupedUsers' => $groupedUsers
     

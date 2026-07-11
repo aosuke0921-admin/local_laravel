@@ -52,35 +52,13 @@
 </head>
 <body class="post-page">
 
+<div class="react" data-component="LogoTitle"></div>
+
   @include('components.user-group-list', [
       'groupedUsers' => $groupedUsers
   ])
 
 <div id="wrapper">
-
-  <style>
-    h1{
-      font-size:18px;
-      color:#7b6e45;
-      height:0;
-      display:block;
-      margin:0 0 0 20px;
-      position:relative;
-      top:1px;
-      img{
-      width:30px;
-      position:relative;
-      top:5px;
-      left:-8px;
-      }
-    }
-    @media screen and (max-width:768px){
-      h1{
-        display:none;
-      }
-    }
-  </style>
-  <h1><img src="{{ asset('image/h1.gif') }}" alt="">LOGUTE</h1>
   
   <div class="user_information">   
 

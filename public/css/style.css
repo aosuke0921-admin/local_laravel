@@ -246,9 +246,12 @@ select:focus{
   font-size:13px;
   background:#F3981D;
   color:#fff;
-  padding:5px 50px;
+  /*padding:5px 50px;*/
+  padding:5px 0;
   border-radius:2px;
   border:none;
+  width:150px;
+  display:inline-block;
 }
 .month_archive .prevPage button[type="submit"]:hover,
 .month_archive .prevPage a:hover{
@@ -457,9 +460,11 @@ select:focus{
   font-size:13px;
   background:#F3981D;
   color:#fff;
-  padding:5px 50px;
+  padding:5px 0;
   border-radius:2px;
   border:none;
+  width:150px;
+  display:inline-block;
 }
 .archive-page .prevPage button[type="submit"],
 .archive-page .prevPage a:hover{
@@ -495,7 +500,9 @@ select:focus{
 .sarch_t{
   text-align:center;
   position:relative;
-  top:-4px;
+  /*top:-4px;*/
+  top:-2px;
+  left:160px;
   display:inline-block;
 }
 
@@ -1465,7 +1472,7 @@ select:focus{
                                               padding-bottom:100px;
                                             }
                                             .post-page form table.tb{
-                                              width:99%;
+                                              width:100%;
                                               margin:0 auto;
                                               background:#fff;
                                             }
@@ -1668,8 +1675,11 @@ select:focus{
                                               font-size:13px;
                                               background:#F3981D;
                                               color:#fff;
-                                              padding:5px 50px;
+                                              padding:5px 0;
                                               border-radius:2px;
+                                              border:none;
+                                              width:150px;
+                                              display:inline-block;
                                             }
                                             .post-page .addition_button{
                                               display:none;
@@ -1834,6 +1844,9 @@ select:focus{
                                             .preview-page .user_information ul{
                                               /*display:inline-block;*/
                                               float:left;
+                                              position:relative;
+                                              left:160px;
+                                              top:2px;
                                             }
                                             .preview-page .user_information ul li{
                                               display:inline-block;
@@ -1869,8 +1882,11 @@ select:focus{
                                               font-size:13px;
                                               background:#F3981D;
                                               color:#fff;
-                                              padding:5px 50px;
+                                              padding:5px 0;
                                               border-radius:2px;
+                                              border:none;
+                                              width:150px;
+                                              display:inline-block;
                                             }
                                             /*------------------------------------------------------*/
                                             .tb185{ position:relative; top:-5px; }
@@ -2619,9 +2635,12 @@ select:focus{
                                                     font-size: 13px;
                                                     background: #F3981D;
                                                     color: #fff;
-                                                    padding: 10px 50px;
+                                                    padding: 10px 0;
+                                                    width:150px;
+                                                    display:inline-block;
                                                     border-radius: 2px;
                                                     border:none;
+                                                    /*border:1px solid #f00;*/
                                                 }
                                                 .b_box input[type=submit]:hover{
                                                   cursor:pointer;
