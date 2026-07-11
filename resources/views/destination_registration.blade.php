@@ -104,9 +104,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 
 <body class="destination_registration">
+
+    <div class="react" data-component="LogoTitle"></div>
+
     <form action="{{ route('destination_registration.post') }}" method="post">
         @csrf
         <div class="wrap">

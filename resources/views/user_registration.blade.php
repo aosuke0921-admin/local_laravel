@@ -19,8 +19,16 @@
 
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?id=1389655283" rel="stylesheet" type="text/css">
+
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="user_registration">
+
+    <div class="react" data-component="LogoTitle"></div>
+
     <form action="{{ route('user_registration.post') }}" method="post">
         @csrf
         <div class="wrap">

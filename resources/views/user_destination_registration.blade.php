@@ -22,8 +22,14 @@
 
 <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">
 
+@viteReactRefresh
+
+@vite('resources/react/index.tsx')
+
 </head>
 <body class="user_destination_registration destination_registration">
+
+    <div class="react" data-component="LogoTitle"></div>
 
     @include('components.user-group-list', [
         'groupedUsers' => $groupedUsers
