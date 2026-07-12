@@ -1,4 +1,5 @@
 $(function(){
+    
     $('.select').change(function(){
 
     //if (isInit) return;

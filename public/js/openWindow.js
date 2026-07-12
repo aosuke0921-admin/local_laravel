@@ -8,37 +8,60 @@ $(function(){
     || fileName == "month-archive"
     || location.pathname.includes("/edit")){
 
-    $('.open_window').hide();
-
+    //------------------------------------------------------------------------------------------------
+    // jQuery → JS
+    //$('.open_window').hide();
+    const openWindow = document.querySelector('.open_window');
+    if (openWindow) {
+        openWindow.style.display = 'none';
+    }
     //------------------------------------------------------------------------------------------------
 
     $('.user_name_select,.user_name_selects').on('click',function(){
 
-    let $w = $(window).width(); //現在のwindow幅を取得
-
+    //------------------------------------------------------------------------------------------------
+    let w = window.innerWidth; //現在のwindow幅を取得
+    //------------------------------------------------------------------------------------------------
     //月報
+    /* 保留
     if(fileName == "month-archive"){
-
         $('.month_archive .prevPage a').hide();
         $('.month_archive .prevPage').hide();
-
-    }
-
-    if($w > 768){
-
-        $('.open_window').css('margin','70px auto 0');
-
-        $('.open_window ul').removeClass('active');
-
-        $('.open_window ul').css({
-        display:'block'
+    }*/
+    //------------------------------------------------------------------------------------------------
+    if(w > 768){
+    //------------------------------------------------------------------------------------------------
+    // jQuery → JS
+        //$('.open_window').css('margin','70px auto 0');
+        document.querySelectorAll('.open_window').forEach(el => {
+            el.style.margin = '70px auto 0';
         });
-
-        $('.open_window ul').css('display','block');
-
-        $('.open_window ul').children('li').css('display','none');
-
-        const className = $(this).attr('class');
+    //------------------------------------------------------------------------------------------------
+    // jQuery → JS
+        //$('.open_window ul').removeClass('active');
+        document.querySelectorAll('.open_window ul').forEach(el => {
+            el.classList.remove('active');
+        });
+    //------------------------------------------------------------------------------------------------
+    //保留
+        /*$('.open_window ul').css({
+            display:'block'
+        });*/
+    //------------------------------------------------------------------------------------------------
+    // jQuery → JS
+        //$('.open_window ul').css('display','block');
+        document.querySelectorAll('.open_window ul').forEach(el => {
+            el.style.display = 'block';
+        });
+    //------------------------------------------------------------------------------------------------
+    // jQuery → JS
+        //$('.open_window ul').children('li').css('display','none');
+        document.querySelectorAll('.open_window ul > li').forEach(el => {
+            el.style.display = 'none';
+        });
+    //------------------------------------------------------------------------------------------------
+    // jQuery → JS
+        /*const className = $(this).attr('class');
 
         if (className.includes('selects')) {
             //alert('A');
@@ -46,7 +69,25 @@ $(function(){
         }else{
             //alert('B');
             $('.open_window ul.open_1 li.cap').css('display','block'); 
+        }*/
+        const target = this.closest('.selects');
+        if (this.className.includes('selects')) {
+            document.querySelectorAll('.open_window ul.open_2 li.cap')
+                .forEach(el => el.style.display = 'block');
+                //console.log('A');
+        } else {
+            document.querySelectorAll('.open_window ul.open_1 li.cap')
+                .forEach(el => el.style.display = 'block');
+                 //console.log('B');
         }
+
+
+        // openWindow.js / 85行目
+        // 続きここから 2026.7.12 pm 18:00
+
+
+
+
 
         //------------------------------------------------------------------------------------------------
 
