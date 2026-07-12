@@ -534,8 +534,7 @@ select:focus{
 .sarch_t input[type=submit]:hover{
   cursor:pointer;
 }
-.prev_btn,
-.pagetop_btn{
+.prev_btn{
   display:none;
 }
 /*------------------------------------------------------
@@ -5125,13 +5124,6 @@ select:focus{
         text-align:center;
         position:relative;
     }
-    .pagetop_btn{
-      display:block;
-      width:55px;
-      position:absolute;
-      right:11px;
-      bottom:-12px;
-    }
     .prev_btn{
       display:block;
       width:43px;
@@ -5142,10 +5134,6 @@ select:focus{
     .delete .inner .prev_btn,
     .archive-page .inner .prev_btn{
       bottom:90px;
-    }
-    .delete .inner .pagetop_btn,
-    .archive-page .inner .pagetop_btn{
-      bottom:80px;
     }
     /*---------------------------------------------------------*/
     /*404ERROR*/

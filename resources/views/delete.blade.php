@@ -8,27 +8,21 @@
 <script type="text/javascript" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
-
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>
+<?php /*<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script> react化済み */ ?>
 {{-- ---------------------------------------------------------------------------------------- --}}
-
 <script src="{{ asset('js/date_picker.js') }}?v={{ time() }}"></script>
 <link href="{{ asset('css/date_picker.css') }}?v={{ time() }}" rel="stylesheet">
-
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/Calendar/Calendar.js') }}?v={{ time() }}" charset="utf-8"></script>
 <link rel="stylesheet" href="{{ asset('js/Calendar/Calendar.css') }}?v={{ time() }}" charset="utf-8">
 {{-- ---------------------------------------------------------------------------------------- --}}
-
 <script src="{{ asset('js/DeleteCheck.js') }}"></script>
-<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 <script src="https://www.google.com/recaptcha/api.js?render={{ config('recaptcha.site_key') }}"></script>
 
 @viteReactRefresh
@@ -174,9 +168,10 @@
             @if(!$posts->isEmpty())
                 <input type="submit" name="submit" class="post_btn delete_btn" value="削除">
                 <button type="button" class="clone_btn">削除</button>
-                <?php /*<span class="clone_btn">削除</span>*/?>
             @endif
-            <img src="{{ asset('image/pagetop.png') }}" class="pagetop_btn">
+
+            <div class="react pagetop" data-component="PageTop"></div>
+
         </div>
     </div>
     

@@ -29,7 +29,7 @@
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/form_load_save.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/time_validation.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>
+<?php /*<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script> react化済み */ ?>
 <script src="{{ asset('js/openRows.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/sharedRide.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/checkboxControl.js') }}?v={{ time() }}" charset="utf-8"></script>
@@ -210,8 +210,6 @@
         <div class="item">合計金額<input type="text" name="total_amount" class="total_amount fixed_input" value="0" readonly></div>  
       </div>
       <div class="insert_btn">
-        <?php /*<a href="{{ route('dashboard') }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>*/ ?>
-
         <a href="{{ route('dashboard', [
             'dates' => session('dates'),
             'car' => session('car'),
@@ -219,7 +217,9 @@
         ]) }}"><img src="{{ asset('image/prev.png') }}" alt="" class="prev_btn"></a>
 
         <input type="submit" name="submit" class="post_btn" value="登録">
-        <img src="{{ asset('image/pagetop.png') }}" alt="" class="pagetop_btn">
+
+        <div class="react pagetop" data-component="PageTop"></div>
+
       </div>
     </div>
   </form>

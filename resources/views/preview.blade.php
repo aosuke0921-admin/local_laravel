@@ -7,33 +7,23 @@
 <script type="text/javascript" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
-
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/calcPrice.js') }}?v={{ time() }}" charset="utf-8"></script><!--まだsystem.jsにあるsystemより上に書く-->
 <script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
-<?php /*<script src="{{ asset('js/form_load_save.js') }}?v={{ time() }}" charset="utf-8"></script>*/ ?>
 <script src="{{ asset('js/time_validation.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script>
-
+<?php /*<script src="{{ asset('js/scroll.js') }}?v={{ time() }}" charset="utf-8"></script> react化済み */ ?>
 <script src="{{ asset('js/distanceValidation.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/sharedRide.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/checkboxControl.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/hospitalSelectHandler.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/classification.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/userDestination.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
@@ -247,7 +237,8 @@
 
             @endif
 
-            <img src="{{ asset('image/pagetop.png') }}" alt="" class="pagetop_btn">
+            <div class="react pagetop" data-component="PageTop"></div>
+
         </div>
     </div>
     <input type="hidden" name="dates" value="{{ $date }}">

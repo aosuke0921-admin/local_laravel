@@ -1,7 +1,9 @@
+// react移行済み
+//----------------------------------------------------------------------------------------
 // All javaScript
 //----------------------------------------------------------------------------------------
 // SPページTOPボタン
-
+/*
 function setupPageTopButton() {
   const btn = document.querySelector('.pagetop_btn');
   if (!btn) return;
@@ -15,3 +17,4 @@ function setupPageTopButton() {
 }
 
 document.addEventListener('DOMContentLoaded', setupPageTopButton);
+*/
