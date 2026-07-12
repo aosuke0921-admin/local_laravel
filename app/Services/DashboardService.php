@@ -7,6 +7,29 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardService
 {
+
+public function getDistanceErrors($member)
+{
+    $today = now()->format('Y-m-d');
+
+    return DB::table('smile_posts')
+        ->where('member', $member)
+        ->where('dates', '!=', $today)
+         ->where('car', '!=', '選択してください')
+        ->where(function ($query) {
+            $query->where('start_distance', 0)
+                  ->orWhere('start_distance', '')
+                  ->orWhere('end_distance', 0)
+                  ->orWhere('end_distance', '')
+                  ->orWhereRaw('CAST(start_distance AS UNSIGNED) < 10'); //100キロ未満
+        })
+        ->select('dates', 'car')
+        ->groupBy('dates', 'car')
+        ->orderBy('dates')
+        ->get();
+}
+
+    //public function getStartDistance($dates, $car)
     public function getStartDistance($dates, $car)
     {
         return DB::table('smile_posts')

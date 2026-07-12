@@ -40,6 +40,13 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
 
+        // ログインユーザー
+        $user_name = auth()->user()->user_login;
+
+        $distanceErrors = $this->service->getDistanceErrors($user_name);
+
+        $showDistanceAlert = session()->pull('show_distance_alert', false);
+        
         // Androidか調べる
         $isAndroid = str_contains(request()->userAgent(), 'Android');
 
@@ -49,11 +56,7 @@ class DashboardController extends Controller
         // sesseion削除
         session()->forget(['user_name', 'car', 'dates']);
 
-
         $id = $request->query('id');
-
-        // ログインユーザー
-        $user_name = auth()->user()->user_login;
 
         // car（URL優先 → session）
         $car = $request->query('car', session('car'));
@@ -83,7 +86,9 @@ class DashboardController extends Controller
             'cars',
             'start_distance',
             'today',
-            'isAndroid'
+            'isAndroid',
+            'distanceErrors',   // ←これを渡す
+            'showDistanceAlert'
         ));
     }
 

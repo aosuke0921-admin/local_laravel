@@ -53,6 +53,27 @@ localStorage.removeItem('post_form');
 
 //--------------------------------------------------------------------
 </script>
+
+{{-- --------------------------------------------------------------------------------- --}}
+
+@if($showDistanceAlert && $distanceErrors->isNotEmpty())
+<script>
+let msg = '';
+
+@foreach($distanceErrors as $row)
+msg += '{{ str_contains($row->dates, "年") 
+    ? $row->dates 
+    : \Carbon\Carbon::parse($row->dates)->format("Y年n月j日") 
+}}（{{ $row->car }}）の開始距離・終了距離を確認してください。\n';
+@endforeach
+
+alert(msg);
+</script>
+@endif
+
+{{-- --------------------------------------------------------------------------------- --}}
+
+
 </head>
 <body>
 

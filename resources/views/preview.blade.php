@@ -27,6 +27,8 @@
 <script src="{{ asset('js/userDestination.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
+
+<script src="{{ asset('js/highlightRows.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/CaptionRunControl.js') }}?id={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/date_picker.js') }}?v={{ time() }}"></script>
@@ -192,10 +194,10 @@
                     <td>
                         <input type="text" class="input remarks" name="remarks[]" value="{{ $post->remarks }}"><!-- 備考欄 -->
                     </td>
-                    <td>
+                    <td class="check-error">
                         <input type="text" class="d{{ $loop->index }} distance" name="distance[]" value="{{ $post->distance ?? '' }}" readonly>
                     </td>
-                    <td>
+                    <td class="check-error">
                         <input type="text" class="p{{ $loop->index }} price" name="price[]" value="{{ $post->price ?? '' }}" readonly>
                     </td>
                 </tr>

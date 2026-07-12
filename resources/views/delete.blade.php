@@ -128,7 +128,7 @@
                         <input type="checkbox" name="shareRide[{{ $index }}]" class="sharedRide" disabled="disabled" value="乗合" {{ $post->shareRide ? 'checked' : '' }}>
                     </td>
                     <td>
-                        <select name="classification[]" style="pointer-events: none;" tabindex="-1">
+                        <select name="classification[]" style="border-radius:4px; padding:5px 10px 3px; pointer-events: none;" tabindex="-1">
                             <option {{ $post->classification == '介護保険' ? 'selected' : '' }}>介護保険</option>
                             <option {{ $post->classification == '障害福祉' ? 'selected' : '' }}>障害福祉</option>
                             <option {{ $post->classification == '保険外' ? 'selected' : '' }}>保険外</option>

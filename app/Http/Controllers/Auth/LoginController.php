@@ -60,6 +60,10 @@ if (!$request->filled('recaptcha_token')) {
 
             $request->session()->regenerate();
 
+            session([
+                'show_distance_alert' => true
+            ]);
+
             return redirect()->intended('/dashboard');
         }
 
