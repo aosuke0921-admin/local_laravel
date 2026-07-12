@@ -18,23 +18,14 @@
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/master.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
-<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('css/master.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/master.css') }}?v={{ time() }}" rel="stylesheet" type="text/css">
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 @viteReactRefresh
 
 @vite('resources/react/index.tsx')
 
-<style>
-  .welcome{
-    display:block;
-    height:0;
-    position:absolute;
-    top:13px;
-    left:150px;
-  }
-</style>
 </head>
 <body class="master-page">
 
