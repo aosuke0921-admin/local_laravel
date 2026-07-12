@@ -6,14 +6,20 @@
 <title>マスター保守</title>
 <script type="text/javascript" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://logute.com/js/plugin/DeleteCheck/DeleteCheck.js?v=1778639541" charset="utf-8"></script>
-<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('css/master.css') }}" rel="stylesheet" type="text/css">
+
+<!--<script src="https://logute.com/js/plugin/DeleteCheck/DeleteCheck.js?v=1778639541" charset="utf-8"></script>-->
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
+{{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/ajax_config.js') }}?v={{ time() }}" charset="utf-8"></script><!-- このページだけで使用 -->
+{{-- ---------------------------------------------------------------------------------------- --}}
+<!--<script src="{{ asset('js/system_init.js') }}?v={{ time() }}" charset="utf-8"></script>-->
+{{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/master.js') }}?id={{ time() }}" charset="utf-8"></script>
+<script src="{{ asset('js/master.js') }}?v={{ time() }}" charset="utf-8"></script>
+{{-- ---------------------------------------------------------------------------------------- --}}
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/master.css') }}" rel="stylesheet" type="text/css">
 {{-- ---------------------------------------------------------------------------------------- --}}
 
 @viteReactRefresh

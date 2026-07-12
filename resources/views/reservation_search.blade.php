@@ -11,9 +11,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-
+<!--<script src="{{ asset('js/ajax_config.js') }}?v={{ time() }}" charset="utf-8"></script>-->
+<script src="{{ asset('js/system_init.js') }}?v={{ time() }}" charset="utf-8"></script><!-- 使用中 -->
+{{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/highlightRows.js') }}?v={{ rand() }}"></script>
-<script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}

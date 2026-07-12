@@ -1,13 +1,9 @@
-// jQuery + javaScript
+// jQuery
 //----------------------------------------------------------------------------------------
 $(function(){
-
-  window.isInit = true;
-
+ 
   $.ajaxSetup({
     cache: false
   });
-
-  window.fileName = window.location.pathname.split("/").pop();
 
 });

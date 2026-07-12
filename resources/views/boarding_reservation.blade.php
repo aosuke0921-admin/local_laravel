@@ -6,7 +6,7 @@
 <title>乗降予約・キャンセル受付</title>
 <script type="text/javascript" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>-->
 <script>
     // boarding_reservation.jsで使用するためPHP配列をjs配列に変換
     // window.をつけるとグローバルになりboarding_reservation.js内で使用できる
@@ -14,13 +14,14 @@
 </script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-
-<script src="{{ asset('js/system.js') }}?v={{ rand() }}"></script>
-<script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
+<!-- ajax_config.js master.js の $.ajax 使用箇所が残っているため masterのみ使用 fetch化後に削除予定-->
+<!--<script src="{{ asset('js/ajax_config.js') }}?v={{ time() }}" charset="utf-8"></script>-->
+<script src="{{ asset('js/system_init.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/device.js') }}?v={{ time() }}" charset="utf-8"></script>
+{{-- ---------------------------------------------------------------------------------------- --}}
+<script src="{{ asset('js/mobile-dropdown.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/boarding_reservation.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/closeWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
-
 <script src="{{ asset('js/openWindow.js') }}?v={{ time() }}" charset="utf-8"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?v={{ rand() }}" rel="stylesheet">

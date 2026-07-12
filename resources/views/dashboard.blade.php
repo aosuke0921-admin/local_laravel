@@ -10,9 +10,10 @@
 
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-
+<!--<script src="{{ asset('js/ajax_config.js') }}?v={{ time() }}" charset="utf-8"></script>-->
+<!--<script src="{{ asset('js/system_init.js') }}?v={{ time() }}" charset="utf-8"></script>-->
+{{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/startDistanceApi.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/system.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/dashboard.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/page-feedback.js') }}?v={{ time() }}" charset="utf-8"></script>
 <script src="{{ asset('js/total.js') }}?v={{ time() }}" charset="utf-8"></script>

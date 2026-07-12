@@ -8,7 +8,8 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 {{-- ---------------------------------------------------------------------------------------- --}}
 <script src="{{ asset('js/sessionMonitor.js') }}?v={{ time() }}" charset="utf-8"></script>
-<script src="{{ asset('js/system.js') }}?id={{ time() }}" charset="utf-8"></script>
+<!--<script src="{{ asset('js/ajax_config.js') }}?v={{ time() }}" charset="utf-8"></script>-->
+<!--<script src="{{ asset('js/system_init.js') }}?v={{ time() }}" charset="utf-8"></script>-->
 {{-- ---------------------------------------------------------------------------------------- --}}
 <link href="{{ asset('css/style.css') }}?id={{ time() }}" rel="stylesheet" type="text/css">
 </head>
