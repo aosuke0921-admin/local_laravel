@@ -207,6 +207,39 @@
         </tr>
 
         @php $count = 0; @endphp
+        
+
+
+
+
+
+<!------------------------------------------------------------------------------------>
+        @if($duplicates->isNotEmpty())
+
+            <h2>重複データあり</h2>
+
+            @foreach($duplicates as $group)
+
+                @foreach($group as $row)
+                    <p>
+                        ID: {{ $row->id }}
+                        利用者: {{ $row->user }}
+                    </p>
+                @endforeach
+
+            @endforeach
+
+        @else
+
+        重複データなし
+
+        @endif
+<!------------------------------------------------------------------------------------>
+
+
+
+
+
 
         @foreach($data as $row)
 

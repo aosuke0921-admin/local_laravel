@@ -8,10 +8,13 @@ use App\Models\SmileCancel;
 use Carbon\Carbon;
 use App\Services\UserService;
 
+use App\Services\DuplicateCheckService;//2026.7.13追記 / 重複データを取得
+
 class ReservationController extends Controller
 {
 
-    public function index(Request $request, UserService $userService)
+    //public function index(Request $request, UserService $userService)
+    public function index(Request $request, UserService $userService,DuplicateCheckService $duplicateCheckService)
     {
 
         $mode = $request->query('mode', 'boarding');
@@ -76,6 +79,21 @@ class ReservationController extends Controller
             ->orderBy($cancel ? 'cancel_date' : 'reservation_datetime')
             ->get();
 
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+// 重複データを取得
+$duplicates = $duplicateCheckService->findDuplicates($data);
+
+if ($duplicates->isNotEmpty()) {
+    dd($duplicates);
+}
+
+//--------------------------------------------------------------------------------------------------------------
+
+
+
         // =========================
         // attention（キャンセルは対象外）
         // =========================
@@ -119,7 +137,8 @@ class ReservationController extends Controller
             'attentions',
             'groupedUsers',
             'year',
-            'month'
+            'month',
+            'duplicates' //重複データを入れた変数
         ));
     }
 
