@@ -61,11 +61,13 @@ localStorage.removeItem('post_form');
 let msg = '';
 
 @foreach($distanceErrors as $row)
-msg += '{{ str_contains($row->dates, "年") 
+msg += '・{{ str_contains($row->dates, "年") 
     ? $row->dates 
     : \Carbon\Carbon::parse($row->dates)->format("Y年n月j日") 
-}}（{{ $row->car }}）の開始距離・終了距離を確認してください。\n';
+}}（{{ $row->car }}）\n';
 @endforeach
+
+msg += '\n上記の開始距離・終了距離を確認してください。';
 
 alert(msg);
 </script>

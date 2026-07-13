@@ -91,6 +91,9 @@ class MonthArchiveController extends Controller
 
         $groupedUsers = app(UserService::class)->getGroupedUsers();
 
+
+        //dd($groupedUsers);
+
         return view('month_archive', [
             'groupedUsers'   => $groupedUsers, // ←統一
             'select_tb'     => $select_tb,
@@ -175,7 +178,28 @@ class MonthArchiveController extends Controller
 
         //----------------------------------------------------------------------
 
-        $posts = $query->orderBy('dates')->get();
+        //$posts = $query->orderBy('dates')->get();
+
+        
+
+$groupedUsers = app(UserService::class)->getGroupedUsers();
+
+$order = $groupedUsers
+    ->flatten(1)
+    ->pluck('name')
+    ->flip();
+
+//dd($order);   // ← 一時的にここを追加
+
+
+$posts = $query->get()
+    ->sortBy(fn($post) => $order->get($post->user, PHP_INT_MAX))
+    ->values();
+
+//dd($posts->pluck('user'));
+
+
+
 
         $headers = [
             "Content-type" => "text/csv",

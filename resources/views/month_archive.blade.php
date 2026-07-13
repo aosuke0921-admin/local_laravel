@@ -147,6 +147,18 @@ $sharedPrice = 100;      // 乗合初乗り（半額）
 $extraKmPriceSingle = 60; // 単独 5km超え1kmごと
 $extraKmPriceShared = 30; // 乗合 5km超え1kmごと
 
+
+//dd($data);
+
+$order = app(\App\Services\UserService::class)
+    ->getGroupedUsers()
+    ->flatten(1)
+    ->pluck('name')
+    ->flip();
+
+$data = collect($data)
+    ->sortBy(fn($item) => $order->get($item->user, PHP_INT_MAX));
+    
 foreach ($data as $item) {
 
     $name = $item->user;

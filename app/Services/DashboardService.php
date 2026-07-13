@@ -14,6 +14,7 @@ public function getDistanceErrors($member)
 
     return DB::table('smile_posts')
         ->where('member', $member)
+        ->whereYear('dates', now()->year)   // ←今年
         ->where('dates', '!=', $today)
          ->where('car', '!=', '選択してください')
         ->where(function ($query) {

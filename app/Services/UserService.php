@@ -17,6 +17,7 @@ class UserService
         ->whereNotNull('kana')
         ->where('kana', '!=', '')
         ->where('status', 1)   // ← これを追加
+        ->orderBy('kana', 'asc')   // ← これを追加
         ->get()
         ->unique('name') // ←これ追加
         ->map(function ($item) {
