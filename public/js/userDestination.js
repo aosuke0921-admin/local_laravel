@@ -135,9 +135,21 @@ window.js_array = [];
                 .find('.user_name_select')
                 .val();
 
+            // 利用者未選択なら何もしない
+            if (!userName) {
+                return;
+            }
+
             if (classification) {
                 $classification.val(classification);
             }else{
+
+                console.log({
+                    isInit: window.isInit,
+                    userName,
+                    classification
+                });
+
                 alert(`${userName}さんの区分が未設定です。\nマスター保守ページで設定してください。`);
             }
         }
