@@ -4,12 +4,9 @@ $(function(){
       //if (isInit) return;
       if (window.isInit) return;
 
-
       const $row = $(this).closest('tr');
-
       const dest = $(this).val();
       const user = $row.find('.user_name_select').val();
-
       const $distance = $row.find('.distance');
       const $price = $row.find('.price');
       const $check = $row.find('.sharedRide');
@@ -55,32 +52,45 @@ $(function(){
           }
       });
 
-      // =========================
-      // 値セット
-      // =========================
-      if (found) {
+        // =========================
+        // 値セット
+        // =========================
+        if (found) {
 
-          $distance.val(parseFloat(found.distance || 0));
+            $distance.val(parseFloat(found.distance || 0));
 
-          calcPrice($row); // ← 料金計算
+            calcPrice($row); // ← 料金計算
 
-      } else {
+        } else {
 
-          $distance.val('');
-          $price.val('');
-      }
+            $distance.val('');
+            $price.val('');
+        }
 
-      // =========================
-      // 乗合チェック制御
-      // =========================
-      if (!dest || classification === '保険外') {
+        // =========================
+        // 乗合チェック制御
+        // =========================
+        /*
+        行き先が未選択なら → 乗合は選べない
+        区分が保険外なら → 乗合は選べない
+        */
+        //if (!dest || classification === '保険外') {
+        //if (!dest || (classification === '保険外' && user !== 'カンエムディ イクラムルホーク')) {
+        // shared_ride.js / 保険外でも乗合許可の人を追記するファイル
+        if (
+            !dest ||
+            (
+                classification === '保険外' &&
+                !window.sharedRideAllowedUsers.includes(user)
+            )
+        ) {
 
-          $check.prop('checked', false).prop('disabled', true);
+            $check.prop('checked', false).prop('disabled', true);
 
-      } else {
+        } else {
 
-          $check.prop('disabled', false);
-      }
+            $check.prop('disabled', false);
+        }
 
       // =========================
       // 合計更新

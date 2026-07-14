@@ -9,7 +9,15 @@ $(function(){
       let $check = $row.find('.sharedRide');
       let val    = $(this).val();
 
-      if (val === '保険外') {
+      let user = $row.find('.user_name_select').val().trim();
+
+      //if (val === '保険外') {
+      //if (val === '保険外' && user !== 'カンエムディ イクラムルホーク') {
+      // shared_ride.js / 保険外でも乗合許可の人を追記するファイル
+        if (
+            val === '保険外' &&
+            !window.sharedRideAllowedUsers.includes(user)
+        ) {
 
           // ① 乗合チェック外す＆無効化
           $check.prop('checked', false).prop('disabled', true);
@@ -20,7 +28,7 @@ $(function(){
           // ③ 金額を通常に戻す（←ここ重要）
           calcPrice($row);
 
-      } else {
+        } else {
 
           // ④ 乗合チェックを有効化
           $check.prop('disabled', false);
